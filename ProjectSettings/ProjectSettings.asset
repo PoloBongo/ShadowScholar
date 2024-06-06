@@ -160,7 +160,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.ShadowScholar-
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -645,7 +646,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: EASYROADS3D_PRO;GENA_PRO
+    Standalone: EASYROADS3D_PRO;GENA_PRO;__DIGGER__;__DIGGER_RUNTIME__
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -751,7 +752,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: e45d45ce-cd76-4ba2-a781-8fadf260fc78
   framebufferDepthMemorylessMode: 0

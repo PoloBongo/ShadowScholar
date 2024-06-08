@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7570509182881826723}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5794944535138762475
 MonoBehaviour:
@@ -152,7 +153,7 @@ MonoBehaviour:
     m_checkCollisionType: 2
     m_spawnCollisionLayers:
       serializedVersion: 2
-      m_Bits: 1847
+      m_Bits: 4294967295
     m_blendAmount: 0.001
     m_boundsExtents: 0.001
     m_checkSlopeType: 2
@@ -162,6 +163,7 @@ MonoBehaviour:
     m_maxSlope: 20
     m_slopeRange: 90
     m_checkHeightType: 2
+    m_seaLevel: 0
     m_minSpawnHeight: -20
     m_maxSpawnHeight: 4600
     m_minHeight: -20
@@ -178,14 +180,46 @@ MonoBehaviour:
     m_checkMask: 0
     m_checkMaskType: 0
     m_maskFractal:
+      m_enabled: 0
+      m_noiseFalloff:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_noiseType: 0
+      m_strength: 1
       m_seed: 0
       m_octaves: 8
       m_persistence: 0.65
       m_frequency: 0.05
       m_lacunarity: 1.5
-      m_XOffset: 0
-      m_ZOffset: 0
-      m_YOffset: 0
+      m_amplitude: 1
+      m_offset: {x: 0, y: 0}
+      m_warp: 0
+      m_warp0: 0
+      m_damp: 0
+      m_damp0: 0
+      m_dampScale: 0
+      m_ridgedOffset: 0
     m_midMaskFractal: 0.5
     m_maskFractalRange: 0.5
     m_maskImagePaletteID: -2147483648
@@ -209,6 +243,7 @@ MonoBehaviour:
     m_overrideBoundsBorder: 0
     m_overrideRayExtents: 0
     m_overrideCheckHeight: 0
+    m_overrideSeaLevel: 0
     m_overrideMinMaxHeight: 0
     m_overrideMinMaxSpawnHeight: 0
     m_overrideHeightVariance: 0
@@ -312,7 +347,7 @@ MonoBehaviour:
         m_checkCollisionType: 2
         m_spawnCollisionLayers:
           serializedVersion: 2
-          m_Bits: 1847
+          m_Bits: 4294967295
         m_blendAmount: 0.001
         m_boundsExtents: 0.001
         m_checkSlopeType: 2
@@ -322,6 +357,7 @@ MonoBehaviour:
         m_maxSlope: 20
         m_slopeRange: 90
         m_checkHeightType: 2
+        m_seaLevel: 0
         m_minSpawnHeight: -20
         m_maxSpawnHeight: 4600
         m_minHeight: -20
@@ -338,14 +374,46 @@ MonoBehaviour:
         m_checkMask: 0
         m_checkMaskType: 0
         m_maskFractal:
+          m_enabled: 0
+          m_noiseFalloff:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_noiseType: 0
+          m_strength: 1
           m_seed: 0
           m_octaves: 8
           m_persistence: 0.65
           m_frequency: 0.05
           m_lacunarity: 1.5
-          m_XOffset: 0
-          m_ZOffset: 0
-          m_YOffset: 0
+          m_amplitude: 1
+          m_offset: {x: 0, y: 0}
+          m_warp: 0
+          m_warp0: 0
+          m_damp: 0
+          m_damp0: 0
+          m_dampScale: 0
+          m_ridgedOffset: 0
         m_midMaskFractal: 0.5
         m_maskFractalRange: 0.5
         m_maskImagePaletteID: -2147483648
@@ -369,6 +437,7 @@ MonoBehaviour:
         m_overrideBoundsBorder: 0
         m_overrideRayExtents: 0
         m_overrideCheckHeight: 0
+        m_overrideSeaLevel: 0
         m_overrideMinMaxHeight: 0
         m_overrideMinMaxSpawnHeight: 0
         m_overrideHeightVariance: 0
@@ -434,6 +503,7 @@ MonoBehaviour:
         m_flagForceOptimise: 0
         m_flagIsOutdoorObject: 1
         m_useColliderBounds: 0
+        m_applyToChildren: 0
       m_basePosition: {x: 0, y: 0, z: 0}
       m_baseRotation: {x: 0, y: 0, z: 0}
       m_baseScale: {x: 1, y: 1, z: 1}
@@ -455,8 +525,7 @@ MonoBehaviour:
         m_size: 0
         m_strength: []
         m_brush: {fileID: 0}
-      m_prefab: {fileID: 105860152798817040, guid: de6f5aff0e5ae404a93539e8b6751b2e,
-        type: 3}
+      m_prefab: {fileID: 105860152798817040, guid: de6f5aff0e5ae404a93539e8b6751b2e, type: 3}
       m_template: {fileID: 0}
       m_nextSuccess: 0
       m_nextPosition: {x: 0, y: 0, z: 0}
@@ -476,10 +545,10 @@ MonoBehaviour:
   m_hasActiveTerrainTextures: 0
   m_hasActiveTerrainHeights: 0
   m_spawnTarget: {fileID: 0}
-  m_spawnOriginLocation: {x: 303.04572, y: 5.951291, z: 849.52136}
+  m_spawnOriginLocation: {x: 1314.8885, y: 19.806746, z: 1824.7485}
   m_spawnOriginNormal: {x: 0, y: 1, z: 0}
-  m_spawnOriginObjectID: 153266
-  m_spawnOriginIsTerrain: 1
+  m_spawnOriginObjectID: -247702
+  m_spawnOriginIsTerrain: 0
   m_spawnOriginGroundTransform: {fileID: 0}
   m_minInstances: 1
   m_maxInstances: 1
@@ -488,7 +557,6 @@ MonoBehaviour:
   m_spawnRangeShape: 0
   m_hasSeaLevelBeenSet: 0
   m_getSeaLevel: 0
-  m_extraSeaLevelHeight: 0
   m_useLargeRanges: 0
   m_randomSeed: 607689
   m_physicsType: 0
@@ -502,13 +570,14 @@ MonoBehaviour:
   m_lastSpawnedObject: {fileID: 0}
   m_probeParent: {fileID: 0}
   m_spawnOriginBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_visualizationActive: 0
+    m_Center: {x: 1314.8885, y: 19.806746, z: 1824.7485}
+    m_Extent: {x: 0.5, y: 2500, z: 0.5}
+  m_visualizationActive: 1
   m_visualizationFixed: 0
   m_physicsSettings:
     m_iterations: 1000
     m_stepSize: 0.05
     m_spawnOffsetY: 0.3
+    m_minHeightY: -10
   m_prototypeIDPool: 
   m_lastSpawnCalls: []

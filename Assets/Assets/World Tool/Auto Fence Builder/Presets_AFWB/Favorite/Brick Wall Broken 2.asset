@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -317,6 +318,7 @@ MonoBehaviour:
   railASize: {x: 1.01, y: 1, z: 1}
   railARotation: {x: 0, y: 0, z: 0}
   railAKeepGrounded: 0
+  rotateFromBaseRailA: 1
   overlapAtCorners: 1
   autoHideBuriedRails: 0
   slopeModeRailA: 2
@@ -964,7 +966,7 @@ MonoBehaviour:
     stepEnabled: 1
   railARandRec:
     sequenceShuffle: 0
-    heightVariation: 8
+    heightVariation: 10
     smallRotVariation: 0
     quantRotVariation: 0
   railBName: MetalSlimArc_Rail
@@ -975,6 +977,7 @@ MonoBehaviour:
   railBSize: {x: 1, y: 1, z: 1}
   railBRotation: {x: 0, y: 0, z: 0}
   railBKeepGrounded: 1
+  rotateFromBaseRailB: 0
   slopeModeRailB: 0
   railBRandomScope: 2
   allowRailBHeightVariation: 0
@@ -1611,6 +1614,7 @@ MonoBehaviour:
   numExtras: 1
   extrasGap: 1
   raiseExtraByPostHeight: 1
+  extrasFollowIncline: 0
   postHeightOffset: 0
   interpolate: 1
   interPostDist: 3

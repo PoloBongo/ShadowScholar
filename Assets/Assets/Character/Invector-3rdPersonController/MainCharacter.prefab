@@ -3712,7 +3712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 2
+  selectedToolbar: 1
   unlockCursorOnStart: 0
   showCursorOnStart: 0
   toggleWalk: 301
@@ -4095,7 +4095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 2
+  selectedToolbar: 0
   canUseMeleeBlock_H: 0
   canUseMeleeWeakAttack_H: 1
   canUseMeleeStrongAttack_H: 1
@@ -4208,7 +4208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openCloseEvents: 0
-  openCloseWindow: 0
+  openCloseWindow: 1
   selectedToolbar: 0
   Members:
   - transform: {fileID: 2182402236445074334}
@@ -4425,19 +4425,7 @@ MonoBehaviour:
     autoEquip: 0
     addToEquipArea: 0
     indexArea: 0
-  - id: 20
-    name: 
-    amount: 1
-    attributes:
-    - name: 6
-      value: 10
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 0
-    addToEquipArea: 0
-    indexArea: 0
-  - id: 22
+  - id: 26
     name: 
     amount: 1
     attributes:
@@ -4446,7 +4434,7 @@ MonoBehaviour:
       isOpen: 0
       isBool: 0
     - name: 6
-      value: 1600
+      value: 100
       isOpen: 0
       isBool: 0
     - name: 10
@@ -4454,11 +4442,35 @@ MonoBehaviour:
       isOpen: 0
       isBool: 0
     - name: 9
-      value: 10
+      value: 0
       isOpen: 0
       isBool: 0
     changeAttributes: 1
-    autoEquip: 0
+    autoEquip: 1
+    addToEquipArea: 0
+    indexArea: 0
+  - id: 27
+    name: 
+    amount: 1
+    attributes:
+    - name: 2
+      value: 25
+      isOpen: 0
+      isBool: 0
+    - name: 6
+      value: 100
+      isOpen: 0
+      isBool: 0
+    - name: 10
+      value: 85
+      isOpen: 0
+      isBool: 0
+    - name: 9
+      value: 0
+      isOpen: 0
+      isBool: 0
+    changeAttributes: 1
+    autoEquip: 1
     addToEquipArea: 0
     indexArea: 0
   - id: 10
@@ -4470,75 +4482,7 @@ MonoBehaviour:
       isOpen: 0
       isBool: 0
     - name: 6
-      value: 8
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 1
-    addToEquipArea: 1
-    indexArea: 0
-  - id: 6
-    name: 
-    amount: 1
-    attributes:
-    - name: 3
-      value: 0
-      isOpen: 0
-      isBool: 0
-    - name: 4
-      value: 80
-      isOpen: 0
-      isBool: 0
-    - name: 5
-      value: 90
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 1
-    addToEquipArea: 1
-    indexArea: 0
-  - id: 15
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 45
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 8
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 1
-    addToEquipArea: 1
-    indexArea: 0
-  - id: 16
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 45
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 8
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 1
-    addToEquipArea: 1
-    indexArea: 0
-  - id: 25
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 45
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 8
+      value: 50
       isOpen: 0
       isBool: 0
     changeAttributes: 1

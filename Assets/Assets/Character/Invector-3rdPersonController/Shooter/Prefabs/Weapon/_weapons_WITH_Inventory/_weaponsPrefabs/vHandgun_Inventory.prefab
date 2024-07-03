@@ -134,6 +134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 462780924778123814}
   - {fileID: 470834}
   - {fileID: 470832}
   - {fileID: 470842}
@@ -163,7 +164,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5432,7 +5433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 0
+  selectedToolbar: 4
   weaponCategory: Pistol
   shootFrequency: 0.25
   isInfinityAmmo: 0
@@ -5529,7 +5530,7 @@ MonoBehaviour:
   recoilLeft: -0.5
   recoilUp: 2
   reloadSource: {fileID: 0}
-  reloadClip: {fileID: 8300000, guid: cc03a3bc3d3003c428240bcd6e12c487, type: 3}
+  reloadClip: {fileID: 8300000, guid: c6d987a03ad75244488aac8add3319d0, type: 3}
   finishReloadClip: {fileID: 0}
   onlyUseScopeUIView: 0
   useUI: 0
@@ -8668,7 +8669,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8426eee56b825664594bb6d0d1678a1d, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9223,7 +9223,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9276,7 +9276,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9329,7 +9329,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -9382,7 +9382,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -13732,7 +13732,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d8603b41eb2844649b9e02a41d1e1ad2, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19219,3 +19218,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1001 &462780924778324442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 443350}
+    m_Modifications:
+    - target: {fileID: 139840, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_Name
+      value: vHandgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0042132176
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0020464063
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9998739
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.015885266
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+--- !u!4 &462780924778123814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 472060, guid: ce5a2b58c9791bc4a84644dd8157da93, type: 3}
+  m_PrefabInstance: {fileID: 462780924778324442}
+  m_PrefabAsset: {fileID: 0}

@@ -12,22 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683f1519800d3cb4ba28248dec3c71ef, type: 3}
   m_Name: GeNa River Profile River Flow
   m_EditorClassIdentifier: 
-  m_riverParamaters:
+  m_riverParameters:
     m_renderMode: 2
     m_isUsedForWeather: 0
-    m_builtInRiverMaterial: {fileID: 2100000, guid: 8fe4660f8881268409c9514268ff0eb8,
-      type: 2}
-    m_universalRiverMaterial: {fileID: 2100000, guid: 3cc5ed8b1264ba149bf1a642f54a0d11,
-      type: 2}
-    m_highDefinitionRiverMaterial: {fileID: 2100000, guid: cfb0953323244954ebf110875e40970f,
-      type: 2}
-    m_builtInRiverShader: {fileID: 4800000, guid: 1c7c3d034fa35cf419f4e9a97c439544,
-      type: 3}
+    m_syncToWeather: 0
+    m_builtInRiverMaterial: {fileID: 2100000, guid: 8fe4660f8881268409c9514268ff0eb8, type: 2}
+    m_universalRiverMaterial: {fileID: 2100000, guid: 3cc5ed8b1264ba149bf1a642f54a0d11, type: 2}
+    m_highDefinitionRiverMaterial: {fileID: 2100000, guid: cfb0953323244954ebf110875e40970f, type: 2}
+    m_builtInRiverShader: {fileID: 4800000, guid: 1c7c3d034fa35cf419f4e9a97c439544, type: 3}
     m_builtInRiverShaderName: PWS/PW_RiverShader
     m_universalRiverShader: {fileID: 0}
     m_universalRiverShaderName: 
-    m_highDefinitionRiverShader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59,
-      type: 3}
+    m_highDefinitionRiverShader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
     m_highDefinitionRiverShaderName: HDRP/Lit
     m_mainColor: {r: 0.11, g: 0.169, b: 0.056, a: 1}
     m_mainColorDepthStrength: 0.729
@@ -39,8 +35,7 @@ MonoBehaviour:
     m_normalShift: 0.094
     m_shoreBlend: 0.263
     m_shoreNormalBlend: 0.4
-    m_normalAndHeightMap: {fileID: 2800000, guid: c2268b3d23101f54b8fbf8bb9a0b4541,
-      type: 3}
+    m_normalAndHeightMap: {fileID: 2800000, guid: c2268b3d23101f54b8fbf8bb9a0b4541, type: 3}
     m_normalAndHeightMapTiling: {x: 2, y: 0.25}
     m_normalStrength: 0.192
     m_shoreRippleHeight: 0.38
@@ -61,22 +56,21 @@ MonoBehaviour:
     m_pBRColor:
       serializedVersion: 2
       rgba: 4076863239
-  m_riverFlowParamaters:
+  m_weatherParameters:
+    m_rainRiverProfile: {fileID: 11400000, guid: 53b278ff29553c34dbdadd4ebd11d9ad, type: 2}
+    m_snowRiverProfile: {fileID: 11400000, guid: 822491e8e572bd644b0e1d9489b3a714, type: 2}
+  m_riverFlowParameters:
     m_renderMode: 0
     m_isUsedForWeather: 0
-    m_builtInRiverMaterial: {fileID: 2100000, guid: 8fe4660f8881268409c9514268ff0eb8,
-      type: 2}
-    m_universalRiverMaterial: {fileID: 2100000, guid: 3cc5ed8b1264ba149bf1a642f54a0d11,
-      type: 2}
-    m_highDefinitionRiverMaterial: {fileID: 2100000, guid: cfb0953323244954ebf110875e40970f,
-      type: 2}
-    m_builtInRiverShader: {fileID: 4800000, guid: 8d1b3f5e246fc6e419b84fd9bde9cee7,
-      type: 3}
+    m_builtInRiverMaterial: {fileID: 2100000, guid: 8fe4660f8881268409c9514268ff0eb8, type: 2}
+    m_universalRiverMaterial: {fileID: 2100000, guid: 3cc5ed8b1264ba149bf1a642f54a0d11, type: 2}
+    m_highDefinitionRiverMaterial: {fileID: 2100000, guid: cfb0953323244954ebf110875e40970f, type: 2}
     m_builtInRiverShaderName: PWS/PW_FlowRiver
-    m_universalRiverShader: {fileID: 0}
     m_universalRiverShaderName: Legacy Shaders/Transparent/Bumped Diffuse
-    m_highDefinitionRiverShader: {fileID: 0}
     m_highDefinitionRiverShaderName: 
+    m_builtInRiverShader: {fileID: 4800000, guid: 8d1b3f5e246fc6e419b84fd9bde9cee7, type: 3}
+    m_universalRiverShader: {fileID: 0}
+    m_highDefinitionRiverShader: {fileID: 0}
     m_waterFogColor: {r: 0.139, g: 0.236, b: 0.261, a: 1}
     m_waterFogDensity: 2
     m_fogBlurDepth: 1
@@ -114,8 +108,3 @@ MonoBehaviour:
     m_foamSlopeStrength: 0.512
     m_foamSlopeContrast: 1.8
     m_seaLevelBlend: 1.25
-  m_weatherParamaters:
-    m_rainRiverProfile: {fileID: 11400000, guid: 53b278ff29553c34dbdadd4ebd11d9ad,
-      type: 2}
-    m_snowRiverProfile: {fileID: 11400000, guid: 822491e8e572bd644b0e1d9489b3a714,
-      type: 2}

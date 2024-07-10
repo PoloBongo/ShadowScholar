@@ -6,15 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
-
-    [SerializeField] private float walkSpeed, runSpeed;
-    [SerializeField] private float runBuildUpSpeed;
-    [SerializeField] private KeyCode runKey;
-
-    private float movementSpeed;
-
-    [SerializeField] private float slopeForce;
-    [SerializeField] private float slopeForceRayLength;
+    [SerializeField] private float movementSpeed;
 
     private CharacterController charController;
 
@@ -43,41 +35,10 @@ public class PlayerMove : MonoBehaviour
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
 
-
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
-        if ((vertInput != 0 || horizInput != 0) && OnSlope())
-            charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
-
-
-        SetMovementSpeed();
         JumpInput();
-    }
 
-    private void SetMovementSpeed()
-    {
-        if (Input.GetKey(runKey))
-            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
-        else
-            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
-    }
-
-
-    private bool OnSlope()
-    {
-        if (isJumping)
-            return false;
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, charController.height / 2 * slopeForceRayLength))
-            if (hit.normal != Vector3.up)
-            {
-                print("OnSlope");
-                return true;
-            }
-
-        return false;
     }
 
     private void JumpInput()
@@ -94,6 +55,7 @@ public class PlayerMove : MonoBehaviour
     {
         charController.slopeLimit = 90.0f;
         float timeInAir = 0.0f;
+
         do
         {
             float jumpForce = jumpFallOff.Evaluate(timeInAir);

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.Events;
 
 namespace Invector
@@ -99,9 +98,9 @@ namespace Invector
         /// </summary>
         public virtual void Open()
         {
-            if (state != DoorState.Opening && state != DoorState.Opening)
+            if (state != DoorState.Opening && state != DoorState.Opened)
             {
-                targetDoorAngle = invertOpenSide ? -angleOfOpen : angleOfOpen;
+                targetDoorAngle = _invertOpenSide ? -angleOfOpen : angleOfOpen;
                 StartCoroutine(HandleDoor());
             }
         }
@@ -118,7 +117,7 @@ namespace Invector
             }
         }
         /// <summary>
-        /// Open or close door depending othe your current <see cref="state"/>
+        /// Open or close door depending on the current state
         /// </summary>
         public virtual void ToggleOpenClose()
         {
@@ -133,14 +132,14 @@ namespace Invector
         }
 
         /// <summary>
-        /// Open or close door Routine
+        /// Open or close door routine
         /// </summary>
         /// <returns></returns>
         protected virtual IEnumerator HandleDoor()
         {
-            bool open = Mathf.Abs(targetDoorAngle).Equals(angleOfOpen);
+            bool open = Mathf.Abs(targetDoorAngle).Equals(Mathf.Abs(angleOfOpen));
             state = open ? DoorState.Opening : DoorState.Closing;
-            switch (state)///Call start event based in state;
+            switch (state) ///Call start event based in state
             {
                 case DoorState.Opening:
                     onStartOpen.Invoke();
@@ -149,7 +148,9 @@ namespace Invector
                     else
                         onStartOpenRight.Invoke();
                     break;
-                case DoorState.Closing: onStartClose.Invoke(); break;
+                case DoorState.Closing:
+                    onStartClose.Invoke();
+                    break;
             }
 
             stopDoor = true;  //break last routine to exit (While) function
@@ -157,9 +158,9 @@ namespace Invector
             stopDoor = false;  //start new routine
             while (!stopDoor)
             {
-                ///Lerp  current angle to target door angle
+                ///Lerp current angle to target door angle
                 currentAngle.y = Mathf.MoveTowardsAngle(currentAngle.y, targetDoorAngle, (open ? openSpeed : closeSpeed));
-                if (Mathf.Abs(currentAngle.y - targetDoorAngle) < 0.01f)///Check if target Door angle is reached
+                if (Mathf.Abs(currentAngle.y - targetDoorAngle) < 0.01f) ///Check if target Door angle is reached
                 {
                     currentAngle.y = targetDoorAngle;
                     pivot.localEulerAngles = currentAngle;
@@ -173,10 +174,10 @@ namespace Invector
             if (!stopDoor)
             {
                 state = open ? DoorState.Opened : DoorState.Closed;
-                ///Close door if auto close and dont has a collider in trigger
+                ///Close door if auto close and don't have a collider in trigger
                 if (open && autoClose && !colliderInTrigger) CloseWithDelay();
 
-                switch (state)//Call finish event based in state
+                switch (state) //Call finish event based in state
                 {
                     case DoorState.Opened:
                         onOpen.Invoke();
@@ -185,7 +186,9 @@ namespace Invector
                         else
                             onOpenRight.Invoke();
                         break;
-                    case DoorState.Closed: onClose.Invoke(); break;
+                    case DoorState.Closed:
+                        onClose.Invoke();
+                        break;
                 }
             }
         }

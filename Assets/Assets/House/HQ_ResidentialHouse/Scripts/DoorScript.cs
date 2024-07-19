@@ -263,7 +263,7 @@ public class DoorScript : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.tag != PlayerHeadTag)
+		if(other.tag != "Player")
 			return;
 		
 		inZone = true;
@@ -271,7 +271,7 @@ public class DoorScript : MonoBehaviour {
 	
 	void OnTriggerExit(Collider other)
 	{
-		if (other.tag != PlayerHeadTag) 
+		if (other.tag != "Player") 
 			return;
 
 

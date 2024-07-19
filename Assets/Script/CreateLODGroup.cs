@@ -1,6 +1,6 @@
-using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 
 public class CreateLODGroup : MonoBehaviour
 {
@@ -88,6 +88,8 @@ public class CreateLODGroup : MonoBehaviour
         {
             float normalizedSize = (rendererSizes[i] - minSize) / (maxSize - minSize);
             GameObject rendererObject = renderers[i].gameObject;
+            Debug.Log(selectedObject.name);
+            Debug.Log(normalizedSize);
 
             // Vérifier si l'objet est dans un dossier "Exterieur"
             bool isExteriorObj = IsInExteriorFolder(rendererObject.transform);
@@ -95,14 +97,12 @@ public class CreateLODGroup : MonoBehaviour
 
             if (isExteriorObj)
             {
-                // Les murs extérieurs sont visibles de près et de loin
                 lodRenderers[0].Add(renderers[i]); 
                 lodRenderers[1].Add(renderers[i]); 
                 lodRenderers[2].Add(renderers[i]); 
             }
             else if (isInteriorObj)
             {
-                // Les murs extérieurs sont visibles de près et de loin
                 lodRenderers[0].Add(renderers[i]);
             }
             else
@@ -126,7 +126,7 @@ public class CreateLODGroup : MonoBehaviour
         }
 
         // Créer les niveaux de LOD
-        float[] lodPercentages = { 0.7f, 0.3f, 0.15f }; // Ajuster les pourcentages pour LOD 0, LOD 1 et LOD 2
+        float[] lodPercentages = { 0.6f, 0.3f, 0.1f }; // Ajuster les pourcentages pour LOD 0, LOD 1 et LOD 2
         for (int i = 0; i < lodCount; i++)
         {
             lods[i] = new LOD(lodPercentages[i], lodRenderers[i].ToArray());

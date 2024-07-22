@@ -63,6 +63,12 @@ public class MeshExtractor : EditorWindow
             
             meshFilter.mesh = newMesh;
 
+            MeshCollider meshCollider = meshFilter.gameObject.GetComponent<MeshCollider>();
+            if (meshCollider != null)
+            {
+                meshCollider.sharedMesh = newMesh;
+            }
+
             nbRoadMesh += 1;
         }
     }

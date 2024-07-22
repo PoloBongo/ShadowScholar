@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CombineChildrenPlus : MonoBehaviour
 {
@@ -18,26 +19,66 @@ public class CombineChildrenPlus : MonoBehaviour
     {
         // Trouver tous les MeshFilters dans les enfants
         MeshFilter[] filters = GetComponentsInChildren<MeshFilter>();
-
         if (filters.Length == 0)
             return;
 
-        // Combiner les meshes
-        CombineInstance[] combine = new CombineInstance[filters.Length];
-        for (int i = 0; i < filters.Length; i++)
+        // Dictionnaire pour stocker les meshes par matériau
+        Dictionary<Material, List<CombineInstance>> materialToCombineInstances = new Dictionary<Material, List<CombineInstance>>();
+
+        // Collecter les CombineInstances
+        foreach (MeshFilter filter in filters)
         {
-            combine[i].mesh = filters[i].sharedMesh;
-            combine[i].transform = filters[i].transform.localToWorldMatrix;
+            MeshRenderer renderer = filter.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                Material[] materials = renderer.sharedMaterials;
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    Material material = materials[i];
+                    if (!materialToCombineInstances.ContainsKey(material))
+                    {
+                        materialToCombineInstances[material] = new List<CombineInstance>();
+                    }
+
+                    Mesh mesh = filter.sharedMesh;
+
+                    // Vérifier la lisibilité du mesh
+                    if (mesh != null && mesh.isReadable)
+                    {
+                        CombineInstance combineInstance = new CombineInstance
+                        {
+                            mesh = mesh,
+                            transform = filter.transform.localToWorldMatrix
+                        };
+                        materialToCombineInstances[material].Add(combineInstance);
+                    }
+                }
+            }
         }
 
-        MeshFilter mf = gameObject.AddComponent<MeshFilter>();
-        MeshRenderer mr = gameObject.AddComponent<MeshRenderer>();
+        // Créer un GameObject pour chaque matériau
+        foreach (var kvp in materialToCombineInstances)
+        {
+            Material material = kvp.Key;
+            List<CombineInstance> combineInstances = kvp.Value;
 
-        Mesh combinedMesh = new Mesh();
-        mf.mesh = combinedMesh;
-        combinedMesh.CombineMeshes(combine, generateTriangleStrips);
+            GameObject combinedObject = new GameObject("Combined Mesh - " + material.name);
+            combinedObject.transform.parent = transform;
+            combinedObject.transform.localPosition = Vector3.zero;
+            combinedObject.transform.localRotation = Quaternion.identity;
+            combinedObject.transform.localScale = Vector3.one;
 
-        // Optionnel : supprimer les meshes originaux
+            MeshFilter combinedMeshFilter = combinedObject.AddComponent<MeshFilter>();
+            MeshRenderer combinedMeshRenderer = combinedObject.AddComponent<MeshRenderer>();
+
+            Mesh combinedMesh = new Mesh();
+            combinedMeshFilter.mesh = combinedMesh;
+            combinedMesh.CombineMeshes(combineInstances.ToArray(), generateTriangleStrips);
+
+            combinedMeshRenderer.material = material;
+        }
+
+        // Optionnel : supprimer les objets d'origine
         if (destroyOnDisable)
         {
             foreach (MeshFilter filter in filters)

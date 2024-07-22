@@ -1,49 +1,77 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class GPUInstancing : MonoBehaviour
+public class AutomaticGPUInstancing : MonoBehaviour
 {
-    public Mesh mesh;
-    public Material material;
-    public string keyword = "ObjectName"; // Le mot clé recherché dans les noms des GameObjects
+    // Structure pour contenir les données de chaque instance de Mesh avec un matériau spécifique
+    private struct MeshInstanceData
+    {
+        public Mesh mesh;
+        public Material material;
+        public List<Matrix4x4> matrices;
+    }
 
-    private Matrix4x4[] matrices;
+    private List<MeshInstanceData> meshInstances = new List<MeshInstanceData>(); // Liste pour stocker les instances de Mesh avec différents matériaux
     private MaterialPropertyBlock propertyBlock;
 
     void Start()
     {
-        List<Matrix4x4> matrixList = new List<Matrix4x4>();
-
-        // Récupérer tous les GameObjects enfants de l'objet auquel ce script est attaché
-        CollectGameObjects(transform, matrixList);
-        Debug.Log(matrixList.Count);
-
-        matrices = matrixList.ToArray();
         propertyBlock = new MaterialPropertyBlock();
+
+        // Récupérer tous les MeshFilters sous le GameObject actuel et ses enfants
+        MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>(true);
+
+        foreach (MeshFilter meshFilter in meshFilters)
+        {
+            Mesh mesh = meshFilter.sharedMesh;
+            Renderer renderer = meshFilter.GetComponent<Renderer>();
+            Material material = renderer.sharedMaterial;
+
+            // Désactiver le Renderer de l'objet original pour éviter le rendu en double
+            renderer.enabled = false;
+
+            // Vérifier si cette combinaison Mesh-Matériau existe déjà dans la liste
+            bool found = false;
+            foreach (MeshInstanceData data in meshInstances)
+            {
+                if (data.mesh == mesh && data.material == material)
+                {
+                    data.matrices.Add(Matrix4x4.TRS(meshFilter.transform.position, meshFilter.transform.rotation, meshFilter.transform.localScale));
+                    found = true;
+                    break;
+                }
+            }
+
+            // Si la combinaison Mesh-Matériau n'a pas été trouvée, l'ajouter à la liste
+            if (!found)
+            {
+                MeshInstanceData newData = new MeshInstanceData
+                {
+                    mesh = mesh,
+                    material = material,
+                    matrices = new List<Matrix4x4>
+                    {
+                        Matrix4x4.TRS(meshFilter.transform.position, meshFilter.transform.rotation, meshFilter.transform.localScale)
+                    }
+                };
+                meshInstances.Add(newData);
+            }
+        }
     }
 
     void Update()
     {
-        if (matrices != null)
+        // Dessiner les instances pour chaque Mesh-Matériau détecté
+        foreach (MeshInstanceData data in meshInstances)
         {
-            Graphics.DrawMeshInstanced(mesh, 0, material, matrices, matrices.Length, propertyBlock);
-        }
-    }
-
-    void CollectGameObjects(Transform parent, List<Matrix4x4> matrixList)
-    {
-        foreach (Transform child in parent)
-        {
-            // Vérifier si le nom du GameObject contient le mot clé spécifié
-            if (child.gameObject.name.StartsWith(keyword))
+            // Assurez-vous que le matériau a l'option GPU Instancing activée
+            if (data.material.enableInstancing)
             {
-                matrixList.Add(Matrix4x4.TRS(child.position, child.rotation, child.localScale));
+                Graphics.DrawMeshInstanced(data.mesh, 0, data.material, data.matrices.ToArray(), data.matrices.Count, propertyBlock);
+            }else
+            {
+                Debug.LogError($"{data.material.name} have not instancing ON !" );
             }
-
-            // Appeler récursivement cette méthode pour les enfants de ce GameObject
-            CollectGameObjects(child, matrixList);
         }
     }
 }
-
-

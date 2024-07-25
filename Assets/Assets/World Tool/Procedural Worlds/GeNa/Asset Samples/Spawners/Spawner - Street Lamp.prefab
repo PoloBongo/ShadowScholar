@@ -51,10 +51,10 @@ MonoBehaviour:
     m_data: 
     m_file: {fileID: 0}
     m_serializeToFile: 0
-  m_spawnerData: {fileID: 9018223267849508132}
+  m_spawnerData: {fileID: -1449641201462758292}
   m_prototypeRootPrefabs:
   - {fileID: 3330552484794139484, guid: ec8025adc0496d242a640be43e6c1607, type: 3}
---- !u!114 &9018223267849508132
+--- !u!114 &-1449641201462758292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,12 +148,12 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_spawnCriteria:
-    m_checkRange: 0
-    m_forceSpawn: 0
+    m_checkRange: 1
+    m_forceSpawn: 1
     m_checkCollisionType: 2
     m_spawnCollisionLayers:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1040183
     m_blendAmount: 0.001
     m_boundsExtents: 0.001
     m_checkSlopeType: 1
@@ -167,7 +167,7 @@ MonoBehaviour:
     m_minSpawnHeight: -15
     m_maxSpawnHeight: 15
     m_minHeight: -20
-    m_maxHeight: 5000
+    m_maxHeight: 4600
     m_heightRange: 30
     m_bottomBoundary: -99.999954
     m_topBoundary: 4600
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_spawnPrototypes:
   - m_palette: {fileID: 11400000, guid: a08d2dd7601d2be46b6c4ded7767abfa, type: 2}
     m_spawnerPaletteID: -2147483648
-    m_spawnerData: {fileID: 9018223267849508132}
+    m_spawnerData: {fileID: -1449641201462758292}
     m_id: 0
     m_name: PW_Street_Lamp_01
     m_isActive: 1
@@ -343,11 +343,11 @@ MonoBehaviour:
       m_addColliderToAabb: 1
       m_spawnCriteria:
         m_checkRange: 0
-        m_forceSpawn: 0
+        m_forceSpawn: 1
         m_checkCollisionType: 2
         m_spawnCollisionLayers:
           serializedVersion: 2
-          m_Bits: 4294967295
+          m_Bits: 1040183
         m_blendAmount: 0.001
         m_boundsExtents: 0.001
         m_checkSlopeType: 1
@@ -361,7 +361,7 @@ MonoBehaviour:
         m_minSpawnHeight: -15
         m_maxSpawnHeight: 15
         m_minHeight: -20
-        m_maxHeight: 5000
+        m_maxHeight: 4600
         m_heightRange: 30
         m_bottomBoundary: -20
         m_topBoundary: 5000
@@ -480,7 +480,7 @@ MonoBehaviour:
       m_oneChildOfWeight: 1
       m_spawnerPaletteID: -2147483648
       m_subSpawnerPaletteID: -2147483648
-      m_spawnerData: {fileID: 9018223267849508132}
+      m_spawnerData: {fileID: -1449641201462758292}
       m_subSpawnerData: {fileID: 0}
       m_static: 1
       m_opacity: 1
@@ -545,9 +545,9 @@ MonoBehaviour:
   m_hasActiveTerrainTextures: 0
   m_hasActiveTerrainHeights: 0
   m_spawnTarget: {fileID: 0}
-  m_spawnOriginLocation: {x: 1294.9597, y: 7.0132833, z: 443.83667}
+  m_spawnOriginLocation: {x: 1459.9622, y: 17.355974, z: 824.05524}
   m_spawnOriginNormal: {x: 0, y: 1, z: 0}
-  m_spawnOriginObjectID: -4069808
+  m_spawnOriginObjectID: -8252520
   m_spawnOriginIsTerrain: 0
   m_spawnOriginGroundTransform: {fileID: 0}
   m_minInstances: 1
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_lastSpawnedObject: {fileID: 0}
   m_probeParent: {fileID: 0}
   m_spawnOriginBounds:
-    m_Center: {x: 1294.9597, y: 7.0132833, z: 443.83667}
+    m_Center: {x: 1459.9622, y: 17.355974, z: 824.05524}
     m_Extent: {x: 25, y: 2500, z: 25}
   m_visualizationActive: 0
   m_visualizationFixed: 0
@@ -581,8 +581,8 @@ MonoBehaviour:
     m_minHeightY: -10
   m_prototypeIDPool: 
   m_lastSpawnCalls:
-  - m_location: {x: 1286.0104, y: 10.34478, z: 491.4925}
-    m_rotation: {x: 0, y: 348.3348, z: 0}
+  - m_location: {x: 1408.9132, y: 6.5219007, z: 340.4645}
+    m_rotation: {x: 0, y: 438.23865, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -590,23 +590,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1286.0103, y: 10.246332, z: 491.4925}
+    m_spawnedLocation: {x: 1408.9132, y: 6.5219007, z: 340.4645}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 320.65878
+    m_randomRotationY: 233.75984
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1296.1995, y: 10.741051, z: 515.25104}
-    m_rotation: {x: 0, y: 45.96129, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1384.4454, y: 6.427682, z: 335.75574}
+    m_rotation: {x: 0, y: 441.20663, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -614,23 +619,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1296.1995, y: 10.640065, z: 515.25104}
+    m_spawnedLocation: {x: 1384.4454, y: 6.427682, z: 335.75574}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 75.54698
+    m_randomRotationY: 274.6523
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1300.0256, y: 11.624224, z: 535.6502}
-    m_rotation: {x: 0, y: 345.42484, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1362.979, y: 6.5676217, z: 338.3028}
+    m_rotation: {x: 0, y: 490.4056, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -638,23 +648,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1300.0258, y: 11.524251, z: 535.6502}
+    m_spawnedLocation: {x: 1362.979, y: 6.5676217, z: 338.3028}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 128.93149
+    m_randomRotationY: 74.10612
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1293.4597, y: 12.034707, z: 559.69543}
-    m_rotation: {x: 0, y: 342.72345, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1353.4623, y: 6.5963907, z: 357.2227}
+    m_rotation: {x: 0, y: 538.04, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -662,23 +677,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1293.4597, y: 11.934699, z: 559.69543}
+    m_spawnedLocation: {x: 1353.4623, y: 6.5963907, z: 357.2227}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 157.51056
+    m_randomRotationY: 175.26483
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1284.2306, y: 11.785986, z: 582.5226}
-    m_rotation: {x: 0, y: 330.01837, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1350.5646, y: 6.873542, z: 382.24878}
+    m_rotation: {x: 0, y: 529.5737, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -686,23 +706,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1284.2306, y: 11.685963, z: 582.5226}
+    m_spawnedLocation: {x: 1350.5646, y: 6.873542, z: 382.24878}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 6.594057
+    m_randomRotationY: 172.80592
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1264.8895, y: 11.224693, z: 592.5555}
-    m_rotation: {x: 0, y: 295.35583, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1345.7821, y: 7.3025556, z: 406.81454}
+    m_rotation: {x: 0, y: 528.505, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -710,23 +735,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1264.8895, y: 11.124796, z: 592.5555}
+    m_spawnedLocation: {x: 1345.7821, y: 7.3025556, z: 406.81454}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 222.77876
+    m_randomRotationY: 241.48349
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1246.4214, y: 10.838781, z: 580.49744}
-    m_rotation: {x: 0, y: 235.22504, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1340.925, y: 8.003828, z: 431.33582}
+    m_rotation: {x: 0, y: 528.5929, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -734,23 +764,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1246.4214, y: 10.738785, z: 580.49744}
+    m_spawnedLocation: {x: 1340.925, y: 8.003828, z: 431.33582}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 323.01703
+    m_randomRotationY: 81.89192
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1227.3298, y: 10.207351, z: 564.92053}
-    m_rotation: {x: 0, y: 223.15144, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1335.6746, y: 8.954036, z: 455.8098}
+    m_rotation: {x: 0, y: 527.3878, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -758,23 +793,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1227.33, y: 10.107268, z: 564.92053}
+    m_spawnedLocation: {x: 1335.6746, y: 8.954036, z: 455.8098}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 1.097208
+    m_randomRotationY: 243.58795
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1210.2695, y: 9.464154, z: 546.6931}
-    m_rotation: {x: 0, y: 221.90028, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1342.0393, y: 9.59422, z: 470.20053}
+    m_rotation: {x: 0, y: 261.69702, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -782,23 +822,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1210.2695, y: 9.364498, z: 546.6931}
+    m_spawnedLocation: {x: 1342.0393, y: 9.59422, z: 470.20053}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 185.89453
+    m_randomRotationY: 182.19635
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1194.6609, y: 8.738271, z: 527.4075}
-    m_rotation: {x: 0, y: 215.1829, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1366.7979, y: 9.587212, z: 473.41772}
+    m_rotation: {x: 0, y: 262.94775, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -806,23 +851,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1194.6609, y: 8.638321, z: 527.4075}
+    m_spawnedLocation: {x: 1366.7979, y: 9.587212, z: 473.41772}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 245.07303
+    m_randomRotationY: 72.79255
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1182.0017, y: 8.177633, z: 506.127}
-    m_rotation: {x: 0, y: 206.8817, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1391.6078, y: 9.574207, z: 476.96597}
+    m_rotation: {x: 0, y: 260.47745, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -830,23 +880,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1182.0017, y: 8.077618, z: 506.127}
+    m_spawnedLocation: {x: 1391.6078, y: 9.574207, z: 476.96597}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 187.54893
+    m_randomRotationY: 197.5248
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1172.3679, y: 7.8544636, z: 483.33304}
-    m_rotation: {x: 0, y: 198.17795, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1416.0265, y: 9.6093, z: 483.01645}
+    m_rotation: {x: 0, y: 253.07004, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -854,23 +909,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1172.3679, y: 7.7544646, z: 483.333}
+    m_spawnedLocation: {x: 1416.0265, y: 9.6093, z: 483.01645}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 149.64081
+    m_randomRotationY: 242.83847
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1167.0905, y: 7.9657216, z: 459.21844}
-    m_rotation: {x: 0, y: 187.46976, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1439.8854, y: 9.715204, z: 490.30408}
+    m_rotation: {x: 0, y: 254.9555, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -878,23 +938,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1167.0905, y: 7.865722, z: 459.21844}
+    m_spawnedLocation: {x: 1439.8854, y: 9.715204, z: 490.30408}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 304.6077
+    m_randomRotationY: 194.45056
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1165.5453, y: 8.172571, z: 434.47192}
-    m_rotation: {x: 0, y: 180.36479, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1464.2048, y: 9.592911, z: 493.1465}
+    m_rotation: {x: 0, y: 271.72925, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -902,23 +967,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1165.5453, y: 8.072545, z: 434.4719}
+    m_spawnedLocation: {x: 1464.2048, y: 9.592911, z: 493.1465}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 2.776755
+    m_randomRotationY: 211.25989
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1180.0328, y: 8.050558, z: 418.58197}
-    m_rotation: {x: 0, y: 122.84747, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1487.6676, y: 8.829524, z: 487.77597}
+    m_rotation: {x: 0, y: 300.5213, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -926,23 +996,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1180.0328, y: 7.950499, z: 418.58197}
+    m_spawnedLocation: {x: 1487.6676, y: 8.829524, z: 487.77597}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 220.17177
+    m_randomRotationY: 163.26091
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1200.3296, y: 7.6267242, z: 403.7663}
-    m_rotation: {x: 0, y: 128.12729, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1507.1411, y: 7.3833623, z: 472.56516}
+    m_rotation: {x: 0, y: 309.56335, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -950,23 +1025,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1200.3296, y: 7.5267076, z: 403.7663}
+    m_spawnedLocation: {x: 1507.1411, y: 7.3833623, z: 472.56516}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 164.92516
+    m_randomRotationY: 318.0782
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1219.3956, y: 7.171422, z: 387.39117}
-    m_rotation: {x: 0, y: 133.34409, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1532.994, y: 6.5635796, z: 453.5636}
+    m_rotation: {x: 0, y: 305.12326, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -974,23 +1054,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1219.3956, y: 7.07154, z: 387.39117}
+    m_spawnedLocation: {x: 1532.9939, y: 6.4634967, z: 453.56357}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 116.71337
+    m_randomRotationY: 93.69584
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1237.4188, y: 6.7866826, z: 369.9817}
-    m_rotation: {x: 0, y: 135.67548, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1541.4957, y: 6.755621, z: 437.92615}
+    m_rotation: {x: 0, y: 394.06238, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -998,23 +1083,29 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1237.4188, y: 6.68668, z: 369.9817}
+    m_spawnedLocation: {x: 1541.4957, y: 6.655658, z: 437.92615}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 93.00124
+    m_randomRotationY: 144.19647
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1253.5525, y: 6.5629287, z: 350.5171}
-    m_rotation: {x: 0, y: 149.61996, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1525.9955, y: 6.703387, z: 418.6136}
+    m_rotation: {x: 0, y: 402.4657, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1022,23 +1113,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1253.5525, y: 6.4629254, z: 350.51706}
+    m_spawnedLocation: {x: 1525.9955, y: 6.6032944, z: 418.6136}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 273.01196
+    m_randomRotationY: 14.578672
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1263.4567, y: 6.661241, z: 327.33893}
-    m_rotation: {x: 0, y: 160.03702, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1508.5322, y: 6.717022, z: 400.8736}
+    m_rotation: {x: 0, y: 406.3148, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1046,23 +1142,29 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1263.4567, y: 6.5613847, z: 327.33893}
+    m_spawnedLocation: {x: 1508.5323, y: 6.617022, z: 400.87363}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 351.47083
+    m_randomRotationY: 112.21827
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1285.4846, y: 6.681623, z: 324.07715}
-    m_rotation: {x: 0, y: 90.2018, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1489.8901, y: 6.7250752, z: 384.37973}
+    m_rotation: {x: 0, y: 410.30618, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1070,23 +1172,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1285.4846, y: 6.5816374, z: 324.07715}
+    m_spawnedLocation: {x: 1489.8901, y: 6.6250744, z: 384.37973}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 276.8683
+    m_randomRotationY: 341.9437
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1310.2776, y: 6.676139, z: 325.23828}
-    m_rotation: {x: 0, y: 83.95964, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1470.2432, y: 6.739069, z: 369.188}
+    m_rotation: {x: 0, y: 416.14612, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1094,23 +1201,29 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1310.2776, y: 6.5761046, z: 325.23825}
+    m_spawnedLocation: {x: 1470.2432, y: 6.639069, z: 369.188}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 48.552704
+    m_randomRotationY: 191.52657
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1331.8805, y: 6.6578355, z: 330.10342}
-    m_rotation: {x: 0, y: 14.839715, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1449.02, y: 6.7198057, z: 356.2533}
+    m_rotation: {x: 0, y: 421.42267, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1118,23 +1231,29 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1331.8805, y: 6.5577946, z: 330.10342}
+    m_spawnedLocation: {x: 1449.02, y: 6.6198015, z: 356.2533}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 30.59561
+    m_randomRotationY: 120.61103
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1341.7583, y: 6.7216744, z: 350.54102}
-    m_rotation: {x: 0, y: 355.40576, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1426.3782, y: 6.6651735, z: 346.29797}
+    m_rotation: {x: 0, y: 430.86407, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1142,23 +1261,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1341.7583, y: 6.6216445, z: 350.54102}
+    m_spawnedLocation: {x: 1426.3782, y: 6.5836163, z: 346.29797}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 344.62018
+    m_randomRotationY: 320.61884
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1338.6844, y: 6.9560075, z: 375.2207}
-    m_rotation: {x: 0, y: 350.86008, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1503.6761, y: 6.7488184, z: 462.5025}
+    m_rotation: {x: 0, y: 410.9739, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1166,23 +1290,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1338.6844, y: 6.855981, z: 375.2207}
+    m_spawnedLocation: {x: 1503.6761, y: 6.7488184, z: 462.5025}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 94.517395
+    m_randomRotationY: 313.6257
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1322.6879, y: 9.136241, z: 456.1827}
-    m_rotation: {x: 0, y: 347.54437, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1483.5276, y: 6.6103196, z: 447.94708}
+    m_rotation: {x: 0, y: 415.94925, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1190,23 +1319,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1322.6879, y: 9.136241, z: 456.1827}
+    m_spawnedLocation: {x: 1483.5276, y: 6.6103196, z: 447.94708}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 315.51755
+    m_randomRotationY: 139.44193
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1316.614, y: 9.684387, z: 480.32263}
-    m_rotation: {x: 0, y: 343.62076, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1462.0903, y: 6.6209435, z: 435.6041}
+    m_rotation: {x: 0, y: 424.92438, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1214,23 +1348,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1316.614, y: 9.684387, z: 480.32263}
+    m_spawnedLocation: {x: 1462.0903, y: 6.6209435, z: 435.6041}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 270.15485
+    m_randomRotationY: 85.89746
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1309.2313, y: 10.555852, z: 504.18204}
-    m_rotation: {x: 0, y: 342.69357, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1438.2065, y: 6.566107, z: 429.54074}
+    m_rotation: {x: 0, y: 434.85046, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1238,23 +1377,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1309.2313, y: 10.555852, z: 504.18204}
+    m_spawnedLocation: {x: 1438.2065, y: 6.566107, z: 429.54074}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 356.92703
+    m_randomRotationY: 47.613014
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1296.5663, y: 10.256213, z: 494.14264}
-    m_rotation: {x: 0, y: 201.69606, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1415.3208, y: 6.5875535, z: 418.6158}
+    m_rotation: {x: 0, y: 408.80118, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1262,23 +1406,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1296.5663, y: 10.256213, z: 494.14264}
+    m_spawnedLocation: {x: 1415.3208, y: 6.5875535, z: 418.6158}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 134.75989
+    m_randomRotationY: 312.07437
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1330.1453, y: 7.6958528, z: 420.13687}
-    m_rotation: {x: 0, y: 348.41388, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1401.2247, y: 6.5508866, z: 397.35645}
+    m_rotation: {x: 0, y: 379.41113, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1286,23 +1435,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1330.1453, y: 7.6958528, z: 420.13687}
+    m_spawnedLocation: {x: 1401.2247, y: 6.5508866, z: 397.35645}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 175.07555
+    m_randomRotationY: 130.39862
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1316.6232, y: 8.413443, z: 437.3217}
-    m_rotation: {x: 0, y: 298.9278, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1398.4661, y: 6.64253, z: 372.1209}
+    m_rotation: {x: 0, y: 357.8296, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1310,23 +1464,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1316.6232, y: 8.413443, z: 437.3217}
+    m_spawnedLocation: {x: 1398.4661, y: 6.64253, z: 372.1209}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 34.455227
+    m_randomRotationY: 133.67429
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1296.5769, y: 9.907078, z: 452.70316}
-    m_rotation: {x: 0, y: 335.03082, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1403.2234, y: 6.7412114, z: 347.21957}
+    m_rotation: {x: 0, y: 342.22638, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1334,23 +1493,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1296.5769, y: 9.907078, z: 452.70316}
+    m_spawnedLocation: {x: 1403.2234, y: 6.7412114, z: 347.21957}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 267.44644
+    m_randomRotationY: 15.50985
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1320.2329, y: 8.400879, z: 447.36133}
-    m_rotation: {x: 0, y: 118.11027, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1413.7463, y: 6.7247434, z: 353.8387}
+    m_rotation: {x: 0, y: 524.4459, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1358,23 +1522,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1320.2329, y: 8.400879, z: 447.36133}
+    m_spawnedLocation: {x: 1413.7463, y: 6.7247434, z: 353.8387}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 249.78426
+    m_randomRotationY: 320.2716
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1257.1902, y: 6.6341047, z: 378.6726}
-    m_rotation: {x: 0, y: 316.46927, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1411.0314, y: 6.5788083, z: 378.02472}
+    m_rotation: {x: 0, y: 184.39105, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1382,23 +1551,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1257.1902, y: 6.6341047, z: 378.6726}
+    m_spawnedLocation: {x: 1411.0314, y: 6.5788083, z: 378.02472}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 7.740179
+    m_randomRotationY: 44.82229
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1250.5659, y: 6.723576, z: 403.37363}
-    m_rotation: {x: 0, y: 350.38605, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1417.3359, y: 6.561958, z: 401.13763}
+    m_rotation: {x: 0, y: 215.20917, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1406,23 +1580,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1250.5659, y: 6.723576, z: 403.37363}
+    m_spawnedLocation: {x: 1417.3359, y: 6.561958, z: 401.13763}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 164.35608
+    m_randomRotationY: 229.51364
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1247.7621, y: 6.6008925, z: 428.75238}
-    m_rotation: {x: 0, y: 15.039685, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1435.8658, y: 6.5999613, z: 415.6873}
+    m_rotation: {x: 0, y: 253.35791, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1430,23 +1609,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1247.7621, y: 6.6008925, z: 428.75238}
+    m_spawnedLocation: {x: 1435.8658, y: 6.5999613, z: 415.6873}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 57.145714
+    m_randomRotationY: 176.79193
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1270.3441, y: 6.7281084, z: 439.44254}
-    m_rotation: {x: 0, y: 80.12139, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1460.2256, y: 6.596047, z: 421.25687}
+    m_rotation: {x: 0, y: 251.81221, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1454,23 +1638,28 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1270.3441, y: 6.7281084, z: 439.44254}
+    m_spawnedLocation: {x: 1460.2256, y: 6.596047, z: 421.25687}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 335.19687
+    m_randomRotationY: 120.52091
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
-  - m_location: {x: 1294.9597, y: 7.0132833, z: 443.83667}
-    m_rotation: {x: 0, y: 80.31652, z: 0}
+    m_canSpawn: 1
+  - m_location: {x: 1482.9296, y: 6.579009, z: 432.4247}
+    m_rotation: {x: 0, y: 238.24873, z: 0}
     m_normal: {x: 0, y: 1, z: 0}
     m_parent: {fileID: 0}
     m_ground: {fileID: 0}
@@ -1478,18 +1667,81 @@ MonoBehaviour:
     m_alignEntitiesToRotation: 1
     m_conformEntitiesToSlope: 0
     m_snapEntitiesToGround: 0
-    m_resourceEntities: []
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_generated: 1
     m_isActive: 1
-    m_spawnedLocation: {x: 1294.9597, y: 7.0132833, z: 443.83667}
+    m_spawnedLocation: {x: 1482.9296, y: 6.579009, z: 432.4247}
     m_spawnDepth: 0
     m_spawnRange: 1
     m_throwDistance: 0
     m_parentScale: {x: 1, y: 1, z: 1}
-    m_randomRotationY: 349.49518
+    m_randomRotationY: 356.63577
     m_parentRotationY: 0
     m_instancesToSpawn: 1
     m_instancesSpawned: 0
-    m_spawnerType: 0
+    m_spawnerType: 1
     m_milliseconds: 1000
-    m_canSpawn: 0
+    m_canSpawn: 1
+  - m_location: {x: 1503.8131, y: 6.6092114, z: 446.3853}
+    m_rotation: {x: 0, y: 233.4417, z: 0}
+    m_normal: {x: 0, y: 1, z: 0}
+    m_parent: {fileID: 0}
+    m_ground: {fileID: 0}
+    m_target: {fileID: 0}
+    m_alignEntitiesToRotation: 1
+    m_conformEntitiesToSlope: 0
+    m_snapEntitiesToGround: 0
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    m_generated: 1
+    m_isActive: 1
+    m_spawnedLocation: {x: 1503.8131, y: 6.6092114, z: 446.3853}
+    m_spawnDepth: 0
+    m_spawnRange: 1
+    m_throwDistance: 0
+    m_parentScale: {x: 1, y: 1, z: 1}
+    m_randomRotationY: 114.73107
+    m_parentRotationY: 0
+    m_instancesToSpawn: 1
+    m_instancesSpawned: 0
+    m_spawnerType: 1
+    m_milliseconds: 1000
+    m_canSpawn: 1
+  - m_location: {x: 1522.8381, y: 6.748307, z: 463.05988}
+    m_rotation: {x: 0, y: 220.42206, z: 0}
+    m_normal: {x: 0, y: 1, z: 0}
+    m_parent: {fileID: 0}
+    m_ground: {fileID: 0}
+    m_target: {fileID: 0}
+    m_alignEntitiesToRotation: 1
+    m_conformEntitiesToSlope: 0
+    m_snapEntitiesToGround: 0
+    m_resourceEntities:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    m_generated: 1
+    m_isActive: 1
+    m_spawnedLocation: {x: 1522.838, y: 6.8896184, z: 463.05988}
+    m_spawnDepth: 0
+    m_spawnRange: 1
+    m_throwDistance: 0
+    m_parentScale: {x: 1, y: 1, z: 1}
+    m_randomRotationY: 188.86444
+    m_parentRotationY: 0
+    m_instancesToSpawn: 1
+    m_instancesSpawned: 0
+    m_spawnerType: 1
+    m_milliseconds: 1000
+    m_canSpawn: 1

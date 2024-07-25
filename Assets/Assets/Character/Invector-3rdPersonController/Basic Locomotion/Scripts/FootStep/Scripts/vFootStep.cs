@@ -31,7 +31,7 @@ namespace Invector
         public vFootStepTrigger rightFootTrigger;
         public Transform currentStep;
         public List<vFootStepTrigger> footStepTriggers;
-      
+
         protected FootStepObject currentFootStep;
 
         protected virtual void Start()
@@ -197,11 +197,7 @@ namespace Invector
 
             if (surfaceIndex != -1)
             {
-#if UNITY_2018_3_OR_NEWER
                 var name = (terrainData != null && terrainData.terrainLayers.Length > 0) ? (terrainData.terrainLayers[surfaceIndex]).diffuseTexture.name : "";
-#else
-                var name = (terrainData != null && terrainData.splatPrototypes.Length > 0) ? (terrainData.splatPrototypes[surfaceIndex]).texture.name : "";
-#endif
                 footStepObject.name = name;
                 currentFootStep = footStepObject;
                 if (_useTriggerEnter)
@@ -215,10 +211,6 @@ namespace Invector
             }
         }
 
-        /// <summary>
-        /// Step on Mesh
-        /// </summary>
-        /// <param name="footStepObject"></param>
         public override void StepOnMesh(FootStepObject footStepObject)
         {
             if (currentStep != null && currentStep == footStepObject.sender && _useTriggerEnter)
@@ -238,13 +230,30 @@ namespace Invector
             }
         }
 
+
         /// <summary>
         /// Play foot Step effect
         /// </summary>
         public override void PlayFootStepEffect()
         {
-            if (currentFootStep != null)
+            RaycastHit hit;
+            if (Physics.Raycast(currentFootStep.sender.position, Vector3.down, out hit, 1f))
             {
+                // hit.collider.gameObject est l'objet sur lequel le personnage marche
+                GameObject surface = hit.collider.gameObject;
+
+                Debug.Log("Tag de la surface : " + surface.tag);
+
+                if (surface.CompareTag("NoSoundFootStep") || surface.CompareTag("Water"))
+                {
+                    Debug.Log("ne pas jouer");
+                    return;
+                }
+                else
+                {
+                    Debug.Log("c good");
+                }
+
                 currentFootStep.volume = Volume;
                 currentFootStep.spawnParticleEffect = SpawnParticle;
                 currentFootStep.spawnStepMarkEffect = SpawnStepMark;

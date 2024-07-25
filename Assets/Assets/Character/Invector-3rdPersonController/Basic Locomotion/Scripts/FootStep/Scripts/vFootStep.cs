@@ -242,16 +242,9 @@ namespace Invector
                 // hit.collider.gameObject est l'objet sur lequel le personnage marche
                 GameObject surface = hit.collider.gameObject;
 
-                Debug.Log("Tag de la surface : " + surface.tag);
-
                 if (surface.CompareTag("NoSoundFootStep") || surface.CompareTag("Water"))
                 {
-                    Debug.Log("ne pas jouer");
                     return;
-                }
-                else
-                {
-                    Debug.Log("c good");
                 }
 
                 currentFootStep.volume = Volume;

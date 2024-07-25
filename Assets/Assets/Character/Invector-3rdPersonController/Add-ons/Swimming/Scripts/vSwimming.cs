@@ -330,7 +330,7 @@ namespace Invector.vCharacterController.vActions
             tpInput.cc.freeSpeed.rotationSpeed = originalRotationSpeed;
             tpInput.cc.freeSpeed.animationSmooth = originalAnimationSmooth;
             tpInput.cc.freeSpeed.movementSmooth = originalMovementSmooth;
-            tpInput.cc.animator.SetInteger(vAnimatorParameters.ActionState, 0);
+            /*tpInput.cc.animator.SetInteger(vAnimatorParameters.ActionState, 0);*/
             tpInput.cc.ResetCapsule();
             tpInput.cc._rigidbody.useGravity = true;
             tpInput.cc._rigidbody.drag = 0f;

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityMeshSimplifier;
@@ -167,7 +167,7 @@ public class CreateLODGroup : MonoBehaviour
                 // Assurez-vous que la qualité n'est pas trop basse
                 quality = Mathf.Clamp(quality, 0.1f, 1.0f);
 
-                /*Mesh simplifiedMesh = SimplifyMeshIteratively(originalMesh, quality);
+                Mesh simplifiedMesh = SimplifyMeshIteratively(originalMesh, quality);
                 Debug.Log("Simplified Mesh Triangle Count: " + simplifiedMesh.triangles.Length / 3);
 
                 GameObject lodObject = new GameObject(rendererObject.name + "_LOD" + lod);
@@ -182,7 +182,7 @@ public class CreateLODGroup : MonoBehaviour
                 lodMeshRenderer.sharedMaterials = renderer.sharedMaterials;
                 lodMeshFilter.sharedMesh = simplifiedMesh;
 
-                lodRenderers[lod].Add(lodMeshRenderer);*/
+                lodRenderers[lod].Add(lodMeshRenderer);
             }
             else
             {
@@ -190,7 +190,7 @@ public class CreateLODGroup : MonoBehaviour
             }
         }
 
-       /* Mesh SimplifyMeshIteratively(Mesh originalMesh, float targetQuality)
+        Mesh SimplifyMeshIteratively(Mesh originalMesh, float targetQuality)
         {
             MeshSimplifier meshSimplifier = new MeshSimplifier();
             meshSimplifier.Initialize(originalMesh);
@@ -230,9 +230,6 @@ public class CreateLODGroup : MonoBehaviour
 
             Mesh simplifiedMesh = meshSimplifier.ToMesh();
 
-            // Nettoyer les indices de triangles
-            CleanMeshIndices(simplifiedMesh);
-
             // Recalculer les données du maillage
             simplifiedMesh.RecalculateBounds();
             simplifiedMesh.RecalculateNormals();
@@ -241,22 +238,7 @@ public class CreateLODGroup : MonoBehaviour
             return simplifiedMesh;
         }
 
-        void CleanMeshIndices(Mesh mesh)
-        {
-            int[] triangles = mesh.triangles;
-            int vertexCount = mesh.vertexCount;
-
-            for (int i = 0; i < triangles.Length; i++)
-            {
-                if (triangles[i] >= vertexCount)
-                {
-                    Debug.LogWarning("Found out-of-bounds triangle index, setting it to 0.");
-                    triangles[i] = 0;
-                }
-            }
-
-            mesh.triangles = triangles;
-        }*/
-
     }
 }
+*/
+

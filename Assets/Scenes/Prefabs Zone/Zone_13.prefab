@@ -13313,7 +13313,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8668445459522324206}
-  - {fileID: 5274621189249033950}
+  - {fileID: 3338184926368852153}
   m_Father: {fileID: 810252523281314249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1869082658364663374
@@ -13631,38 +13631,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1891446860619832508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5274621189249033950}
-  m_Layer: 0
-  m_Name: Road Meshes (766)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &5274621189249033950
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891446860619832508}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -496.2954, y: -7.4874725, z: -798.64606}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7007882469854882842}
-  m_Father: {fileID: 8882851919705748978}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935997576897884927
 GameObject:
   m_ObjectHideFlags: 0
@@ -23786,6 +23754,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.000002, y: 0.09955568, z: 0.0862178}
   m_Center: {x: -1.5006845, y: 0, z: 0}
+--- !u!1 &3024690831397927089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3338184926368852153}
+  m_Layer: 0
+  m_Name: Road Meshes (677)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3338184926368852153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024690831397927089}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -496.2954, y: -7.4874725, z: -798.64606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3088621709418285654}
+  m_Father: {fileID: 8882851919705748978}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3028808181375241837
 GameObject:
   m_ObjectHideFlags: 0
@@ -59780,112 +59780,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &7030966098373837528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7007882469854882842}
-  - component: {fileID: 7105269874850940423}
-  - component: {fileID: 3287592177187567103}
-  - component: {fileID: 1899355550669625085}
-  m_Layer: 0
-  m_Name: RoadMesh_0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &7007882469854882842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030966098373837528}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5274621189249033950}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7105269874850940423
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030966098373837528}
-  m_Mesh: {fileID: 0}
---- !u!23 &3287592177187567103
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030966098373837528}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1899355550669625085
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030966098373837528}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7033204068464116052
 GameObject:
   m_ObjectHideFlags: 0
@@ -67396,6 +67290,112 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7907166718706959370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3088621709418285654}
+  - component: {fileID: 2978943142372357557}
+  - component: {fileID: 8235354300882195071}
+  - component: {fileID: 359481829505016550}
+  m_Layer: 0
+  m_Name: RoadMesh_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3088621709418285654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907166718706959370}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1000, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3338184926368852153}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2978943142372357557
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907166718706959370}
+  m_Mesh: {fileID: 4300000, guid: fb640b38aadd29944b6212da66b96281, type: 2}
+--- !u!23 &8235354300882195071
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907166718706959370}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6d079a2312632a64f98c5799e1706f81, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &359481829505016550
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907166718706959370}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: fb640b38aadd29944b6212da66b96281, type: 2}
 --- !u!1 &7918207686796372580
 GameObject:
   m_ObjectHideFlags: 0
@@ -80149,6 +80149,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2137953110729797733}
     m_Modifications:
+    - target: {fileID: 55808276249156266, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 55808276249156266, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 74442372925240586, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80161,6 +80169,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 129499797918580823, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 129499797918580823, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 152892894910253597, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -80189,6 +80205,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 470188246790139901, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 470188246790139901, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 504606787905862745, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -80217,6 +80241,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1129361904699875144, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 1129361904699875144, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 1140296853735314308, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80225,6 +80257,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1203610069724103969, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 1203610069724103969, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 1231681676127842793, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -80232,6 +80272,146 @@ PrefabInstance:
     - target: {fileID: 1256779185811744768, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[1].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[4].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[5].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[1].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[4].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[5].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.data[1].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.data[4].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.data[5].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[13].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[14].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[15].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[16].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[17].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[18].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[19].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[20].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[21].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[22].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[23].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[24].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[25].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[26].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[27].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[28].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[29].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[30].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[31].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[32].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[33].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[34].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[35].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[36].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[37].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510686644769912693, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[38].renderer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1582186952786809964, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -80397,14 +80577,42 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4366002065420451663, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 4366002065420451663, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 4390353807704941613, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411457204306512781, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: c1f18edbb5057c24498b2b649cdcb87b, type: 3}
+    - target: {fileID: 4411457204306512781, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: c1f18edbb5057c24498b2b649cdcb87b, type: 3}
+    - target: {fileID: 4411457204306512781, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4417053877326691917, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4445540038564560376, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 4445540038564560376, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 4479403770995610119, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80429,6 +80637,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4746167091568734492, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 4746167091568734492, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 4763675151450546589, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80465,6 +80681,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5642574986884148830, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 5642574986884148830, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 5642735663550494518, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -80553,6 +80777,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6988397667804010675, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 6988397667804010675, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 7085325444537054091, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80565,6 +80797,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7139817732586635934, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 7139817732586635934, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 7392839934836648054, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -80589,6 +80829,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7925981271954469763, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 7925981271954469763, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 7961635328061605691, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80597,6 +80845,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8233576938199082628, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 8233576938199082628, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 8246630785371309501, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -80628,6 +80884,18 @@ PrefabInstance:
     - target: {fileID: 8791204000221067245, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025613925455701547, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: c1f18edbb5057c24498b2b649cdcb87b, type: 3}
+    - target: {fileID: 9025613925455701547, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: c1f18edbb5057c24498b2b649cdcb87b, type: 3}
+    - target: {fileID: 9025613925455701547, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+      propertyPath: doorSounds.volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9073158381240711064, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -80690,7 +80958,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2771383987273800659, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+    - {fileID: 7851263975759061377, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
+    - {fileID: 4765682759067665399, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a0200c117d0794686acd83d3aa3eca, type: 3}
@@ -80723,6 +80994,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 684241407780533182, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 684241407780533182, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 697590276154529299, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81199,6 +81478,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 884407278002615507, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 53da33c42cb46bc438c48dd65a273c51, type: 3}
+    - target: {fileID: 884407278002615507, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 352214ab3e872c144854d08324c2b9b2, type: 3}
     - target: {fileID: 930256984727109901, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81331,10 +81618,74 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1193873994607206541, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1193873994607206541, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 1225103376541694663, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1225103376541694663, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 1301922186040133848, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1301922186040133848, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 1317259345700343369, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1317259345700343369, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 1408383722952160084, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1408383722952160084, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 1660301314098252540, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 1660301314098252540, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
     - target: {fileID: 1707592836916994516, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1824792908894828607, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1824792908894828607, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 1897681235189328828, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 1897681235189328828, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 2003162523097149774, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81355,6 +81706,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2061250080610759623, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 2061250080610759623, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 2092369489871118606, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81363,6 +81722,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2162134256088671938, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 2162134256088671938, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 2246695537431272172, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 53da33c42cb46bc438c48dd65a273c51, type: 3}
+    - target: {fileID: 2246695537431272172, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 352214ab3e872c144854d08324c2b9b2, type: 3}
     - target: {fileID: 2408854453851830939, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81395,6 +81770,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2495122452046447050, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 2495122452046447050, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 2495388316897031222, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81411,6 +81794,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2686294614413622434, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 2686294614413622434, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 2722505371688748584, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81419,6 +81810,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2868912333711124471, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 2868912333711124471, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 3074476707212526169, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 3074476707212526169, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 3219500360710063908, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81467,6 +81874,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3249823202377143742, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 3249823202377143742, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 3510447394712038149, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 3510447394712038149, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
     - target: {fileID: 3529495363194530549, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81475,10 +81898,42 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3585701189527135548, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 3585701189527135548, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 3735747871792790386, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3849019831517084824, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 3849019831517084824, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 3906962801409527376, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 3906962801409527376, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 3935005432069102245, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 53da33c42cb46bc438c48dd65a273c51, type: 3}
+    - target: {fileID: 3935005432069102245, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 352214ab3e872c144854d08324c2b9b2, type: 3}
     - target: {fileID: 3959695418729424915, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -81859,6 +82314,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4601737854320723936, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 4601737854320723936, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 4640716876247397192, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 4640716876247397192, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 4683395656793612161, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 4683395656793612161, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 4790759734443419664, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82091,6 +82570,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5024369252385830718, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 5024369252385830718, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 5232878859952671565, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82131,6 +82618,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5647136036732829765, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 5647136036732829765, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 5763802239532554571, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82139,6 +82634,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5800627976288440547, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 5800627976288440547, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
     - target: {fileID: 5852264888025677056, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82623,6 +83126,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6228613484488302144, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 53da33c42cb46bc438c48dd65a273c51, type: 3}
+    - target: {fileID: 6228613484488302144, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 352214ab3e872c144854d08324c2b9b2, type: 3}
     - target: {fileID: 6259621777743697697, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82631,6 +83142,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6264084343660316790, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 6264084343660316790, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 6451841830090351095, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82639,10 +83158,50 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6833015262377749486, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 6833015262377749486, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 6919325449502527638, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 6919325449502527638, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 6973854518262888572, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7005008140664756463, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 7005008140664756463, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 7241791437048123724, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 7241791437048123724, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 7337664661700647389, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
+    - target: {fileID: 7337664661700647389, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c7e07f151ac5f94bb945361d3f24203, type: 3}
     - target: {fileID: 7377014095487275827, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82731,6 +83290,14 @@ PrefabInstance:
       propertyPath: m_LODs.Array.data[0].renderers.Array.data[7805].renderer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7925567697671124211, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 53da33c42cb46bc438c48dd65a273c51, type: 3}
+    - target: {fileID: 7925567697671124211, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 352214ab3e872c144854d08324c2b9b2, type: 3}
     - target: {fileID: 8195471324783962876, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82767,6 +83334,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8255734145796992850, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 8255734145796992850, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 8301523079660528113, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82775,6 +83350,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8359607948750437458, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 8359607948750437458, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
     - target: {fileID: 8468229439679293437, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82791,6 +83374,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8487933877859773712, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 8487933877859773712, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 8494053377215512143, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 53da33c42cb46bc438c48dd65a273c51, type: 3}
+    - target: {fileID: 8494053377215512143, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: 352214ab3e872c144854d08324c2b9b2, type: 3}
     - target: {fileID: 8502165838371702900, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -82887,6 +83486,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8657498647237895124, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a464b465087314286848e31cb70bf5, type: 3}
+    - target: {fileID: 8657498647237895124, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: d0258f421979e7c44a69e3fbcecb94bd, type: 3}
+    - target: {fileID: 8911795971613301326, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 8911795971613301326, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 9161913238367058858, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.open
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
+    - target: {fileID: 9161913238367058858, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
+      propertyPath: doorSounds.close
+      value: 
+      objectReference: {fileID: 8300000, guid: db292f9004e554440aa376c7843ab437, type: 3}
     - target: {fileID: 9192383184087007103, guid: 47595fb291ed6774e970af51ed017c6e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

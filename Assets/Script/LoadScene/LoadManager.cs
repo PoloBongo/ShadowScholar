@@ -1,0 +1,259 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
+public class LoadManager : MonoBehaviour
+{
+    public Text loadingText;
+    public Slider loadingSlider;
+    [SerializeField] JsonFile jsonFile;
+    [SerializeField] bool isNormalGameplay;
+    private int sceneIndex;
+
+    private void Start()
+    {
+        if (isNormalGameplay)
+        {
+            // Commencer à charger la scène en arrière-plan //
+            if (jsonFile != null)
+            {
+                if (jsonFile.ReadKinematicStartJsonFile())
+                {
+                    StartCoroutine(PreloadSceneAndAssetsGame("Game"));
+                }
+                else
+                {
+                    StartCoroutine(PreloadSceneAndAssetsKinematicStart("Kinematic"));
+                }
+            }
+        }
+    }
+
+    public void StartLoadManager()
+    {
+        // Commencer à charger la scène en arrière-plan
+        if (jsonFile != null)
+        {
+            if (jsonFile.ReadKinematicStartJsonFile())
+            {
+                StartCoroutine(PreloadSceneAndAssetsGame("Game"));
+            }
+            else
+            {
+                StartCoroutine(PreloadSceneAndAssetsKinematicStart("Kinematic"));
+            }
+        }
+    }
+
+    IEnumerator PreloadSceneAndAssetsGame(string sceneName)
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        loadingSlider.gameObject.SetActive(true);
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        loadingText.text = "Préparation des assets nécessaire";
+        // Charger la scène en arrière-plan sans l'activer
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        operation.allowSceneActivation = false;
+
+        // Une fois chargé à 90% on peut activer la scène
+        while (operation.progress < 0.9f)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                break;
+            }
+            yield return null;
+        }
+        loadingSlider.value = 90f;
+
+        loadingText.color = Color.red;
+        loadingText.text = $"Chargement de la scène : {operation.progress * 100:F0}%";
+        operation.allowSceneActivation = true;
+
+        // Attendre que la scène soit complètement activée pour passer à l'étape suivante
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        // on la met comme active comme ça on peut charger les assets dedans
+        Scene targetScene = SceneManager.GetSceneByName(sceneName);
+        if (targetScene.IsValid())
+        {
+            SceneManager.SetActiveScene(targetScene);
+        }
+
+        GameObject transitionUI = GameObject.Find("TransitionUI");
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(false);
+        }
+
+        GameObject FinishedAssetZone = GameObject.Find("Finished Assets Zone");
+        GameObject Zones = GameObject.Find("Zones");
+        if (FinishedAssetZone == null || Zones == null)
+        {
+            Debug.LogError("GameObject missing in the scene.");
+            yield break;
+        }
+
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        // Instanciation des assets dans la nouvelle scène
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Zones, 2, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Zone_1", FinishedAssetZone, 3, 3));
+
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
+
+        // on enlève de force la scène de chargement pour éviter tout soucis
+        loadingText.text = "Nettoyage de la scène de chargement...";
+        SceneManager.UnloadSceneAsync(sceneIndex);
+    }
+
+    IEnumerator PreloadSceneAndAssetsKinematicStart(string sceneName)
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        loadingSlider.gameObject.SetActive(true);
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        loadingText.text = "Préparation des assets nécessaire";
+        // Charger la scène en arrière-plan sans l'activer
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        operation.allowSceneActivation = false;
+
+        // Une fois chargé à 90% on peut activer la scène
+        while (operation.progress < 0.9f)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                break;
+            }
+            yield return null;
+        }
+        loadingSlider.value = 90f;
+
+        loadingText.color = Color.red;
+        loadingText.text = $"Chargement de la scène : {operation.progress * 100:F0}%";
+        operation.allowSceneActivation = true;
+
+        // Attendre que la scène soit complètement activée pour passer à l'étape suivante
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        // on la met comme active comme ça on peut charger les assets dedans
+        Scene targetScene = SceneManager.GetSceneByName(sceneName);
+        if (targetScene.IsValid())
+        {
+            SceneManager.SetActiveScene(targetScene);
+        }
+
+        // empêche une superposition des ui
+        GameObject transitionUI = GameObject.Find("TransitionUI");
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(false);
+        }
+
+        GameObject Zone_1 = GameObject.Find("Zone_1");
+        GameObject Zone_2 = GameObject.Find("Zone_2");
+        GameObject Zone_12 = GameObject.Find("Zone_12");
+        GameObject Zone_14 = GameObject.Find("Zone_14");
+        GameObject Zone_15 = GameObject.Find("Zone_15");
+        GameObject Zones = GameObject.Find("Zones");
+        if (Zone_1 == null || Zone_2 == null || Zone_14 == null || Zone_15 == null || Zone_12 == null || Zones == null)
+        {
+            Debug.LogError("GameObject missing in the scene.");
+            yield break;
+        }
+
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        // Instanciation des assets dans la nouvelle scène
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/Exterior", Zone_1, 1, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_3", Zone_1, 2, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_4", Zone_1, 3, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_4_1", Zone_1, 4, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_6_1", Zone_1, 5, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_7", Zone_1, 6, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_A_3", Zone_1, 7, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_A_3_1", Zone_1, 8, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_A_4", Zone_1, 9, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_B_6", Zone_1, 10, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_D_4", Zone_1, 11, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_E_1", Zone_1, 12, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/House_E_6", Zone_1, 13, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_1/School", Zone_1, 14, 35));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/Exterior", Zone_2, 15, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_4_3", Zone_2, 16, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_A_3", Zone_2, 17, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_B_4", Zone_2, 18, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_C_4_1", Zone_2, 19, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_D_3", Zone_2, 20, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_D_3_1", Zone_2, 21, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_2/House_E_4", Zone_2, 22, 35));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_12/Exterior", Zone_12, 23, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_12/House_A_1", Zone_12, 24, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_12/House_C_3", Zone_12, 25, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_12/House_E_2", Zone_12, 26, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_12/House_E_3", Zone_12, 27, 35));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_14/House_2", Zone_14, 28, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_14/Exterior", Zone_14, 29, 35));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_15/Exterior", Zone_15, 30, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_15/House_D_1", Zone_15, 31, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_15/House_E_6_1", Zone_15, 32, 35));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 33, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Zones, 34, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicController", null, 35, 35));
+
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
+
+        // on enlève de force la scène de chargement pour éviter tout soucis
+        loadingText.text = "Nettoyage de la scène de chargement...";
+        SceneManager.UnloadSceneAsync(sceneIndex);
+    }
+
+    IEnumerator LoadAndInstantiateAssetAsync(string assetPath, GameObject parentObject, int assetIndex, int totalAssets)
+    {
+        Debug.Log($"Attempting to load {assetPath}");
+
+        // méthode synchrone pour charger un asset dans le dossier "Resources"
+        GameObject prefab = Resources.Load<GameObject>(assetPath);
+
+        if (prefab == null)
+        {
+            Debug.LogError($"Failed to load asset at path: {assetPath}. Make sure the asset is in a Resources folder.");
+            yield break;
+        }
+
+        Debug.Log("Asset loaded successfully.");
+
+        int childrenCount = prefab.transform.childCount;
+        int childrenLoaded = 0;
+        float fakeProgress = 0f;
+        Instantiate(prefab, parentObject != null ? parentObject.transform : null);
+        foreach (Transform child in prefab.transform)
+        {
+            // pour la progression du text en temps réel
+            childrenLoaded++;
+            float prefabProgress = (float)childrenLoaded / childrenCount * 100f;
+
+            fakeProgress = Mathf.MoveTowards(prefabProgress, 1f, Time.deltaTime);
+            loadingSlider.value = fakeProgress;
+            loadingText.text = $"Chargement des assets : {assetIndex}/{totalAssets} - {prefabProgress:F0}%";
+            // Attendre une frame pour chaque enfant instancié
+            yield return null;
+        }
+    }
+}

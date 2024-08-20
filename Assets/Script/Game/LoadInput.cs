@@ -27,7 +27,6 @@ public class LoadInput : MonoBehaviour
         if (File.Exists(filePath))
         {
             jsonFile.ReadJsonFile();
-            Debug.Log(jsonFile.shadowScholar.inputSettings.jumpInput);
         }
     }
 
@@ -40,8 +39,10 @@ public class LoadInput : MonoBehaviour
         vSwimming = FindAnyObjectByType<vSwimming>();
         vCoverController = FindAnyObjectByType<vCoverController>();
         vZipLine = FindAnyObjectByType<vZipLine>();
+        vLadderAction = FindAnyObjectByType<vLadderAction>();
+        vDrawHideMeleeWeapons = FindAnyObjectByType<vDrawHideMeleeWeapons>();
 
-        if (invectorInput != null || invectorMeleeCombatInput != null || invectorShooterInput != null)
+        if (invectorInput != null || invectorMeleeCombatInput != null || invectorShooterInput != null || vInventory != null || vSwimming != null || vCoverController != null || vZipLine != null)
         {
             invectorInput.jumpInput = new GenericInput(jsonFile.shadowScholar.inputSettings.jumpInput, "X", "X");
             invectorInput.rollInput = new GenericInput(jsonFile.shadowScholar.inputSettings.rollInput, "B", "B");
@@ -55,7 +56,7 @@ public class LoadInput : MonoBehaviour
             invectorShooterInput.aimInput = new GenericInput(jsonFile.shadowScholar.inputSettings.aimInput, "LT", "LT");
             invectorShooterInput.shotInput = new GenericInput(jsonFile.shadowScholar.inputSettings.shootInput, "RT", "RT");
             invectorShooterInput.reloadInput = new GenericInput(jsonFile.shadowScholar.inputSettings.reloadInput, "LB", "LB");
-            invectorShooterInput.scopeViewInput = new GenericInput(jsonFile.shadowScholar.inputSettings.scopViewInput, "RB", "RB");
+            invectorShooterInput.scopeViewInput = new GenericInput(jsonFile.shadowScholar.inputSettings.scopeViewInput, "RB", "RB");
 
             invectorInput.strafeInput = new GenericInput(jsonFile.shadowScholar.inputSettings.strafeInput, "RightStickClick", "RightStickClick");
             invectorShooterInput.switchCameraSideInput = new GenericInput(jsonFile.shadowScholar.inputSettings.switchCameraSideInput, "RightStickClick", "RightStickClick");
@@ -70,8 +71,8 @@ public class LoadInput : MonoBehaviour
 
             vZipLine.exitZipline = new GenericInput(jsonFile.shadowScholar.inputSettings.exitZipLineInput, "X", "X");
 
-            vLadderAction.enterInput = new GenericInput(jsonFile.shadowScholar.inputSettings.enterLadderInput, "A", "A");
-            vLadderAction.exitInput = new GenericInput(jsonFile.shadowScholar.inputSettings.exitLadderInput, "B", "B");
+            vLadderAction.enterInput = new GenericInput(jsonFile.shadowScholar.inputSettings.enterInput, "A", "A");
+            vLadderAction.exitInput = new GenericInput(jsonFile.shadowScholar.inputSettings.exitInput, "B", "B");
             vLadderAction.fastClimbInput = new GenericInput(jsonFile.shadowScholar.inputSettings.fastClimbInput, "LeftStickClick", "LeftStickClick");
             vLadderAction.slideDownInput = new GenericInput(jsonFile.shadowScholar.inputSettings.slideDownClimbInput, "X", "X");
 

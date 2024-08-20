@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class JsonFile : MonoBehaviour
 {
@@ -32,7 +34,7 @@ public class JsonFile : MonoBehaviour
         public string aimInput;
         public string shootInput;
         public string reloadInput;
-        public string scopViewInput;
+        public string scopeViewInput;
         public string switchCameraSideInput;
         public string openInventoryInput;
         public string closeInventoryInput;
@@ -40,18 +42,19 @@ public class JsonFile : MonoBehaviour
         public string swimDownInput;
         public string coverInput;
         public string exitZipLineInput;
-        public string enterLadderInput;
-        public string exitLadderInput;
+        public string enterInput;
+        public string exitInput;
         public string fastClimbInput;
         public string slideDownClimbInput;
         public string hideWeaponInput;
     }
 
     private string filePath;
-    private string currentInputSettings;
     public ShadowScholar shadowScholar;
     [SerializeField] private bool isForInputSettings;
-    [SerializeField] TMP_Text getTextInputSettings;
+    [SerializeField] private List<TMP_InputField> inputFields;
+    private TMP_InputField activeInputField;
+    private bool isListeningForKey = false;
 
     void Start()
     {
@@ -88,7 +91,7 @@ public class JsonFile : MonoBehaviour
                 aimInput = "Mouse1",
                 shootInput = "Mouse0",
                 reloadInput = "R",
-                scopViewInput = "Z",
+                scopeViewInput = "Z",
                 switchCameraSideInput = "Tab",
                 openInventoryInput = "I",
                 closeInventoryInput = "Escape",
@@ -96,8 +99,8 @@ public class JsonFile : MonoBehaviour
                 swimDownInput = "LeftShift",
                 coverInput = "Q",
                 exitZipLineInput = "Space",
-                enterLadderInput = "E",
-                exitLadderInput = "Space",
+                enterInput = "E",
+                exitInput = "Space",
                 fastClimbInput = "LeftShift",
                 slideDownClimbInput = "Q",
                 hideWeaponInput = "H"
@@ -125,7 +128,6 @@ public class JsonFile : MonoBehaviour
     {
         string json = File.ReadAllText(filePath);
         shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
-        Debug.Log("Boolean : " + shadowScholar.kinematicStart.isFinish);
 
         return shadowScholar.kinematicStart.isFinish;
     }
@@ -137,21 +139,58 @@ public class JsonFile : MonoBehaviour
             shadowScholar.kinematicStart.isFinish = _isFinish;
 
             SaveJson();
-
-            Debug.Log("Données update");
         } else { Debug.Log("shadowScholar est null"); }
     }
 
-    public void HandleInputChange(string text)
+    public void DetectInputFieldSettings()
     {
-        currentInputSettings = text;
+        foreach (TMP_InputField inputField in inputFields)
+        {
+            inputField.onSelect.AddListener(delegate { StartListeningForKey(inputField); });
+            inputField.onDeselect.AddListener(delegate { StopListeningForKey(); });
+        }
     }
 
-    public void UpdateInputSettingsDataJson(string inputName)
+    void Update()
+    {
+        if (isListeningForKey)
+        {
+            // Écouter les touches pressées
+            foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKeyDown(keyCode))
+                {
+                    if (keyCode != KeyCode.Mouse0 && keyCode != KeyCode.Mouse1 && keyCode != KeyCode.Mouse2)
+                    {
+                        string inputFieldName = activeInputField.gameObject.name;
+                        UpdateInputSettingsDataJson(inputFieldName, activeInputField.text);
+                        activeInputField.text = keyCode.ToString();
+                        EventSystem.current.SetSelectedGameObject(null);
+                        StopListeningForKey();
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void StartListeningForKey(TMP_InputField inputField)
+    {
+        isListeningForKey = true;
+        activeInputField = inputField;
+    }
+
+    private void StopListeningForKey()
+    {
+        isListeningForKey = false;
+        activeInputField = null;
+    }
+
+    public void UpdateInputSettingsDataJson(string inputName, string inputContent)
     {
         if (shadowScholar != null)
         {
-            string input = currentInputSettings;
+            string input = inputContent;
             // permet de supprimer les caractère invisible
             input = input.Replace("\u200B", "");
             input = new string(input.Where(c => !char.IsControl(c) && c >= 32 && c <= 126).ToArray());

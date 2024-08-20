@@ -36,7 +36,7 @@ public class JsonInput : MonoBehaviour
         public TMP_InputField exitZipLineInputText;
 
         public TMP_InputField enterLadderInputText;
-        public TMP_InputField exitLadderInputText;
+        public TMP_InputField exitInputText;
         public TMP_InputField fastClimbInputText;
         public TMP_InputField slideDownInputText;
 
@@ -74,7 +74,7 @@ public class JsonInput : MonoBehaviour
         tmp_InputFieldClass.aimInputText.text = jsonFile.shadowScholar.inputSettings.aimInput;
         tmp_InputFieldClass.shootInputText.text = jsonFile.shadowScholar.inputSettings.shootInput;
         tmp_InputFieldClass.reloadInputText.text = jsonFile.shadowScholar.inputSettings.reloadInput;
-        tmp_InputFieldClass.scopeViewInputText.text = jsonFile.shadowScholar.inputSettings.scopViewInput;
+        tmp_InputFieldClass.scopeViewInputText.text = jsonFile.shadowScholar.inputSettings.scopeViewInput;
 
         tmp_InputFieldClass.strafeInputText.text = jsonFile.shadowScholar.inputSettings.strafeInput;
         tmp_InputFieldClass.switchCameraSideInputText.text = jsonFile.shadowScholar.inputSettings.switchCameraSideInput;
@@ -89,8 +89,8 @@ public class JsonInput : MonoBehaviour
 
         tmp_InputFieldClass.exitZipLineInputText.text = jsonFile.shadowScholar.inputSettings.exitZipLineInput;
 
-        tmp_InputFieldClass.enterLadderInputText.text = jsonFile.shadowScholar.inputSettings.enterLadderInput;
-        tmp_InputFieldClass.exitLadderInputText.text = jsonFile.shadowScholar.inputSettings.exitLadderInput;
+        tmp_InputFieldClass.enterLadderInputText.text = jsonFile.shadowScholar.inputSettings.enterInput;
+        tmp_InputFieldClass.exitInputText.text = jsonFile.shadowScholar.inputSettings.exitInput;
         tmp_InputFieldClass.fastClimbInputText.text = jsonFile.shadowScholar.inputSettings.fastClimbInput;
         tmp_InputFieldClass.slideDownInputText.text = jsonFile.shadowScholar.inputSettings.slideDownClimbInput;
 

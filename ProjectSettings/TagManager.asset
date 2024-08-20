@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Stair
+  - WallRun
+  - Climb
+  - Fly
   - Action
   - AutoCrouch
   - Ragdoll
@@ -35,6 +39,7 @@ TagManager:
   - ground_pave
   - Head
   - NoSoundFootStep
+  - Animal
   layers:
   - Default
   - TransparentFX
@@ -56,6 +61,7 @@ TagManager:
   - Pushable
   - CoverPoint
   - Camera
+  - Animal
   - 
   - 
   - 
@@ -65,8 +71,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Item
   - PostProcess
   m_SortingLayers:
   - name: Default

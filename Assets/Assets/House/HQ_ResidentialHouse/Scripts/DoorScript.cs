@@ -142,8 +142,8 @@ public class DoorScript : MonoBehaviour {
 				Debug.LogWarning(gameObject.name + ": Text prefab missing, if you want see the text, please, put the text prefab in Text Prefab slot");
 				return;
 			}
-			GameObject go = Instantiate (doorTexts.TextPrefab, Vector3.zero, new Quaternion (0, 0, 0, 0)) as GameObject;
-			TextObj = go.GetComponent<Canvas>();
+			//GameObject go = Instantiate (doorTexts.TextPrefab, Vector3.zero, new Quaternion (0, 0, 0, 0)) as GameObject;
+			//TextObj = go.GetComponent<Canvas>();
 			
 			theText = TextObj.GetComponentInChildren<Text>();
 		}

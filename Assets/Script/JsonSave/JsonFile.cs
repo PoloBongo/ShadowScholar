@@ -1,0 +1,223 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class JsonFile : MonoBehaviour
+{
+    [System.Serializable]
+    public class ShadowScholar
+    {
+        public KinematicStart kinematicStart;
+        public InputSettings inputSettings;
+    }
+    [System.Serializable]
+    public class KinematicStart
+    {
+        public bool isFinish;
+    }
+    [System.Serializable]
+    public class InputSettings
+    {
+        public string jumpInput;
+        public string rollInput;
+        public string sprintInput;
+        public string crouchInput;
+        public string strafeInput;
+        public string weakAttackInput;
+        public string strongAttackInput;
+        public string blockInput;
+        public string aimInput;
+        public string shootInput;
+        public string reloadInput;
+        public string scopeViewInput;
+        public string switchCameraSideInput;
+        public string openInventoryInput;
+        public string closeInventoryInput;
+        public string swimUpInput;
+        public string swimDownInput;
+        public string coverInput;
+        public string exitZipLineInput;
+        public string enterInput;
+        public string exitInput;
+        public string fastClimbInput;
+        public string slideDownClimbInput;
+        public string hideWeaponInput;
+    }
+
+    private string filePath;
+    public ShadowScholar shadowScholar;
+    [SerializeField] private bool isForInputSettings;
+    [SerializeField] private List<TMP_InputField> inputFields;
+    private TMP_InputField activeInputField;
+    private bool isListeningForKey = false;
+
+    void Start()
+    {
+        filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
+
+        if (File.Exists(filePath))
+        {
+            ReadJsonFile();
+        }
+        else
+        {
+            CreateJsonFile();
+        }
+    }
+
+    public void CreateJsonFile()
+    {
+        shadowScholar = new ShadowScholar()
+        {
+            kinematicStart = new KinematicStart()
+            {
+                isFinish = false
+            },
+            inputSettings = new InputSettings()
+            {
+                jumpInput = "Space",
+                rollInput = "Q",
+                sprintInput = "LeftShift",
+                crouchInput = "C",
+                strafeInput = "Tab",
+                weakAttackInput = "Mouse0",
+                strongAttackInput = "Alpha1",
+                blockInput = "Mouse1",
+                aimInput = "Mouse1",
+                shootInput = "Mouse0",
+                reloadInput = "R",
+                scopeViewInput = "Z",
+                switchCameraSideInput = "Tab",
+                openInventoryInput = "I",
+                closeInventoryInput = "Escape",
+                swimUpInput = "Space",
+                swimDownInput = "LeftShift",
+                coverInput = "Q",
+                exitZipLineInput = "Space",
+                enterInput = "E",
+                exitInput = "Space",
+                fastClimbInput = "LeftShift",
+                slideDownClimbInput = "Q",
+                hideWeaponInput = "H"
+            }
+        };
+
+        SaveJson();
+        Debug.Log("Fichier json crée");
+    }
+
+    public void ReadJsonFile()
+    {
+        string json = File.ReadAllText(filePath);
+        shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
+    }
+
+    void SaveJson()
+    {
+        string json = JsonUtility.ToJson(shadowScholar, true);
+        File.WriteAllText(filePath, json, System.Text.Encoding.UTF8);
+        Debug.Log("Données save");
+    }
+
+    public bool ReadKinematicStartJsonFile()
+    {
+        string json = File.ReadAllText(filePath);
+        shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
+
+        return shadowScholar.kinematicStart.isFinish;
+    }
+
+    public void UpdateKinematicStartDataJson(bool _isFinish)
+    {
+        if (shadowScholar != null)
+        {
+            shadowScholar.kinematicStart.isFinish = _isFinish;
+
+            SaveJson();
+        } else { Debug.Log("shadowScholar est null"); }
+    }
+
+    public void DetectInputFieldSettings()
+    {
+        foreach (TMP_InputField inputField in inputFields)
+        {
+            inputField.onSelect.AddListener(delegate { StartListeningForKey(inputField); });
+            inputField.onDeselect.AddListener(delegate { StopListeningForKey(); });
+        }
+    }
+
+    void Update()
+    {
+        if (isListeningForKey)
+        {
+            // Écouter les touches pressées
+            foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKeyDown(keyCode))
+                {
+                    if (keyCode != KeyCode.Mouse0 && keyCode != KeyCode.Mouse1 && keyCode != KeyCode.Mouse2)
+                    {
+                        string inputFieldName = activeInputField.gameObject.name;
+                        UpdateInputSettingsDataJson(inputFieldName, activeInputField.text);
+                        activeInputField.text = keyCode.ToString();
+                        EventSystem.current.SetSelectedGameObject(null);
+                        StopListeningForKey();
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void StartListeningForKey(TMP_InputField inputField)
+    {
+        isListeningForKey = true;
+        activeInputField = inputField;
+    }
+
+    private void StopListeningForKey()
+    {
+        isListeningForKey = false;
+        activeInputField = null;
+    }
+
+    public void UpdateInputSettingsDataJson(string inputName, string inputContent)
+    {
+        if (shadowScholar != null)
+        {
+            string input = inputContent;
+            // permet de supprimer les caractère invisible
+            input = input.Replace("\u200B", "");
+            input = new string(input.Where(c => !char.IsControl(c) && c >= 32 && c <= 126).ToArray());
+            PropertyInfo property = shadowScholar.inputSettings.GetType().GetProperty(inputName);
+
+            if (property != null && property.CanWrite)
+            {
+                // Affectation dynamique de la valeur à la propriété
+                property.SetValue(shadowScholar.inputSettings, input, null);
+                SaveJson();
+            }
+            else
+            {
+                FieldInfo field = shadowScholar.inputSettings.GetType().GetField(inputName);
+
+                if (field != null)
+                {
+                    // Affectation dynamique de la valeur au champ
+                    field.SetValue(shadowScholar.inputSettings, input);
+                    SaveJson();
+                }
+                else
+                {
+                    Debug.LogWarning($"Aucune propriété ou champ trouvé avec le nom '{inputName}'.");
+                }
+            }
+        }
+        else { Debug.Log("shadowScholar est null"); }
+    }
+}

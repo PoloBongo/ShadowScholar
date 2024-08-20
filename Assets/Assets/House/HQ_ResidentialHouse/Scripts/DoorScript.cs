@@ -8,6 +8,8 @@ using System;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Invector.vItemManager;
+using TMPro;
 
 public class DoorScript : MonoBehaviour {
 	private Transform[] Childs;
@@ -52,9 +54,9 @@ public class DoorScript : MonoBehaviour {
 	public class DoorTexts
 	{
 		public bool enabled = false;
-		public string openingText = "Press [BUTTON] to open";
-		public string closingText = "Press [BUTTON] to close";
-		public string lockText = "You need a key!";
+		public string openingText = "Appuyer sur [BUTTON] pour ouvrir";
+		public string closingText = "Appuyer sur [BUTTON] pour fermer";
+		public string lockText = "Vous avez besoin d'une clé!";
 		public GameObject TextPrefab; 
 	}
 	[Serializable]
@@ -225,7 +227,7 @@ public class DoorScript : MonoBehaviour {
 			if(keySystem.enabled)
 			{
 				if(keySystem.isUnlock)
-					OpenLockDoor();
+					OpenDoor();
 				else
 					PlayClosedFXs();
 			}
@@ -265,7 +267,19 @@ public class DoorScript : MonoBehaviour {
 	{
 		if(other.tag != "Player")
 			return;
-		
+
+		if(keySystem.enabled && !keySystem.isUnlock)
+		{
+			foreach (vItem item in other.gameObject.GetComponent<vItemManager>().GetItems())
+			{
+				if (item.originalObject == keySystem.LockPrefab)
+				{
+					Unlock();
+					break;
+				}
+			}
+		}
+
 		inZone = true;
 	}
 	
@@ -278,6 +292,8 @@ public class DoorScript : MonoBehaviour {
 		if(Opened && controls.autoClose)
 			CloseDoor();
 		
+		keySystem.isUnlock = false;
+
 		inZone = false;
 	}
 

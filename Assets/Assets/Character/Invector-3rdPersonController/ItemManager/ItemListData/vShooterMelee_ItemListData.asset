@@ -94,6 +94,7 @@ MonoBehaviour:
   - {fileID: 1942869621032062961}
   - {fileID: 2688758854506974251}
   - {fileID: -5194065755357517554}
+  - {fileID: 6485842364432305854}
   inEdition: 0
   itemsHidden: 1
 --- !u!114 &11427962
@@ -1314,6 +1315,43 @@ MonoBehaviour:
   disableDelayTime: 0.5
   customHandler: 
   twoHandWeapon: 1
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6485842364432305854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adabc1ae49fd3c44a36cc9152ebb0f9, type: 3}
+  m_Name: Access Card
+  m_EditorClassIdentifier: 
+  id: 28
+  description: Access to Agence Room
+  type: 0
+  icon: {fileID: 21300000, guid: bb27bbcc19afabe4c96dd41b12d6789a, type: 3}
+  stackable: 0
+  maxStack: 1
+  amount: 0
+  originalObject: {fileID: 4717989749987442893, guid: f0293859618ea5447973a9cb447038fc, type: 3}
+  dropObject: {fileID: 0}
+  attributes: []
+  isInEquipArea: 0
+  isEquiped: 0
+  destroyAfterUse: 0
+  canBeUsed: 1
+  canBeDroped: 0
+  canBeDestroyed: 0
+  EnableAnim: LowBack
+  DisableAnim: LowBack
+  enableDelayTime: 0.5
+  disableDelayTime: 0.5
+  customHandler: 
+  twoHandWeapon: 0
   onDestroy:
     m_PersistentCalls:
       m_Calls: []

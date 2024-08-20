@@ -155,16 +155,20 @@ public class JsonFile : MonoBehaviour
     {
         if (isListeningForKey)
         {
-            // Écouter les touches pressées
             foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
             {
                 if (Input.GetKeyDown(keyCode))
                 {
                     if (keyCode != KeyCode.Mouse0 && keyCode != KeyCode.Mouse1 && keyCode != KeyCode.Mouse2)
                     {
+                        string keyName = keyCode.ToString().ToUpper();
+                        if (IsSpecialKey(keyCode))
+                        {
+                            activeInputField.text = keyName;
+                        }
+
                         string inputFieldName = activeInputField.gameObject.name;
-                        UpdateInputSettingsDataJson(inputFieldName, activeInputField.text);
-                        activeInputField.text = keyCode.ToString();
+                        UpdateInputSettingsDataJson(inputFieldName, keyCode.ToString().ToUpper());
                         EventSystem.current.SetSelectedGameObject(null);
                         StopListeningForKey();
                         break;
@@ -172,6 +176,25 @@ public class JsonFile : MonoBehaviour
                 }
             }
         }
+    }
+
+    private bool IsSpecialKey(KeyCode keyCode)
+    {
+        return keyCode == KeyCode.Space ||
+               keyCode == KeyCode.Backspace ||
+               keyCode == KeyCode.Escape ||
+               keyCode == KeyCode.F1 ||
+               keyCode == KeyCode.F2 ||
+               keyCode == KeyCode.F3 ||
+               keyCode == KeyCode.F4 ||
+               keyCode == KeyCode.F5 ||
+               keyCode == KeyCode.F6 ||
+               keyCode == KeyCode.F7 ||
+               keyCode == KeyCode.F8 ||
+               keyCode == KeyCode.F9 ||
+               keyCode == KeyCode.F10 ||
+               keyCode == KeyCode.F11 ||
+               keyCode == KeyCode.F12;
     }
 
     private void StartListeningForKey(TMP_InputField inputField)

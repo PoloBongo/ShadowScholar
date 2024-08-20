@@ -119,7 +119,7 @@ public class DoorScript : MonoBehaviour {
 		if(controls.openMethod == OpenStyle.AUTOMATIC)
 			controls.autoClose = true;
 
-		if(PlayerHeadTag == "")
+/*		if(PlayerHeadTag == "")
 			Debug.LogError("You need to set a tag!");
 
 		if (GameObject.FindWithTag (PlayerHeadTag) != null) {
@@ -127,7 +127,7 @@ public class DoorScript : MonoBehaviour {
 		} 
 		else {
 			Debug.LogWarning(gameObject.name + ": You need to set your player's camera tag to " + "'"+PlayerHeadTag+"'." + " The " + "'" + gameObject.name+"'" +" can't open/close if you don't set this tag");
-		}
+		}*/
 
 
 		AddText();
@@ -137,19 +137,31 @@ public class DoorScript : MonoBehaviour {
 		doorAnimation = GetComponent<Animation>();
 	}
 
-	void AddText(){
+	public void AddText(){
 		if(doorTexts.enabled){
 			if(doorTexts.TextPrefab == null)
 			{
 				Debug.LogWarning(gameObject.name + ": Text prefab missing, if you want see the text, please, put the text prefab in Text Prefab slot");
 				return;
 			}
-			//GameObject go = Instantiate (doorTexts.TextPrefab, Vector3.zero, new Quaternion (0, 0, 0, 0)) as GameObject;
-			//TextObj = go.GetComponent<Canvas>();
+			GameObject go = Instantiate (doorTexts.TextPrefab, Vector3.zero, new Quaternion (0, 0, 0, 0)) as GameObject;
+			TextObj = go.GetComponent<Canvas>();
 			
 			theText = TextObj.GetComponentInChildren<Text>();
 		}
-	}
+
+        if (PlayerHeadTag == "")
+            Debug.LogError("You need to set a tag!");
+
+        if (GameObject.FindWithTag(PlayerHeadTag) != null)
+        {
+            player = GameObject.FindWithTag(PlayerHeadTag).transform;
+        }
+        else
+        {
+            Debug.LogWarning(gameObject.name + ": You need to set your player's camera tag to " + "'" + PlayerHeadTag + "'." + " The " + "'" + gameObject.name + "'" + " can't open/close if you don't set this tag");
+        }
+    }
 
 	void AddLock(){
 		if(!keySystem.enabled)
@@ -239,7 +251,11 @@ public class DoorScript : MonoBehaviour {
 	}
 
 	bool PLayerIsLookingAtDoorKnob(){
-		Vector3 forward = player.TransformDirection (Vector3.back);
+        if (player == null)
+        {
+            player = GameObject.FindWithTag(PlayerHeadTag).transform;
+        }
+        Vector3 forward = player.TransformDirection (Vector3.back);
 		Vector3 thisTransform = knob.position - player.transform.position;
 
 		float dotProd = Vector3.Dot (forward.normalized, thisTransform.normalized);

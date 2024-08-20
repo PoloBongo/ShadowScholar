@@ -7,7 +7,10 @@ public class Horloge : MonoBehaviour
     private float startTime;
     private float lightStartTime;
     private float lightStartTimeDay;
+
     [SerializeField] Light directionalLight;
+    [SerializeField] private Material daySkybox;
+    [SerializeField] private Material nightSkybox;
 
     void Start()
     {
@@ -25,12 +28,12 @@ public class Horloge : MonoBehaviour
 
         if (percentageComplete > 0.2f)
         {
-            SetIntensityNight(percentageComplete, 0.2f, 1f, 0.1f);
+            SetIntensityNight(percentageComplete, 0.2f, 1f, 0f);
         }
         
         if (percentageComplete > 0.6f)
         {
-            SetIntensityDay(percentageComplete, 0.6f, 0.1f, 1f);
+            SetIntensityDay(percentageComplete, 0.6f, 0f, 1f);
         }
 
         if (percentageComplete >= 1f)
@@ -49,11 +52,15 @@ public class Horloge : MonoBehaviour
             if (lightStartTime == 0f)
             {
                 lightStartTime = Time.time;
+                ChangeSkybox(nightSkybox);
             }
             float elapsedLightTime = Time.time - lightStartTime;
             float percentageIntensity = elapsedLightTime / durationLight;
             float intensity = Mathf.Lerp(start, end, percentageIntensity);
             directionalLight.intensity = intensity;
+
+            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(start, end, percentageIntensity));
+            DynamicGI.UpdateEnvironment();
         }
     }
 
@@ -64,11 +71,24 @@ public class Horloge : MonoBehaviour
             if (lightStartTimeDay == 0f)
             {
                 lightStartTimeDay = Time.time;
+                ChangeSkybox(daySkybox);
             }
             float elapsedLightTime = Time.time - lightStartTimeDay;
             float percentageIntensity = elapsedLightTime / durationLight;
             float intensity = Mathf.Lerp(start, end, percentageIntensity);
             directionalLight.intensity = intensity;
+
+            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(start, end, percentageIntensity));
+            DynamicGI.UpdateEnvironment();
+        }
+    }
+
+    private void ChangeSkybox(Material newSkybox)
+    {
+        if (newSkybox != null)
+        {
+            RenderSettings.skybox = newSkybox;
+            DynamicGI.UpdateEnvironment();
         }
     }
 }

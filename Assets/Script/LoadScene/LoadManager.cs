@@ -90,9 +90,9 @@ public class LoadManager : MonoBehaviour
             transitionUI.SetActive(false);
         }
 
-        GameObject FinishedAssetZone = GameObject.Find("Finished Assets Zone");
         GameObject Zones = GameObject.Find("Zones");
-        if (FinishedAssetZone == null || Zones == null)
+        GameObject Roads = GameObject.Find("Roads");
+        if (Zones == null || Roads == null)
         {
             Debug.LogError("GameObject missing in the scene.");
             yield break;
@@ -101,8 +101,8 @@ public class LoadManager : MonoBehaviour
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Zones, 2, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Zone_1", FinishedAssetZone, 3, 3));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Roads, 2, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Zone_1", Zones, 3, 3));
 
         if (transitionUI != null)
         {
@@ -164,8 +164,8 @@ public class LoadManager : MonoBehaviour
         GameObject Zone_12 = GameObject.Find("Zone_12");
         GameObject Zone_14 = GameObject.Find("Zone_14");
         GameObject Zone_15 = GameObject.Find("Zone_15");
-        GameObject Zones = GameObject.Find("Zones");
-        if (Zone_1 == null || Zone_2 == null || Zone_14 == null || Zone_15 == null || Zone_12 == null || Zones == null)
+        GameObject Roads = GameObject.Find("Roads");
+        if (Zone_1 == null || Zone_2 == null || Zone_14 == null || Zone_15 == null || Zone_12 == null || Roads == null)
         {
             Debug.LogError("GameObject missing in the scene.");
             yield break;
@@ -211,7 +211,7 @@ public class LoadManager : MonoBehaviour
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/Zone_15/House_E_6_1", Zone_15, 32, 35));
 
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 33, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Zones, 34, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Roads, 34, 35));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicController", null, 35, 35));
 
         if (transitionUI != null)

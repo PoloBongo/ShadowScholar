@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.790404, g: 0.76649743, b: 0.74812657, a: 1}
+  m_IndirectSpecularColor: {r: 0.621515, g: 0.60214925, b: 0.5873384, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -467,7 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722470990}
   m_Layer: 0
-  m_Name: Finished Assets Zone
+  m_Name: Zones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,7 +482,7 @@ Transform:
   m_GameObject: {fileID: 722470989}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 178.53235, y: 229.26125, z: 376.55795}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -665,7 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 916056872}
   m_Layer: 0
-  m_Name: Zones
+  m_Name: Roads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 916056871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1609.11, y: 67.95663, z: 819.5579}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -855,6 +855,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1374416761640390525, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
+      propertyPath: selectedToolbar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1754044592700181842, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -14.9999695
@@ -917,15 +921,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9122010047458130103, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 859.79
+      value: 1460.272
       objectReference: {fileID: 0}
     - target: {fileID: 9122010047458130103, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.89
+      value: 13.827
       objectReference: {fileID: 0}
     - target: {fileID: 9122010047458130103, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 457.82
+      value: 1024.322
       objectReference: {fileID: 0}
     - target: {fileID: 9122010047458130103, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
       propertyPath: m_LocalRotation.w

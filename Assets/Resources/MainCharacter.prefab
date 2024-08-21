@@ -8512,6 +8512,7 @@ GameObject:
   - component: {fileID: 5247496281457346975}
   - component: {fileID: 6244271974321292249}
   - component: {fileID: 3496278031354646502}
+  - component: {fileID: 406770880536277923}
   m_Layer: 8
   m_Name: MainCharacter
   m_TagString: Player
@@ -10876,6 +10877,19 @@ MonoBehaviour:
   currentIKPose: 
   localCharPosition: {x: 0, y: 0, z: 0}
   coverPoints: []
+--- !u!114 &406770880536277923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806862119620824390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e9d520b4a55ed44a5e30853b32bd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadInput: {fileID: 6849754194688832165, guid: 42e2674b1f000564e822735d159e5005, type: 3}
 --- !u!1 &3814402028755733498
 GameObject:
   m_ObjectHideFlags: 0

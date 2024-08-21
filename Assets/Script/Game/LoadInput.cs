@@ -3,6 +3,7 @@ using Invector.vCharacterController;
 using Invector.vCharacterController.vActions;
 using Invector.vCover;
 using Invector.vItemManager;
+using Invector.vShooter;
 using System.IO;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class LoadInput : MonoBehaviour
     private vCoverController vCoverController;
     private vZipLine vZipLine;
     private vLadderAction vLadderAction;
-    private vDrawHideMeleeWeapons vDrawHideMeleeWeapons;
+    private vDrawHideShooterWeapons vDrawHideShooterWeapons;
 
     private string filePath;
     [SerializeField] private JsonFile jsonFile;
@@ -33,14 +34,23 @@ public class LoadInput : MonoBehaviour
     public void OnThirdPersonInputActivated()
     {
         invectorInput = FindObjectOfType<vThirdPersonInput>();
+        if (invectorInput == null) Debug.LogError("vThirdPersonInput non trouvé.");
         invectorShooterInput = FindAnyObjectByType<vShooterMeleeInput>();
-        invectorMeleeCombatInput = FindAnyObjectByType<vShooterMeleeInput>();
+        if (invectorShooterInput == null) Debug.LogError("vShooterMeleeInput non trouvé.");
+        invectorMeleeCombatInput = FindAnyObjectByType<vMeleeCombatInput>();
+        if (invectorMeleeCombatInput == null) Debug.LogError("invectorMeleeCombatInput non trouvé.");
         vInventory = FindAnyObjectByType<vInventory>();
+        if (vInventory == null) Debug.LogError("vInventory non trouvé.");
         vSwimming = FindAnyObjectByType<vSwimming>();
+        if (vSwimming == null) Debug.LogError("vSwimming non trouvé.");
         vCoverController = FindAnyObjectByType<vCoverController>();
+        if (vCoverController == null) Debug.LogError("vCoverController non trouvé.");
         vZipLine = FindAnyObjectByType<vZipLine>();
+        if (vZipLine == null) Debug.LogError("vZipLine non trouvé.");
         vLadderAction = FindAnyObjectByType<vLadderAction>();
-        vDrawHideMeleeWeapons = FindAnyObjectByType<vDrawHideMeleeWeapons>();
+        if (vLadderAction == null) Debug.LogError("vLadderAction non trouvé.");
+        vDrawHideShooterWeapons = FindAnyObjectByType<vDrawHideShooterWeapons>();
+        if (vDrawHideShooterWeapons == null) Debug.LogError("vDrawHideShooterWeapons non trouvé.");
 
         if (invectorInput != null || invectorMeleeCombatInput != null || invectorShooterInput != null || vInventory != null || vSwimming != null || vCoverController != null || vZipLine != null)
         {
@@ -76,7 +86,7 @@ public class LoadInput : MonoBehaviour
             vLadderAction.fastClimbInput = new GenericInput(jsonFile.shadowScholar.inputSettings.fastClimbInput, "LeftStickClick", "LeftStickClick");
             vLadderAction.slideDownInput = new GenericInput(jsonFile.shadowScholar.inputSettings.slideDownClimbInput, "X", "X");
 
-            vDrawHideMeleeWeapons.hideAndDrawWeaponsInput = new GenericInput(jsonFile.shadowScholar.inputSettings.hideWeaponInput, "LB", "LB");
+            vDrawHideShooterWeapons.hideAndDrawWeaponsInput = new GenericInput(jsonFile.shadowScholar.inputSettings.hideWeaponInput, "LB", "LB");
         }
         else
         {

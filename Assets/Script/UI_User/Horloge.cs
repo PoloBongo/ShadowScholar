@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class Horloge : MonoBehaviour
 {
-    private float duration = 60f;
-    private float durationLight = 10f;
+    private float duration = 3600f;
+    private float durationLight = 300f;
     private float startTime;
     private float lightStartTime;
     private float lightStartTimeDay;
+    private bool timeAdjustedManually = false;
 
     [SerializeField] Light directionalLight;
     [SerializeField] private Material daySkybox;
     [SerializeField] private Material nightSkybox;
+    public float percentageComplete;
 
     void Start()
     {
@@ -19,21 +21,30 @@ public class Horloge : MonoBehaviour
 
     void Update()
     {
-        float elapsedTime = Time.time - startTime;
-        float percentageComplete = elapsedTime / duration;
+        if (!timeAdjustedManually)
+        {
+            float elapsedTime = Time.time - startTime;
+            percentageComplete = elapsedTime / duration;
+        }
+        else
+        {
+            startTime = Time.time - (percentageComplete * duration);
+            timeAdjustedManually = false;
+        }
         float angle = Mathf.Lerp(0f, -720f, percentageComplete);
         Vector3 currentRotation = transform.localEulerAngles;
         transform.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, angle);
 
+        Debug.Log(percentageComplete);
 
-        if (percentageComplete > 0.2f)
+        if (percentageComplete > 0.37f)
         {
-            SetIntensityNight(percentageComplete, 0.2f, 1f, 0f);
+            SetIntensityNight(percentageComplete, 0.37f, 1f, 0f);
         }
         
-        if (percentageComplete > 0.6f)
+        if (percentageComplete > 0.826f)
         {
-            SetIntensityDay(percentageComplete, 0.6f, 0f, 1f);
+            SetIntensityDay(percentageComplete, 0.826f, 0f, 1f);
         }
 
         if (percentageComplete >= 1f)
@@ -43,6 +54,12 @@ public class Horloge : MonoBehaviour
             lightStartTime = 0f;
             lightStartTimeDay = 0f;
         }
+    }
+
+    public void SetTimeManually(float newPercentage)
+    {
+        percentageComplete = newPercentage;
+        timeAdjustedManually = true;
     }
 
     private void SetIntensityNight(float percentageComplete, float time, float start, float end)
@@ -59,7 +76,7 @@ public class Horloge : MonoBehaviour
             float intensity = Mathf.Lerp(start, end, percentageIntensity);
             directionalLight.intensity = intensity;
 
-            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(start, end, percentageIntensity));
+            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(start, 0.5f, percentageIntensity));
             DynamicGI.UpdateEnvironment();
         }
     }
@@ -78,7 +95,7 @@ public class Horloge : MonoBehaviour
             float intensity = Mathf.Lerp(start, end, percentageIntensity);
             directionalLight.intensity = intensity;
 
-            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(start, end, percentageIntensity));
+            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(0.5f, end, percentageIntensity));
             DynamicGI.UpdateEnvironment();
         }
     }

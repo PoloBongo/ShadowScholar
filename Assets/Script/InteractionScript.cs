@@ -32,18 +32,21 @@ public class InteractionScript : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		if (GameObject.FindWithTag(PlayerHeadTag) != null)
-		{
-			player = GameObject.FindWithTag(PlayerHeadTag).transform;
-		}
-		else
-		{
-			Debug.LogWarning(gameObject.name + ": You need to set your player's camera tag to " + "'" + PlayerHeadTag + "'." + " The " + "'" + gameObject.name + "'" + " can't open/close if you don't set this tag");
-		}
-
 		AddText();
 		DetectInteractKnob();
 	}
+
+	public void InitInteractionScript()
+	{
+        if (GameObject.FindWithTag(PlayerHeadTag) != null)
+        {
+            player = GameObject.FindWithTag(PlayerHeadTag).transform;
+        }
+        else
+        {
+            Debug.Log(gameObject.name + ": You need to set your player's camera tag to " + "'" + PlayerHeadTag + "'." + " The " + "'" + gameObject.name + "'" + " can't open/close if you don't set this tag");
+        }
+    }
 
 	void AddText()
 	{

@@ -32,6 +32,11 @@ public class GetCardDialogue : MonoBehaviour
         }
 
         dialogueCanvas.gameObject.SetActive(false);
+        /*player = GameObject.FindWithTag("Player");*/
+    }
+
+    public void InitGetCardDialogue()
+    {
         player = GameObject.FindWithTag("Player");
     }
 

@@ -113,8 +113,15 @@ public class JsonFile : MonoBehaviour
 
     public void ReadJsonFile()
     {
-        string json = File.ReadAllText(filePath);
-        shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
+        if (filePath == "")
+        {
+            return;
+        }
+        else
+        {
+            string json = File.ReadAllText(filePath);
+            shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
+        }
     }
 
     void SaveJson()

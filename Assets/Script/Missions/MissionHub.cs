@@ -64,23 +64,11 @@ public class MissionHub : MonoBehaviour
 
     private List<IMission> missions = new List<IMission>();
     private int nextMissionNum;
+    Mission1 mission1;
 
 
     void Start()
     {
-        if (interactionScript != null)
-        {
-            interactionScript.OnInteract += OpenHub;
-        }
-
-        player = GameObject.FindWithTag("Player");
-        animator = player.GetComponent<Animator>();
-        vThirdPersonController = player.GetComponent<vThirdPersonController>();
-        vShooterMeleeInput = player.GetComponent<vShooterMeleeInput>();
-        rigidbody = player.GetComponent<Rigidbody>();
-
-        mainCamera = GameObject.Find("vThirdPersonCamera");
-        vThirdPersonCamera = mainCamera.GetComponent<vThirdPersonCamera>();
         screenMaterial = screen.GetComponent<MeshRenderer>().material;
         screenMaterial.SetColor("_EmissionColor", Color.black);
         originalEmissionColor = Color.white;
@@ -91,9 +79,25 @@ public class MissionHub : MonoBehaviour
 
         layerMask = LayerMask.GetMask("UI");
 
-        Mission1 mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
+        mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
         missions.Add(mission1);
         ChangeNextMissionNum(1);
+    }
+
+    public void InitMissionHub()
+    {
+        if (interactionScript != null)
+        {
+            interactionScript.OnInteract += OpenHub;
+        }
+        player = GameObject.FindWithTag("Player");
+        animator = player.GetComponent<Animator>();
+        vThirdPersonController = player.GetComponent<vThirdPersonController>();
+        vShooterMeleeInput = player.GetComponent<vShooterMeleeInput>();
+        rigidbody = player.GetComponent<Rigidbody>();
+
+        mainCamera = GameObject.Find("vThirdPersonCamera");
+        vThirdPersonCamera = mainCamera.GetComponent<vThirdPersonCamera>();
     }
 
     void OnDestroy()
@@ -307,6 +311,7 @@ public class MissionHub : MonoBehaviour
                 else if(clickedObject == hubInterface.missionLaunchButton )
                 {
                     Debug.Log("Launch");
+                    mission1.LaunchMission();
                 }
             }
         }

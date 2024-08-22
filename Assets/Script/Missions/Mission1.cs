@@ -7,6 +7,11 @@ public class Mission1 : IMission
     {
     }
 
+    public void LaunchMission()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

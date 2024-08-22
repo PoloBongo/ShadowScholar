@@ -25,14 +25,34 @@ public class AutoAddMeshCollider : MonoBehaviour
     {
         foreach (Transform child in parent)
         {
-            if (child.GetComponent<MeshRenderer>() != null)
+            if (child.name.Contains("(POLY FEW)"))
             {
-                if (child.GetComponent<MeshRenderer>() != null && child.GetComponent<MeshCollider>() == null)
+                if (child.GetComponent<Renderer>() != null)
                 {
-                    child.gameObject.AddComponent<MeshCollider>();
+                    Collider[] colliders = child.GetComponents<Collider>();
+                    bool no_collider = true;
+                    foreach (Collider collider in colliders)
+                    {
+                        if (!collider.isTrigger)
+                        {
+                            if (no_collider)
+                            {
+                                no_collider = false;
+                            }
+                            else
+                            {
+                                DestroyImmediate(collider);
+                            }
+                        }
+                    }
+
+                    if (colliders.Length == 0 || no_collider)
+                    {
+                        child.gameObject.AddComponent<MeshCollider>();
+                    }
                 }
+                AutoAddMeshColliderFunction(child);
             }
-            AutoAddMeshColliderFunction(child);
         }
     }
 }

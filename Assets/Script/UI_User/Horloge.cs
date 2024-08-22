@@ -35,8 +35,6 @@ public class Horloge : MonoBehaviour
         Vector3 currentRotation = transform.localEulerAngles;
         transform.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, angle);
 
-        Debug.Log(percentageComplete);
-
         if (percentageComplete > 0.37f)
         {
             SetIntensityNight(percentageComplete, 0.37f, 1f, 0f);

@@ -14,6 +14,8 @@ public class JsonFile : MonoBehaviour
     {
         public KinematicStart kinematicStart;
         public InputSettings inputSettings;
+        public Horloge horloge;
+        public Mission mission;
     }
     [System.Serializable]
     public class KinematicStart
@@ -48,6 +50,18 @@ public class JsonFile : MonoBehaviour
         public string slideDownClimbInput;
         public string hideWeaponInput;
     }
+    [System.Serializable]
+    public class Horloge
+    {
+        public float time;
+    }
+
+    [System.Serializable]
+    public class Mission
+    {
+        public bool isStart;
+        public bool isFinish;
+    }
 
     private string filePath;
     public ShadowScholar shadowScholar;
@@ -62,7 +76,7 @@ public class JsonFile : MonoBehaviour
 
         if (File.Exists(filePath))
         {
-            ReadJsonFile();
+            ReadJsonFile(filePath);
         }
         else
         {
@@ -104,6 +118,15 @@ public class JsonFile : MonoBehaviour
                 fastClimbInput = "LeftShift",
                 slideDownClimbInput = "Q",
                 hideWeaponInput = "H"
+            },
+            horloge = new Horloge()
+            {
+                time = 0f
+            },
+            mission = new Mission()
+            {
+                isStart = false,
+                isFinish = false
             }
         };
 
@@ -111,7 +134,7 @@ public class JsonFile : MonoBehaviour
         Debug.Log("Fichier json crée");
     }
 
-    public void ReadJsonFile()
+    public void ReadJsonFile(string filePath)
     {
         if (filePath == "")
         {
@@ -124,7 +147,7 @@ public class JsonFile : MonoBehaviour
         }
     }
 
-    void SaveJson()
+    public void SaveJson()
     {
         string json = JsonUtility.ToJson(shadowScholar, true);
         File.WriteAllText(filePath, json, System.Text.Encoding.UTF8);
@@ -139,12 +162,19 @@ public class JsonFile : MonoBehaviour
         return shadowScholar.kinematicStart.isFinish;
     }
 
+    public bool ReadMissionIsStartJsonFile()
+    {
+        string json = File.ReadAllText(filePath);
+        shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
+
+        return shadowScholar.mission.isStart;
+    }
+
     public void UpdateKinematicStartDataJson(bool _isFinish)
     {
         if (shadowScholar != null)
         {
             shadowScholar.kinematicStart.isFinish = _isFinish;
-
             SaveJson();
         } else { Debug.Log("shadowScholar est null"); }
     }

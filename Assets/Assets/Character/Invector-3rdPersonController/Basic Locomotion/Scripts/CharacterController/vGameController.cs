@@ -35,7 +35,7 @@ namespace Invector
 
         protected virtual void Start()
         {
-            if (instance == null)
+/*            if (instance == null)
             {
                 instance = this;
                 if (dontDestroyOnLoad)
@@ -49,7 +49,7 @@ namespace Invector
             {
                 Destroy(this.gameObject);
                 return;
-            }
+            }*/
 
             SceneManager.sceneLoaded += OnLevelFinishedLoading;
             if (displayInfoInFadeText && vHUDController.instance)

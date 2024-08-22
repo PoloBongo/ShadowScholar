@@ -27,7 +27,7 @@ public class LoadInput : MonoBehaviour
 
         if (File.Exists(filePath))
         {
-            jsonFile.ReadJsonFile();
+            jsonFile.ReadJsonFile(filePath);
         }
     }
 

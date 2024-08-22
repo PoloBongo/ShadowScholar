@@ -22,6 +22,10 @@ public class LoadManager : MonoBehaviour
                 {
                     StartCoroutine(PreloadSceneAndAssetsGame("Game"));
                 }
+                else if (jsonFile.ReadMissionIsStartJsonFile())
+                {
+                    StartCoroutine(PreloadSceneAndAssetsMission1("Mission1"));
+                }
                 else
                 {
                     StartCoroutine(PreloadSceneAndAssetsKinematicStart("Kinematic"));
@@ -46,6 +50,7 @@ public class LoadManager : MonoBehaviour
         }
     }
 
+    #region LoadSceneGame
     IEnumerator PreloadSceneAndAssetsGame(string sceneName)
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -102,7 +107,7 @@ public class LoadManager : MonoBehaviour
         // Instanciation des assets dans la nouvelle scène
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 4));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Roads, 2, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Zone_1", Zones, 3, 3));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 3));
 
         if (transitionUI != null)
         {
@@ -113,7 +118,8 @@ public class LoadManager : MonoBehaviour
         loadingText.text = "Nettoyage de la scène de chargement...";
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
-
+    #endregion
+    #region LoadSceneKinematicStart
     IEnumerator PreloadSceneAndAssetsKinematicStart(string sceneName)
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -223,7 +229,77 @@ public class LoadManager : MonoBehaviour
         loadingText.text = "Nettoyage de la scène de chargement...";
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
+    #endregion
+    #region LoadSceneMission1
 
+    IEnumerator PreloadSceneAndAssetsMission1(string sceneName)
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        loadingSlider.gameObject.SetActive(true);
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        loadingText.text = "Préparation des assets nécessaire";
+        // Charger la scène en arrière-plan sans l'activer
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        operation.allowSceneActivation = false;
+
+        // Une fois chargé à 90% on peut activer la scène
+        while (operation.progress < 0.9f)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                break;
+            }
+            yield return null;
+        }
+        loadingSlider.value = 90f;
+
+        loadingText.color = Color.red;
+        loadingText.text = $"Chargement de la scène : {operation.progress * 100:F0}%";
+        operation.allowSceneActivation = true;
+
+        // Attendre que la scène soit complètement activée pour passer à l'étape suivante
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        // on la met comme active comme ça on peut charger les assets dedans
+        Scene targetScene = SceneManager.GetSceneByName(sceneName);
+        if (targetScene.IsValid())
+        {
+            SceneManager.SetActiveScene(targetScene);
+        }
+
+        GameObject transitionUI = GameObject.Find("TransitionUI");
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(false);
+        }
+
+        GameObject AllHub = GameObject.Find("AllHub");
+        if (AllHub == null)
+        {
+            Debug.LogError("GameObject missing in the scene.");
+            yield break;
+        }
+
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        // Instanciation des assets dans la nouvelle scène
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission1/Basic_Hive", AllHub, 1, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission1/Hub", AllHub, 2, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission1/MeleeCombat_Hive", AllHub, 3, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission1/Shooter_Hive", AllHub, 4, 4));
+
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
+
+        // on enlève de force la scène de chargement pour éviter tout soucis
+        loadingText.text = "Nettoyage de la scène de chargement...";
+        SceneManager.UnloadSceneAsync(sceneIndex);
+    }
+    #endregion
     IEnumerator LoadAndInstantiateAssetAsync(string assetPath, GameObject parentObject, int assetIndex, int totalAssets)
     {
         Debug.Log($"Attempting to load {assetPath}");

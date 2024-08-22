@@ -5,6 +5,7 @@ using UnityEngine;
 public class JsonInput : MonoBehaviour
 {
     [SerializeField] JsonFile jsonFile;
+    #region TMP InputField
     [System.Serializable]
     public class TMP_InputFieldClass
     {
@@ -43,6 +44,7 @@ public class JsonInput : MonoBehaviour
         public TMP_InputField hideWeaponInputText;
     }
     public TMP_InputFieldClass tmp_InputFieldClass;
+    #endregion
     private string filePath;
     void Start()
     {
@@ -50,7 +52,7 @@ public class JsonInput : MonoBehaviour
 
         if (File.Exists(filePath))
         {
-            jsonFile.ReadJsonFile();
+            jsonFile.ReadJsonFile(filePath);
             setAllInputText();
         }
         else

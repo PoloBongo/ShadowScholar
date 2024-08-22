@@ -8,17 +8,17 @@ namespace Invector
         AudioSource _audioSource;
         public AudioClip _audioClip;
         public GameObject _particle;
-        private int countItemPickup;
         private GameObject Door_Prefab_Melee;
         private GameObject Lock_Prefab_Melee;
 
         private GameObject Door_Prefab_Shooter;
         private GameObject Lock_Prefab_Shooter;
+        private objectCollectableCount objectCollectableCount;
 
         void Start()
         {
             _audioSource = GetComponent<AudioSource>();
-            countItemPickup = 0;
+            objectCollectableCount = GetComponentInParent<objectCollectableCount>();
         }
 
         void OnTriggerEnter(Collider other)
@@ -30,10 +30,11 @@ namespace Invector
                     r.enabled = false;
 
                 _audioSource.PlayOneShot(_audioClip);
-                countItemPickup++;
-                if (countItemPickup == 1 || countItemPickup >= 1)
+                objectCollectableCount.Incremente();
+                Debug.Log(objectCollectableCount.count);
+                if (objectCollectableCount.count == 10 || objectCollectableCount.count >= 10)
                     openDoorMelee();
-                if (countItemPickup == 0 || countItemPickup >= 0)
+                if (objectCollectableCount.count == 17 || objectCollectableCount.count >= 17)
                     openDoorShooter();
                 Destroy(gameObject, _audioClip.length);
             }

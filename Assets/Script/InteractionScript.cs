@@ -136,17 +136,20 @@ public class InteractionScript : MonoBehaviour
 
 	void HideText()
 	{
-		if (!interactTexts.enabled)
-			return;
-		if (interactTexts.TextPrefab != null)
-		{
-			TextObj.enabled = false;
-		}
-		else
-		{
-			interactTexts.enabled = false;
-		}
-	}
+        if (!interactTexts.enabled)
+            return;
+        if (interactTexts.TextPrefab != null)
+        {
+            if (TextObj != null)
+            {
+                TextObj.enabled = false;
+            }
+        }
+        else
+        {
+            interactTexts.enabled = false;
+        }
+    }
 	#endregion
 
 	private void OnDisable()

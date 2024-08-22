@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MissionHub : MonoBehaviour
 {
@@ -66,6 +67,8 @@ public class MissionHub : MonoBehaviour
     private int nextMissionNum;
     Mission1 mission1;
 
+    private GameObject jsonSaveGameObject;
+    private JsonFile jsonSave;
 
     void Start()
     {
@@ -98,6 +101,10 @@ public class MissionHub : MonoBehaviour
 
         mainCamera = GameObject.Find("vThirdPersonCamera");
         vThirdPersonCamera = mainCamera.GetComponent<vThirdPersonCamera>();
+
+        jsonSaveGameObject = GameObject.Find("Save");
+        jsonSave = jsonSaveGameObject.GetComponent<JsonFile>();
+
     }
 
     void OnDestroy()
@@ -310,8 +317,10 @@ public class MissionHub : MonoBehaviour
                 }
                 else if(clickedObject == hubInterface.missionLaunchButton )
                 {
-                    Debug.Log("Launch");
-                    mission1.LaunchMission();
+                    jsonSave.shadowScholar.mission.isStart = true;
+                    jsonSave.SaveJson();
+                    SceneManager.LoadScene(2);
+                    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                 }
             }
         }

@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 
 public class Horloge : MonoBehaviour
@@ -14,9 +15,24 @@ public class Horloge : MonoBehaviour
     [SerializeField] private Material nightSkybox;
     public float percentageComplete;
 
+    private GameObject jsonFileGamObject;
+    private JsonFile jsonFile;
+    private string filePath;
+
     void Start()
     {
         startTime = Time.time;
+        jsonFileGamObject = GameObject.Find("Save");
+        filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
+        if (jsonFileGamObject != null )
+        {
+            jsonFile = jsonFileGamObject.GetComponent<JsonFile>();
+            if (jsonFile != null)
+            {
+                jsonFile.ReadJsonFile(filePath);
+                SetTimeManually(jsonFile.shadowScholar.horloge.time);
+            }
+        }
     }
 
     void Update()
@@ -105,5 +121,12 @@ public class Horloge : MonoBehaviour
             RenderSettings.skybox = newSkybox;
             DynamicGI.UpdateEnvironment();
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        jsonFile.shadowScholar.horloge.time = percentageComplete;
+        jsonFile.SaveJson();
+        Debug.Log("Application ending after " + Time.time + " seconds");
     }
 }

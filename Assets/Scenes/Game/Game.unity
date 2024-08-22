@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983207762085400733, guid: a433524a8b01e3b428f1b0ee82dd22ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1983207762085400733, guid: a433524a8b01e3b428f1b0ee82dd22ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -256,15 +256,15 @@ PrefabInstance:
     - target: {fileID: 1983207762085400733, guid: a433524a8b01e3b428f1b0ee82dd22ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2371222422065140436}
+      objectReference: {fileID: 0}
     - target: {fileID: 1983207762085400733, guid: a433524a8b01e3b428f1b0ee82dd22ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 2371222422065140436}
+      objectReference: {fileID: 0}
     - target: {fileID: 1983207762085400733, guid: a433524a8b01e3b428f1b0ee82dd22ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 2371222422065140436}
+      objectReference: {fileID: 0}
     - target: {fileID: 1983207762085400733, guid: a433524a8b01e3b428f1b0ee82dd22ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -775,10 +775,13 @@ MonoBehaviour:
       hideWeaponInput: 
     horloge:
       time: 0
-    mission:
-      isStart: 0
-      isFinish: 0
-    isFirstConnexion: 0
+    missions:
+      mission1:
+        isStart: 0
+        isFinish: 0
+      mission2:
+        isStart: 0
+        isFinish: 0
   isForInputSettings: 0
   inputFields: []
 --- !u!4 &1063183821
@@ -971,285 +974,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1908287060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2030724844
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 66652991356527547, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 200622350979998560, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 322349149681339371, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 527756980633645698, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 544514865123640500, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 606136938669340287, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 607152204512054065, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 687000304504686844, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 725873970304794603, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 801444867294949829, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 829245156659297912, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 888897500511686466, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223872587134896452, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682191773211968904, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: loadManager
-      value: 
-      objectReference: {fileID: 1614958193591220067, guid: ae03a8578349a3f4f8cf1565837bd022, type: 3}
-    - target: {fileID: 2073946096529336941, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2205418827120385207, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2365818738143941964, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2371222421948085304, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_Name
-      value: Zone_18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2371222421948085304, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455306568650661554, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481282458001497085, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523635202277083568, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2558312704934583121, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 317.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 228.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814200633419137255, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2921956484025565750, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3222572083130312184, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3293306518563570615, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461235362471071015, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466751712965718890, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469905479973746364, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544005703802588736, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649069635361898178, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4901289785134054557, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022383180283188382, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_Name
-      value: Chair_PD_01_02_Interact
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500749751717433181, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: interactTexts.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5574368977502306169, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5778275347637295757, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5946691051979503598, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310245818369997453, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6570461538226677054, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6679781665325770517, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6893166043032209642, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326065367426415106, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7339107889185605983, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521270454288051991, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7523102902209139681, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7575187235098051237, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7685095165244879460, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7886389327487803263, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016267629305902245, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415225809112518951, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572883006337692589, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778455525824507252, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8940143627922890676, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096041926524330057, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9147013922956596075, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-      propertyPath: m_genaManagerExists
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 109765176449196572, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
---- !u!1 &2371222422065140436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2371222421948085304, guid: 47e962d7f5162d743a2a2cd5b8e8fd01, type: 3}
-  m_PrefabInstance: {fileID: 2030724844}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5532468437317684935
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,4 +1032,3 @@ SceneRoots:
   - {fileID: 5532468437317684935}
   - {fileID: 1063183821}
   - {fileID: 792369843}
-  - {fileID: 2030724844}

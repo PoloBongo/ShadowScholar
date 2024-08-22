@@ -66,6 +66,7 @@ public class MissionHub : MonoBehaviour
     private List<IMission> missions = new List<IMission>();
     private int nextMissionNum;
     Mission1 mission1;
+    Mission2 mission2;
 
     private GameObject jsonSaveGameObject;
     private JsonFile jsonSave;
@@ -82,9 +83,9 @@ public class MissionHub : MonoBehaviour
 
         layerMask = LayerMask.GetMask("UI");
 
-        mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
+/*        mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
         missions.Add(mission1);
-        ChangeNextMissionNum(1);
+        ChangeNextMissionNum(1);*/
     }
 
     public void InitMissionHub()
@@ -105,6 +106,26 @@ public class MissionHub : MonoBehaviour
         jsonSaveGameObject = GameObject.Find("Save");
         jsonSave = jsonSaveGameObject.GetComponent<JsonFile>();
 
+        setInfoActualMission();
+    }
+
+    private void setInfoActualMission()
+    {
+        if (!jsonSave.shadowScholar.missions.mission1.isFinish)
+        {
+            mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
+            missions.Add(mission1);
+        }
+        else
+        {
+            if (!jsonSave.shadowScholar.missions.mission2.isFinish)
+            {
+                mission2 = new Mission2(2, "Repérage", "Finissez le parcours", "Mission1/Localization");
+                missions.Add(mission2);
+            }
+        }
+
+        ChangeNextMissionNum(1);
     }
 
     void OnDestroy()
@@ -317,7 +338,18 @@ public class MissionHub : MonoBehaviour
                 }
                 else if(clickedObject == hubInterface.missionLaunchButton )
                 {
-                    jsonSave.shadowScholar.mission.isStart = true;
+                    hubInterface.missionLaunchText.text = "Lancement en cours...";
+                    switch (nextMissionNum)
+                    {
+                        case 1:
+                            if (!jsonSave.shadowScholar.missions.mission1.isFinish)
+                                jsonSave.shadowScholar.missions.mission1.isStart = true;
+                            break;
+                        case 2:
+                            if (!jsonSave.shadowScholar.missions.mission2.isFinish)
+                                jsonSave.shadowScholar.missions.mission2.isStart = true;
+                            break;
+                    }
                     jsonSave.SaveJson();
                     SceneManager.LoadScene(2);
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

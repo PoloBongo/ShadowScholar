@@ -22,7 +22,7 @@ public class objectCollectableCount : MonoBehaviour
         count++;
         if (count >= 20)
         {
-            jsonFile.shadowScholar.mission.isFinish = true;
+            jsonFile.shadowScholar.missions.mission1.isFinish = true;
             jsonFile.SaveJson();
             SceneManager.LoadScene(2);
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

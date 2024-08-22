@@ -11,6 +11,7 @@ public class Horloge : MonoBehaviour
     private bool timeAdjustedManually = false;
 
     [SerializeField] Light directionalLight;
+    private GameObject foundDirectionalLight;
     [SerializeField] private Material daySkybox;
     [SerializeField] private Material nightSkybox;
     public float percentageComplete;
@@ -32,6 +33,12 @@ public class Horloge : MonoBehaviour
                 jsonFile.ReadJsonFile(filePath);
                 SetTimeManually(jsonFile.shadowScholar.horloge.time);
             }
+        }
+
+        if (directionalLight == null)
+        {
+            foundDirectionalLight = GameObject.Find("Directional Light");
+            directionalLight = foundDirectionalLight.GetComponent<Light>();
         }
     }
 

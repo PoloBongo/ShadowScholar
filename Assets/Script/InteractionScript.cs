@@ -107,12 +107,12 @@ public class InteractionScript : MonoBehaviour
 
 	bool PLayerIsLookingAtDoorKnob()
 	{
-		Vector3 forward = player.TransformDirection(Vector3.back);
-		Vector3 thisTransform = knob.position - player.transform.position;
+        Vector3 forward = player.TransformDirection(Vector3.back);
+        Vector3 thisTransform = knob.position - player.transform.position;
 
-		float dotProd = Vector3.Dot(forward.normalized, thisTransform.normalized);
-		return (dotProd < 0 && dotProd < -0.9f);
-	}
+        float dotProd = Vector3.Dot(forward.normalized, thisTransform.normalized);
+        return (dotProd < 0 && dotProd < -0.9f);
+    }
 
 
 

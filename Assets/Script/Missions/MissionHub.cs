@@ -351,8 +351,8 @@ public class MissionHub : MonoBehaviour
                             break;
                     }
                     jsonSave.SaveJson();
-                    SceneManager.LoadScene(2);
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+                    SceneManager.LoadScene(2);
                 }
             }
         }

@@ -114,9 +114,10 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 3));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Roads, 2, 3));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 3));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 2, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_18", Zones, 4, 4));
 
         if (transitionUI != null)
         {
@@ -226,7 +227,7 @@ public class LoadManager : MonoBehaviour
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/House_E_6_1", Zone_15, 32, 35));
 
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 33, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Other", Roads, 34, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 34, 35));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/KinematicController", null, 35, 35));
 
         if (transitionUI != null)
@@ -309,7 +310,6 @@ public class LoadManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
     #endregion
-
     #region LoadSceneMission2
 
     IEnumerator PreloadSceneAndAssetsMission2(string sceneName)

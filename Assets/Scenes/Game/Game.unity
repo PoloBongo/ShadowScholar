@@ -796,11 +796,10 @@ MonoBehaviour:
       time: 0
     missions:
       mission1:
-        isStart: 0
         isFinish: 0
       mission2:
-        isStart: 0
         isFinish: 0
+      isStart: 0
   isForInputSettings: 0
   inputFields: []
 --- !u!4 &1063183821
@@ -911,6 +910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1908287060}
   - component: {fileID: 1908287059}
+  - component: {fileID: 1908287061}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -962,6 +962,20 @@ Transform:
   - {fileID: 2001829922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908287061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908287058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a985c6608b9164cbf3e2af49ed10ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 1063183820}
+  isMainMenu: 0
 --- !u!1 &2001829921
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,13 +1000,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001829921}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 25, y: 0.012, z: 25}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1595.54, y: 15.34, z: 644.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1908287060}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &5532468437317684935
 Transform:
   m_ObjectHideFlags: 0

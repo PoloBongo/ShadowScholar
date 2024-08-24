@@ -18,16 +18,17 @@ public class LoadManager : MonoBehaviour
             // Commencer à charger la scène en arrière-plan //
             if (jsonFile != null)
             {
-                if (jsonFile.ReadMission1IsStartJsonFile() && !jsonFile.shadowScholar.missions.mission1.isFinish)
+                if (jsonFile.shadowScholar.missions.isStart && !jsonFile.shadowScholar.missions.mission1.isFinish)
                 {
                     StartCoroutine(PreloadSceneAndAssetsMission1("Mission1"));
                 }
                 else
                 {
-                    if (jsonFile.ReadMission2IsStartJsonFile() && !jsonFile.shadowScholar.missions.mission2.isFinish)
+                    if (jsonFile.shadowScholar.missions.isStart && !jsonFile.shadowScholar.missions.mission2.isFinish)
                     {
                         StartCoroutine(PreloadSceneAndAssetsMission2("Mission2"));
-                    } else
+                    }
+                    else
                     {
                         if (jsonFile.ReadKinematicStartJsonFile())
                         {
@@ -357,7 +358,8 @@ public class LoadManager : MonoBehaviour
         }
 
         GameObject AllHub = GameObject.Find("AllHub");
-        if (AllHub == null)
+        GameObject IA = GameObject.Find("IA");
+        if (AllHub == null || IA == null)
         {
             Debug.LogError("GameObject missing in the scene.");
             yield break;
@@ -365,10 +367,19 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/", AllHub, 1, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/", AllHub, 2, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/", AllHub, 3, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/", AllHub, 4, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 2, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 11));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_1", IA, 4, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_2", IA, 5, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_3", IA, 6, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_4", IA, 7, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_5", IA, 8, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_Boss", IA, 9, 11));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vEnemyAI_1", IA, 10, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vEnemyAI_2", IA, 11, 11));
 
         if (transitionUI != null)
         {

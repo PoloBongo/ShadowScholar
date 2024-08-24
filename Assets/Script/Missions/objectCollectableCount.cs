@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,6 +26,7 @@ public class objectCollectableCount : MonoBehaviour
         if (count >= 20)
         {
             jsonFile.shadowScholar.missions.mission1.isFinish = true;
+            jsonFile.shadowScholar.missions.isStart = false;
             jsonFile.SaveJson();
             if (missionSuccess != null)
                 hudPlayer = GameObject.Find("InvectorComponents");

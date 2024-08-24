@@ -65,6 +65,7 @@ public class MissionHub : MonoBehaviour
 
     private List<IMission> missions = new List<IMission>();
     private int nextMissionNum;
+    private int nextMissionInfo = 1;
     Mission1 mission1;
     Mission2 mission2;
 
@@ -115,6 +116,7 @@ public class MissionHub : MonoBehaviour
         {
             mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
             missions.Add(mission1);
+            nextMissionInfo = 1;
         }
         else
         {
@@ -122,6 +124,7 @@ public class MissionHub : MonoBehaviour
             {
                 mission2 = new Mission2(2, "Repérage", "Finissez le parcours", "Mission1/Localization");
                 missions.Add(mission2);
+                nextMissionInfo = 2;
             }
         }
 
@@ -339,15 +342,15 @@ public class MissionHub : MonoBehaviour
                 else if(clickedObject == hubInterface.missionLaunchButton )
                 {
                     hubInterface.missionLaunchText.text = "Lancement en cours...";
-                    switch (nextMissionNum)
+                    switch (nextMissionInfo)
                     {
                         case 1:
                             if (!jsonSave.shadowScholar.missions.mission1.isFinish)
-                                jsonSave.shadowScholar.missions.mission1.isStart = true;
+                                jsonSave.shadowScholar.missions.isStart = true;
                             break;
                         case 2:
                             if (!jsonSave.shadowScholar.missions.mission2.isFinish)
-                                jsonSave.shadowScholar.missions.mission2.isStart = true;
+                                jsonSave.shadowScholar.missions.isStart = true;
                             break;
                     }
                     jsonSave.SaveJson();

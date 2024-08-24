@@ -61,19 +61,18 @@ public class JsonFile : MonoBehaviour
     {
         public Mission1 mission1;
         public Mission2 mission2;
+        public bool isStart;
     }
 
     [System.Serializable]
     public class Mission1
     {
-        public bool isStart;
         public bool isFinish;
     }
 
     [System.Serializable]
     public class Mission2
     {
-        public bool isStart;
         public bool isFinish;
     }
 
@@ -141,14 +140,13 @@ public class JsonFile : MonoBehaviour
             {
                 mission1 = new Mission1()
                 {
-                    isStart = false,
                     isFinish = false
                 },
                 mission2 = new Mission2()
                 {
-                    isStart = false,
                     isFinish = false
-                }
+                },
+                isStart = false
             }
         };
 
@@ -182,22 +180,6 @@ public class JsonFile : MonoBehaviour
         shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
 
         return shadowScholar.kinematicStart.isFinish;
-    }
-
-    public bool ReadMission1IsStartJsonFile()
-    {
-        string json = File.ReadAllText(filePath);
-        shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
-
-        return shadowScholar.missions.mission1.isStart;
-    }
-
-    public bool ReadMission2IsStartJsonFile()
-    {
-        string json = File.ReadAllText(filePath);
-        shadowScholar = JsonUtility.FromJson<ShadowScholar>(json);
-
-        return shadowScholar.missions.mission2.isStart;
     }
 
     public void UpdateKinematicStartDataJson(bool _isFinish)

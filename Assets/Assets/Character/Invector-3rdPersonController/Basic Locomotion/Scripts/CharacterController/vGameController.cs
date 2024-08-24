@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Invector
 {
+    using System.Collections.Generic;
     using UnityEngine.Events;
     using vCharacterController;
     [vClassHeader("Simple GameController Example", openClose = false)]
@@ -32,6 +33,14 @@ namespace Invector
 
         public UnityEvent onSpawn;
         public bool dontDestroyOnLoad = true;
+
+        [System.Serializable]
+        public class GetActiveScene
+        {
+            public string sceneName;
+        }
+
+        public GetActiveScene getActiveSceneName;
 
         protected virtual void Start()
         {
@@ -275,6 +284,11 @@ namespace Invector
                 if (displayInfoInFadeText && vHUDController.instance)
                 {
                     vHUDController.instance.ShowText("Spawn player: " + currentPlayer.name.Replace("(Clone)", ""));
+                }
+                Activation playerActivation = currentPlayer.GetComponent<Activation>();
+                if (playerActivation)
+                {
+                    playerActivation.sceneName = getActiveSceneName.sceneName;
                 }
             }
         }

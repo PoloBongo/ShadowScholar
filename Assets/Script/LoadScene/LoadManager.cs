@@ -351,7 +351,7 @@ public class LoadManager : MonoBehaviour
             SceneManager.SetActiveScene(targetScene);
         }
 
-        GameObject transitionUI = GameObject.Find("TransitionUI");
+        GameObject transitionUI = GameObject.Find("TransitionUIForKinematic");
         if (transitionUI != null)
         {
             transitionUI.SetActive(false);

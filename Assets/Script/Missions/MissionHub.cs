@@ -341,6 +341,7 @@ public class MissionHub : MonoBehaviour
                 }
                 else if(clickedObject == hubInterface.missionLaunchButton )
                 {
+                    hubInterface.missionLaunchText.fontSize = 0.18f;
                     hubInterface.missionLaunchText.text = "Lancement en cours...";
                     switch (nextMissionInfo)
                     {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace Invector.vCharacterController.AI
 {
@@ -10,6 +11,13 @@ namespace Invector.vCharacterController.AI
         protected bool getFromDistance;
         protected float lastDetectionDistance;
 
+        private GameObject gameController;
+        private MissionManager missionManager;
+
+        [vEditorToolbar("Mission")]
+        public bool detectionCanFailedMission;
+        public int indexMission;
+
         protected virtual void Start()
         {
             targetsInArea = new List<Transform>();
@@ -19,6 +27,7 @@ namespace Invector.vCharacterController.AI
         {
             if (!targetsInArea.Contains(_transform))
             {
+                Debug.Log("OLY SHEEEEEEEEEEET PRINT TOI ZBI");
                 targetsInArea.Add(_transform);
             }
         }
@@ -36,6 +45,7 @@ namespace Invector.vCharacterController.AI
         {
             if (targetsInArea.Count > 0)
             {
+                Debug.Log("OLY SHEEEEEEEEEEET PRINT TOI ZBI 2");
                 SortTargets();
                 if (targetsInArea.Count > 0)
                 {
@@ -83,6 +93,10 @@ namespace Invector.vCharacterController.AI
                     return Vector3.Distance(this.transform.position, c1 != null ? c1.transform.position : Vector3.one * Mathf.Infinity).CompareTo
                         ((Vector3.Distance(this.transform.position, c2 != null ? c2.transform.position : Vector3.one * Mathf.Infinity)));
                 });
+            }
+            if (detectionCanFailedMission)
+            {
+                FailedMission(indexMission);
             }
         }
 
@@ -150,6 +164,16 @@ namespace Invector.vCharacterController.AI
         //    if (tagsToDetect.Contains(other.gameObject.tag) && targetsInArea.Contains(other.transform))
         //        targetsInArea.Remove(other);
         //}
+
+        public virtual void FailedMission(int indexMission)
+        {
+            gameController = GameObject.Find("GameController");
+            if(gameController != null)
+            {
+                missionManager = gameController.GetComponent<MissionManager>();
+                missionManager.MissionStatus("Failed", indexMission);
+            } else { Debug.Log("GameController null"); }
+        }
     }
 }
 

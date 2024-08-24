@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using static JsonInput;
 
 namespace Invector
 {
@@ -14,6 +15,14 @@ namespace Invector
         private GameObject Door_Prefab_Shooter;
         private GameObject Lock_Prefab_Shooter;
         private objectCollectableCount objectCollectableCount;
+
+        [System.Serializable]
+        public class CheckMission
+        {
+            public bool isForMission1;
+            public bool isForMission2;
+        }
+        public CheckMission checkMission;
 
         void Start()
         {
@@ -30,13 +39,19 @@ namespace Invector
                     r.enabled = false;
 
                 _audioSource.PlayOneShot(_audioClip);
-                objectCollectableCount.Incremente();
-                Debug.Log(objectCollectableCount.count);
-                if (objectCollectableCount.count == 10 || objectCollectableCount.count >= 10)
-                    openDoorMelee();
-                if (objectCollectableCount.count == 17 || objectCollectableCount.count >= 17)
-                    openDoorShooter();
                 Destroy(gameObject, _audioClip.length);
+                if(checkMission.isForMission1)
+                {
+                    objectCollectableCount.IncrementeMission1();
+                    if (objectCollectableCount.count == 11 || objectCollectableCount.count >= 11)
+                        openDoorMelee();
+                    if (objectCollectableCount.count == 17 || objectCollectableCount.count >= 17)
+                        openDoorShooter();
+                }
+                else if (checkMission.isForMission2)
+                {
+                    objectCollectableCount.IncrementeMission2();
+                }
             }
         }
 

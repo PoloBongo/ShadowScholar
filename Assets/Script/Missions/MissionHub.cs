@@ -107,10 +107,10 @@ public class MissionHub : MonoBehaviour
         jsonSaveGameObject = GameObject.Find("Save");
         jsonSave = jsonSaveGameObject.GetComponent<JsonFile>();
 
-        setInfoActualMission();
+        SetInfoActualMission();
     }
 
-    private void setInfoActualMission()
+    private void SetInfoActualMission()
     {
         if (!jsonSave.shadowScholar.missions.mission1.isFinish)
         {
@@ -341,7 +341,7 @@ public class MissionHub : MonoBehaviour
                 }
                 else if(clickedObject == hubInterface.missionLaunchButton )
                 {
-                    hubInterface.missionLaunchText.fontSize = 0.18f;
+                    hubInterface.missionLaunchText.fontSize = 0.17f;
                     hubInterface.missionLaunchText.text = "Lancement en cours...";
                     switch (nextMissionInfo)
                     {

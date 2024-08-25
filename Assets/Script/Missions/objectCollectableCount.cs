@@ -11,6 +11,7 @@ public class objectCollectableCount : MonoBehaviour
     public void IncrementeMission1()
     {
         count++;
+        objectifMission.ShowTextMotivation();
         if (count <= 11)
         {
             objectifMission.UpdateObjectif(0, 1);
@@ -28,5 +29,6 @@ public class objectCollectableCount : MonoBehaviour
     public void IncrementeMission2()
     {
         objectifMission.UpdateObjectif(0, 1);
+        objectifMission.ShowTextMotivation();
     }
 }

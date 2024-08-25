@@ -32,6 +32,7 @@ public class DetectionObject : MonoBehaviour
                 if (!objectIsView)
                 {
                     objectifMission.UpdateObjectif(1, 1);
+                    objectifMission.ShowTextMotivation();
                     objectIsView = true;
                 }
             }

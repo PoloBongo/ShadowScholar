@@ -15,6 +15,7 @@ public class MissionManager : MonoBehaviour
     [SerializeField] List<TMP_Text> objectifs = new List<TMP_Text>();
     private GameObject HUDPlayer;
     public GenericInput openObjectif = new GenericInput("F1", "Start", "Start");
+    public GenericInput closeObjectif = new GenericInput("Escape", "Start", "Start");
     private bool isOpen = false;
 
     private string filePath;
@@ -69,9 +70,8 @@ public class MissionManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    private void OpenObjectifFunction()
+    private void OpenObjectifFunction(bool isOpen)
     {
-        isOpen = !isOpen;
         objectifUI.SetActive(isOpen);
     }
 
@@ -79,7 +79,13 @@ public class MissionManager : MonoBehaviour
     {
         if (openObjectif.GetButtonDown())
         {
-            OpenObjectifFunction();
+            isOpen = !isOpen;
+            OpenObjectifFunction(isOpen);
+        }
+        if (closeObjectif.GetButtonDown())
+        {
+            isOpen = false;
+            OpenObjectifFunction(isOpen);
         }
     }
 

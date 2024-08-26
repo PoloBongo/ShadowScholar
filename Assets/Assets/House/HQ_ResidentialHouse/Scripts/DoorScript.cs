@@ -458,5 +458,10 @@ public class DoorScript : MonoBehaviour {
 		if (controls.openMethod == OpenStyle.BUTTON && !controls.autoClose) 
 			HideText();
 	}
-	
+
+
+    private void OnDestroy()
+    {
+		DestroyImmediate(doorTexts.TextPrefab);
+    }
 }

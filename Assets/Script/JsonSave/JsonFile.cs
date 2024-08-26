@@ -62,6 +62,7 @@ public class JsonFile : MonoBehaviour
     {
         public Mission1 mission1;
         public Mission2 mission2;
+        public Mission3 mission3;
         public bool isStart;
     }
 
@@ -73,6 +74,12 @@ public class JsonFile : MonoBehaviour
 
     [System.Serializable]
     public class Mission2
+    {
+        public bool isFinish;
+    }
+    
+    [System.Serializable]
+    public class Mission3
     {
         public bool isFinish;
     }
@@ -154,6 +161,10 @@ public class JsonFile : MonoBehaviour
                 {
                     isFinish = false
                 },
+                mission3 = new Mission3()
+                {
+                    isFinish = false
+                },
                 isStart = false
             },
             area = new Area()
@@ -164,7 +175,7 @@ public class JsonFile : MonoBehaviour
         };
 
         SaveJson();
-        Debug.Log("Fichier json crée");
+        Debug.Log("Fichier json crÃ©e");
     }
 
     public void ReadJsonFile(string filePath)
@@ -184,7 +195,7 @@ public class JsonFile : MonoBehaviour
     {
         string json = JsonUtility.ToJson(shadowScholar, true);
         File.WriteAllText(filePath, json, System.Text.Encoding.UTF8);
-        Debug.Log("Données save");
+        Debug.Log("DonnÃ©es save");
     }
 
     public bool ReadKinematicStartJsonFile()
@@ -276,14 +287,14 @@ public class JsonFile : MonoBehaviour
         if (shadowScholar != null)
         {
             string input = inputContent;
-            // permet de supprimer les caractère invisible
+            // permet de supprimer les caractÃ¨re invisible
             input = input.Replace("\u200B", "");
             input = new string(input.Where(c => !char.IsControl(c) && c >= 32 && c <= 126).ToArray());
             PropertyInfo property = shadowScholar.inputSettings.GetType().GetProperty(inputName);
 
             if (property != null && property.CanWrite)
             {
-                // Affectation dynamique de la valeur à la propriété
+                // Affectation dynamique de la valeur Ã  la propriÃ©tÃ©
                 property.SetValue(shadowScholar.inputSettings, input, null);
                 SaveJson();
             }
@@ -299,7 +310,7 @@ public class JsonFile : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"Aucune propriété ou champ trouvé avec le nom '{inputName}'.");
+                    Debug.LogWarning($"Aucune propriÃ©tÃ© ou champ trouvÃ© avec le nom '{inputName}'.");
                 }
             }
         }

@@ -156,7 +156,6 @@ public class LoadManager : MonoBehaviour
         loadingText.text = $"Chargement de la scène : {operation.progress * 100:F0}%";
         operation.allowSceneActivation = true;
 
-        // Attendre que la scène soit complètement activée pour passer à l'étape suivante
         while (!operation.isDone)
         {
             yield return null;
@@ -170,7 +169,7 @@ public class LoadManager : MonoBehaviour
         }
 
         // empêche une superposition des ui
-        GameObject transitionUI = GameObject.Find("TransitionUI");
+        GameObject transitionUI = GameObject.Find("TransitionUIForKinematic");
         if (transitionUI != null)
         {
             transitionUI.SetActive(false);
@@ -190,46 +189,45 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/Exterior", Zone_1, 1, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_3", Zone_1, 2, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_4", Zone_1, 3, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_4_1", Zone_1, 4, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_6_1", Zone_1, 5, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_7", Zone_1, 6, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_A_3", Zone_1, 7, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_A_3_1", Zone_1, 8, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_A_4", Zone_1, 9, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_B_6", Zone_1, 10, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_D_4", Zone_1, 11, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_E_1", Zone_1, 12, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_E_6", Zone_1, 13, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/School", Zone_1, 14, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/Exterior", Zone_1, 1, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_3", Zone_1, 2, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_4", Zone_1, 3, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_4_1", Zone_1, 4, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_6_1", Zone_1, 5, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_7", Zone_1, 6, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_A_3", Zone_1, 7, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_A_3_1", Zone_1, 8, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_A_4", Zone_1, 9, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_B_6", Zone_1, 10, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_D_4", Zone_1, 11, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_E_1", Zone_1, 12, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/House_E_6", Zone_1, 13, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_1/School", Zone_1, 14, 34));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/Exterior", Zone_2, 15, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_4_3", Zone_2, 16, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_A_3", Zone_2, 17, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_B_4", Zone_2, 18, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_C_4_1", Zone_2, 19, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_D_3", Zone_2, 20, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_D_3_1", Zone_2, 21, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_E_4", Zone_2, 22, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/Exterior", Zone_2, 15, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_4_3", Zone_2, 16, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_A_3", Zone_2, 17, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_B_4", Zone_2, 18, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_C_4_1", Zone_2, 19, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_D_3", Zone_2, 20, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_D_3_1", Zone_2, 21, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_2/House_E_4", Zone_2, 22, 34));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/Exterior", Zone_12, 23, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_A_1", Zone_12, 24, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_C_3", Zone_12, 25, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_E_2", Zone_12, 26, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_E_3", Zone_12, 27, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/Exterior", Zone_12, 23, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_A_1", Zone_12, 24, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_C_3", Zone_12, 25, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_E_2", Zone_12, 26, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_12/House_E_3", Zone_12, 27, 34));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_14/House_2", Zone_14, 28, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_14/Exterior", Zone_14, 29, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_14/House_2", Zone_14, 28, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_14/Exterior", Zone_14, 29, 34));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/Exterior", Zone_15, 30, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/House_D_1", Zone_15, 31, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/House_E_6_1", Zone_15, 32, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/Exterior", Zone_15, 30, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/House_D_1", Zone_15, 31, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/Zone_15/House_E_6_1", Zone_15, 32, 34));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 33, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 34, 35));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Kinematic/KinematicStart/KinematicController", null, 35, 35));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 33, 34));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 34, 34));
 
         if (transitionUI != null)
         {
@@ -281,7 +279,7 @@ public class LoadManager : MonoBehaviour
             SceneManager.SetActiveScene(targetScene);
         }
 
-        GameObject transitionUI = GameObject.Find("TransitionUI");
+        GameObject transitionUI = GameObject.Find("TransitionUIForKinematic");
         if (transitionUI != null)
         {
             transitionUI.SetActive(false);
@@ -351,7 +349,7 @@ public class LoadManager : MonoBehaviour
             SceneManager.SetActiveScene(targetScene);
         }
 
-        GameObject transitionUI = GameObject.Find("TransitionUI");
+        GameObject transitionUI = GameObject.Find("TransitionUIForKinematic");
         if (transitionUI != null)
         {
             transitionUI.SetActive(false);
@@ -367,19 +365,27 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 2, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 2, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 19));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_1", IA, 4, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_2", IA, 5, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_3", IA, 6, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_4", IA, 7, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_5", IA, 8, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_Boss", IA, 9, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_1", IA, 4, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_2", IA, 5, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_3", IA, 6, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_4", IA, 7, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_5", IA, 8, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_Boss", IA, 9, 19));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vEnemyAI_1", IA, 10, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vEnemyAI_2", IA, 11, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_1", IA, 10, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_2", IA, 11, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_3", IA, 12, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_4", IA, 13, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_5", IA, 14, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_6", IA, 15, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_7", IA, 16, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_8", IA, 17, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_9", IA, 18, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_10", IA, 19, 19));
 
         if (transitionUI != null)
         {

@@ -6,42 +6,29 @@ using UnityEngine.SceneManagement;
 public class objectCollectableCount : MonoBehaviour
 {
     public int count = 0;
-    private string filePath;
-    [SerializeField] JsonFile jsonFile;
-    [SerializeField] GameObject missionSuccess;
-    private GameObject hudPlayer;
+    [SerializeField] ObjectifMission objectifMission;
 
-    private void Start()
-    {
-        filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
-        if (jsonFile != null)
-        {
-            jsonFile.ReadJsonFile(filePath);
-        }
-    }
-
-    public void Incremente()
+    public void IncrementeMission1()
     {
         count++;
-        if (count >= 20)
+        objectifMission.ShowTextMotivation();
+        if (count <= 11)
         {
-            jsonFile.shadowScholar.missions.mission1.isFinish = true;
-            jsonFile.shadowScholar.missions.isStart = false;
-            jsonFile.SaveJson();
-            if (missionSuccess != null)
-                hudPlayer = GameObject.Find("InvectorComponents");
-                StartCoroutine(MissionSuccess());
+            objectifMission.UpdateObjectif(0, 1);
+        }
+        else if (count >= 11 && count <= 17)
+        {
+            objectifMission.UpdateObjectif(1, 1);
+        }
+        else if (count >= 17 && count <= 20)
+        {
+            objectifMission.UpdateObjectif(2, 1);
         }
     }
 
-    private IEnumerator MissionSuccess()
+    public void IncrementeMission2()
     {
-        if (hudPlayer != null)
-            hudPlayer.SetActive(false);
-        missionSuccess.SetActive(true);
-        yield return new WaitForSeconds(3);
-
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadScene(2);
+        objectifMission.UpdateObjectif(0, 1);
+        objectifMission.ShowTextMotivation();
     }
 }

@@ -1936,8 +1936,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4276667541539912943}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1895.2677, y: 8.075742, z: 1192.4299}
+  m_LocalRotation: {x: 0, y: -0.17364825, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 1887.65, y: 8.075742, z: 1193.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1946,7 +1946,7 @@ Transform:
   - {fileID: 5879472073173275914}
   - {fileID: 8107540677717650464}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -20, z: 0}
 --- !u!95 &4053733923904510181
 Animator:
   serializedVersion: 5
@@ -2358,6 +2358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 0}
   targetsInArea: []
+  detectionCanFailedMission: 1
+  indexMission: 1
 --- !u!1 &4582510982315376652
 GameObject:
   m_ObjectHideFlags: 0

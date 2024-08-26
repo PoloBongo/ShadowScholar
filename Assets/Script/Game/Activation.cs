@@ -5,7 +5,9 @@ public class Activation : MonoBehaviour
 {
     private GameObject loadInput;
     private GameObject zoneLoader;
-    private GameObject[] interactionScripts = new GameObject[2];
+    private List<GameObject> interactionScripts = new List<GameObject>();
+    public string sceneName;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,24 +22,65 @@ public class Activation : MonoBehaviour
         zoneLoader = GameObject.Find("ZoneLoader");
         loadInput.GetComponent<ZoneLoader>().InitZoneLoader();
 
-        interactionScripts[0] = GameObject.Find("ReceptionTable_straight (3)");
-        if (interactionScripts[0] != null)
+        if (sceneName == "Game")
         {
-            InteractionScript interactionScript1 = interactionScripts[0].GetComponent<InteractionScript>();
-            GetCardDialogue getCardDialogue1 = interactionScripts[0].GetComponent<GetCardDialogue>();
+            GameObject acceuil = GameObject.Find("ReceptionTable_straight (3)");
+            GameObject launchMission = GameObject.Find("Chair_PD_01_02_Interact");
+            if (acceuil != null)
+            {
+                interactionScripts.Add(acceuil);
+            }
 
-            interactionScript1.InitInteractionScript();
-            getCardDialogue1.InitGetCardDialogue();
+            if (launchMission != null)
+            {
+                interactionScripts.Add(launchMission);
+            }
+
+            foreach (GameObject obj in interactionScripts)
+            {
+                InteractionScript interactionScript = obj.GetComponent<InteractionScript>();
+                if (interactionScript != null)
+                {
+                    interactionScript.InitInteractionScript();
+                }
+
+                GetCardDialogue getCardDialogue = obj.GetComponent<GetCardDialogue>();
+                if (getCardDialogue != null)
+                {
+                    getCardDialogue.InitGetCardDialogue();
+                }
+
+                MissionHub missionHub = obj.GetComponent<MissionHub>();
+                if (missionHub != null)
+                {
+                    missionHub.InitMissionHub();
+                }
+            }
         }
-
-        interactionScripts[1] = GameObject.Find("Chair_PD_01_02_Interact");
-        if (interactionScripts[1] != null)
+        else if (sceneName == "Mission2")
         {
-            InteractionScript interactionScript1 = interactionScripts[1].GetComponent<InteractionScript>();
-            MissionHub missionHub1 = interactionScripts[1].GetComponent<MissionHub>();
+            GameObject barril = GameObject.Find("vBarrel_C");
+            GameObject barril2 = GameObject.Find("vBarrel_C (1)");
+            GameObject barril3 = GameObject.Find("vBarrel_C (2)");
+            GameObject barril4 = GameObject.Find("vBarrel_C (3)");
+            GameObject cameraPlayer = GameObject.FindGameObjectWithTag("MainCamera");
 
-            interactionScript1.InitInteractionScript();
-            missionHub1.InitMissionHub();
+            if (barril != null && barril2 != null && barril3 != null && barril4 != null)
+            {
+                interactionScripts.Add(barril);
+                interactionScripts.Add(barril2);
+                interactionScripts.Add(barril3);
+                interactionScripts.Add(barril4);
+            }
+
+            foreach (GameObject obj in interactionScripts)
+            {
+                DetectionObject detectionObject = obj.GetComponent<DetectionObject>();
+                if (detectionObject != null)
+                {
+                    detectionObject.InitDetectionObject(cameraPlayer.GetComponent<Camera>(), true);
+                }
+            }
         }
     }
 }

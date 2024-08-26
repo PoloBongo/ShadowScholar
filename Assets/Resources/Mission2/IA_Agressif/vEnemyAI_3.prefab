@@ -4365,6 +4365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 0}
   targetsInArea: []
+  detectionCanFailedMission: 1
+  indexMission: 1
 --- !u!1 &8993751942950817639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4535,7 +4537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 4
+  selectedToolbar: 5
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
@@ -4602,7 +4604,7 @@ MonoBehaviour:
   minStrafeSwape: 2
   maxStrafeSwape: 5
   strafeRotationSpeed: 5
-  currentState: 1
+  currentState: 0
   sphereSensor: {fileID: 6654569390939504135}
   tagsToDetect:
     tags:
@@ -4636,7 +4638,7 @@ MonoBehaviour:
   lowerShield: 2
   distanceToChangeWaypoint: 1
   patrollingStopDistance: 0.5
-  patrolWithoutAreaStyle: 0
+  patrolWithoutAreaStyle: 2
   pathArea: {fileID: 0}
   randomWaypoints: 0
   _capsuleCollider: {fileID: 0}

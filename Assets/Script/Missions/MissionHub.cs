@@ -68,6 +68,7 @@ public class MissionHub : MonoBehaviour
     private int nextMissionInfo = 1;
     Mission1 mission1;
     Mission2 mission2;
+    Mission3 mission3;
 
     private GameObject jsonSaveGameObject;
     private JsonFile jsonSave;
@@ -125,6 +126,15 @@ public class MissionHub : MonoBehaviour
                 mission2 = new Mission2(2, "Repérage", "Finissez le parcours", "Mission1/Localization");
                 missions.Add(mission2);
                 nextMissionInfo = 2;
+            }
+            else
+            {
+                if (!jsonSave.shadowScholar.missions.mission3.isFinish)
+                {
+                    mission3 = new Mission3(2, "Attaquer la planque du gang", "Finissez le parcours", "Mission1/Localization");
+                    missions.Add(mission3);
+                    nextMissionInfo = 3;
+                }
             }
         }
 

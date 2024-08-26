@@ -76,6 +76,7 @@ namespace Invector.vCharacterController.vActions
             base.Start();
 
             originalConstrains = GetComponent<Rigidbody>().constraints;
+            ziplineHandler = GameObject.Find("ZiplineHandler");
         }
 
         public override void OnActionEnter(Collider other)
@@ -191,7 +192,7 @@ namespace Invector.vCharacterController.vActions
                 currentSpeed = Mathf.Lerp(currentSpeed, maxSpeed, .5f * Time.deltaTime);
                 transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime, Space.Self);
                 var euler = transform.eulerAngles;
-                euler.x = 0f;
+                euler.x = 2f;
                 tpInput.transform.eulerAngles = euler;
                 tpInput.CameraInput();
                 onZiplineUsing.Invoke();

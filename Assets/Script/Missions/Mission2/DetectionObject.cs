@@ -41,7 +41,7 @@ public class DetectionObject : MonoBehaviour
 
     private bool IsObjectInView()
     {
-        if (Vector3.Distance(this.gameObject.transform.position, playerCamera.transform.position) <= 100)
+        if (Vector3.Distance(this.gameObject.transform.position, playerCamera.transform.position) <= 30)
         {
             Vector3 screenPoint = playerCamera.WorldToViewportPoint(this.gameObject.transform.position);
             bool isInView = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;

@@ -61,6 +61,7 @@ public class JsonFile : MonoBehaviour
     {
         public Mission1 mission1;
         public Mission2 mission2;
+        public Mission3 mission3;
         public bool isStart;
     }
 
@@ -72,6 +73,12 @@ public class JsonFile : MonoBehaviour
 
     [System.Serializable]
     public class Mission2
+    {
+        public bool isFinish;
+    }
+
+    [System.Serializable]
+    public class Mission3
     {
         public bool isFinish;
     }
@@ -143,6 +150,10 @@ public class JsonFile : MonoBehaviour
                     isFinish = false
                 },
                 mission2 = new Mission2()
+                {
+                    isFinish = false
+                },
+                mission3 = new Mission3()
                 {
                     isFinish = false
                 },

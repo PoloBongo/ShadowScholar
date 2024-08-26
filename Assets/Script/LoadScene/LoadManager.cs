@@ -365,19 +365,27 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 2, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 2, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 19));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_1", IA, 4, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_2", IA, 5, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_3", IA, 6, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_4", IA, 7, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_5", IA, 8, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_Boss", IA, 9, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_1", IA, 4, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_2", IA, 5, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_3", IA, 6, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_4", IA, 7, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_5", IA, 8, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Agressif/vEnemyAI_Boss", IA, 9, 19));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vEnemyAI_1", IA, 10, 11));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vEnemyAI_2", IA, 11, 11));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_1", IA, 10, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_2", IA, 11, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_3", IA, 12, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_4", IA, 13, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_5", IA, 14, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_6", IA, 15, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_7", IA, 16, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_8", IA, 17, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_9", IA, 18, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_10", IA, 19, 19));
 
         if (transitionUI != null)
         {

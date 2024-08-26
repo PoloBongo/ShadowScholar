@@ -16,6 +16,7 @@ public class JsonFile : MonoBehaviour
         public InputSettings inputSettings;
         public Horloge horloge;
         public Missions missions;
+        public Area area;
     }
     [System.Serializable]
     public class KinematicStart
@@ -74,6 +75,13 @@ public class JsonFile : MonoBehaviour
     public class Mission2
     {
         public bool isFinish;
+    }
+
+    [System.Serializable]
+    public class Area
+    {
+        public string playArea;
+        public Transform playerTransform;
     }
 
     private string filePath;
@@ -147,6 +155,11 @@ public class JsonFile : MonoBehaviour
                     isFinish = false
                 },
                 isStart = false
+            },
+            area = new Area()
+            {
+                playArea = "Zone_14",
+                playerTransform = null
             }
         };
 

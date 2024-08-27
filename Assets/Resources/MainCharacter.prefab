@@ -8514,6 +8514,7 @@ GameObject:
   - component: {fileID: 6244271974321292249}
   - component: {fileID: 3496278031354646502}
   - component: {fileID: 406770880536277923}
+  - component: {fileID: 325652493355350091}
   m_Layer: 8
   m_Name: MainCharacter
   m_TagString: Player
@@ -10890,6 +10891,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e9d520b4a55ed44a5e30853b32bd11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
+--- !u!114 &325652493355350091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806862119620824390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: 8450b94f1a27db848a1e460bf58ca353, type: 3}
 --- !u!1 &3814402028755733498
 GameObject:
   m_ObjectHideFlags: 0
@@ -17316,7 +17331,7 @@ MonoBehaviour:
   openCloseEvents: 0
   openCloseWindow: 0
   selectedToolbar: 0
-  bodyStruct: {fileID: 11400000, guid: 65499a56104ff124d86c001ac38e1c4e, type: 2}
+  bodyStruct: {fileID: 0}
   showLabels: 0
   boneSnappingList:
   - name: Hips
@@ -19140,7 +19155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1052800895485429138, guid: 8cff4600ff380fc45910465a0a4d4ab1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.000061
+      value: -15.000046
       objectReference: {fileID: 0}
     - target: {fileID: 2684243853317659422, guid: 8cff4600ff380fc45910465a0a4d4ab1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19168,7 +19183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3230466574713676040, guid: 8cff4600ff380fc45910465a0a4d4ab1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.000061
+      value: -15.000046
       objectReference: {fileID: 0}
     - target: {fileID: 3231417557787647076, guid: 8cff4600ff380fc45910465a0a4d4ab1, type: 3}
       propertyPath: m_CullTransparentMesh
@@ -19432,7 +19447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7852043810890253363, guid: 8cff4600ff380fc45910465a0a4d4ab1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.000061
+      value: -15.000046
       objectReference: {fileID: 0}
     - target: {fileID: 8019618877503904632, guid: 8cff4600ff380fc45910465a0a4d4ab1, type: 3}
       propertyPath: m_AnchorMax.y

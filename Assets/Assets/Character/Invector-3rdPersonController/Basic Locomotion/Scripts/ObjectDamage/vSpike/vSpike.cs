@@ -16,7 +16,7 @@ namespace Invector
 
         void OnCollisionEnter(Collision collision)
         {
-            if (collision.rigidbody != null && collision.collider.GetComponent<vCharacterController.vDamageReceiver>() != null && !inConect)
+            if (collision.rigidbody != null && collision.collider.GetComponent<vCharacterController.VDamageReceiver>() != null && !inConect)
             {
                 bool condition = control == null ? true : !control.attachColliders.Contains(collision.collider.transform);
                 if (control) control.attachColliders.Add(collision.collider.transform);
@@ -31,7 +31,7 @@ namespace Invector
                     {
                         body.velocity = Vector3.zero;
                     }
-                    var damageReceiver = collision.collider.GetComponent<vCharacterController.vDamageReceiver>();
+                    var damageReceiver = collision.collider.GetComponent<vCharacterController.VDamageReceiver>();
                     if (damageReceiver && damageReceiver.ragdoll && damageReceiver.ragdoll.iChar!=null) damageReceiver.ragdoll.iChar.ChangeHealth((int)-damageReceiver.ragdoll.iChar.currentHealth);
                 }
             }

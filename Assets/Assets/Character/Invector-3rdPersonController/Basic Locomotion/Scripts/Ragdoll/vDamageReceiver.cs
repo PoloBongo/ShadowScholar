@@ -3,7 +3,7 @@
 namespace Invector.vCharacterController
 {
     [vClassHeader("DAMAGE RECEIVER", "You can add damage multiplier for example causing twice damage on Headshots", openClose = false)]
-    public partial class vDamageReceiver : vMonoBehaviour, vIDamageReceiver
+    public partial class VDamageReceiver : vMonoBehaviour, vIDamageReceiver
     {
 
         [vEditorToolbar("Default")]

@@ -8615,7 +8615,12 @@ MonoBehaviour:
         isFinish: 0
       mission2:
         isFinish: 0
+      mission3:
+        isFinish: 0
       isStart: 0
+    area:
+      playArea: 
+      playerTransform: {fileID: 0}
   isForInputSettings: 1
   inputFields:
   - {fileID: 1761043904}
@@ -21968,6 +21973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 871930528}
   isMainMenu: 1
+  isPauseMenu: 0
 --- !u!4 &2144582932
 Transform:
   m_ObjectHideFlags: 0

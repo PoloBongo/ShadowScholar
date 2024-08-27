@@ -4,13 +4,23 @@ using UnityEngine;
 public class Activation : MonoBehaviour
 {
     private GameObject loadInput;
+    private GameObject zoneLoader;
     private List<GameObject> interactionScripts = new List<GameObject>();
     public string sceneName;
+    
     // Start is called before the first frame update
     void Start()
     {
+        ActivateScript();
+    }
+
+    public void ActivateScript()
+    {
         loadInput = GameObject.Find("LoadInput");
         loadInput.GetComponent<LoadInput>().OnThirdPersonInputActivated();
+
+        zoneLoader = GameObject.Find("ZoneLoader");
+        loadInput.GetComponent<ZoneLoader>().InitZoneLoader();
 
         if (sceneName == "Game")
         {

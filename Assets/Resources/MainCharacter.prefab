@@ -8516,6 +8516,7 @@ GameObject:
   - component: {fileID: 406770880536277923}
   - component: {fileID: 637949589146000347}
   - component: {fileID: 6780384403125768426}
+  - component: {fileID: 286504798290888158}
   m_Layer: 8
   m_Name: MainCharacter
   m_TagString: Player
@@ -10924,6 +10925,19 @@ MonoBehaviour:
   defaultDamageEffects:
   - {fileID: 120346, guid: b8f2fe1ee1a01724cb72f5b0e6bd2eef, type: 3}
   customDamageEffects: []
+--- !u!114 &286504798290888158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806862119620824390}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: 8450b94f1a27db848a1e460bf58ca353, type: 3}
 --- !u!1 &3814402028755733498
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,11 +19,11 @@ public class Activation : MonoBehaviour
         loadInput = GameObject.Find("LoadInput");
         loadInput.GetComponent<LoadInput>().OnThirdPersonInputActivated();
 
-        zoneLoader = GameObject.Find("ZoneLoader");
-        loadInput.GetComponent<ZoneLoader>().InitZoneLoader();
-
         if (sceneName == "Game")
         {
+            zoneLoader = GameObject.Find("ZoneLoader");
+            loadInput.GetComponent<ZoneLoader>().InitZoneLoader();
+
             GameObject acceuil = GameObject.Find("ReceptionTable_straight (3)");
             GameObject launchMission = GameObject.Find("Chair_PD_01_02_Interact");
             if (acceuil != null)
@@ -79,6 +79,18 @@ public class Activation : MonoBehaviour
                 if (detectionObject != null)
                 {
                     detectionObject.InitDetectionObject(cameraPlayer.GetComponent<Camera>(), true);
+                }
+            }
+        }
+        else if (sceneName == "Mission3")
+        {
+            GameObject IAVague1 = GameObject.Find("IAVague1");
+            foreach (Transform child in IAVague1.transform)
+            {
+                AIPlayerController aiController = child.GetComponent<AIPlayerController>();
+                if (aiController != null)
+                {
+                    aiController.AssignPlayerTransforms(this.gameObject);
                 }
             }
         }

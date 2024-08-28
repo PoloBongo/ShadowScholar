@@ -432,10 +432,10 @@ namespace Invector.vCharacterController
             foreach (BoneInfo bone in bones)
             {
                 bone.anchor.gameObject.AddComponent<Rigidbody>();
-                var hasDamageReceiver = bone.anchor.gameObject.GetComponent<vDamageReceiver>();
+                var hasDamageReceiver = bone.anchor.gameObject.GetComponent<VDamageReceiver>();
                 if (!hasDamageReceiver)
                 {
-                    bone.anchor.gameObject.AddComponent<vDamageReceiver>();
+                    bone.anchor.gameObject.AddComponent<VDamageReceiver>();
                 }
 
                 bone.anchor.GetComponent<Rigidbody>().mass = bone.density;

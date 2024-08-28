@@ -30,13 +30,20 @@ public class LoadManager : MonoBehaviour
                     }
                     else
                     {
-                        if (jsonFile.ReadKinematicStartJsonFile())
+                        if (jsonFile.shadowScholar.missions.isStart && !jsonFile.shadowScholar.missions.mission3.isFinish)
                         {
-                            StartCoroutine(PreloadSceneAndAssetsGame("Game"));
+                            StartCoroutine(PreloadSceneAndAssetsMission3("Mission3"));
                         }
                         else
                         {
-                            StartCoroutine(PreloadSceneAndAssetsKinematicStart("Kinematic"));
+                            if (jsonFile.ReadKinematicStartJsonFile())
+                            {
+                                StartCoroutine(PreloadSceneAndAssetsGame("Game"));
+                            }
+                            else
+                            {
+                                StartCoroutine(PreloadSceneAndAssetsKinematicStart("Kinematic"));
+                            }
                         }
                     }
                 }
@@ -386,6 +393,100 @@ public class LoadManager : MonoBehaviour
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_8", IA, 17, 19));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_9", IA, 18, 19));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission2/IA_Passif/vNeutreAI_10", IA, 19, 19));
+
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
+
+        // on enlève de force la scène de chargement pour éviter tout soucis
+        loadingText.text = "Nettoyage de la scène de chargement...";
+        SceneManager.UnloadSceneAsync(sceneIndex);
+    }
+    #endregion
+    #region LoadSceneMission3
+
+    IEnumerator PreloadSceneAndAssetsMission3(string sceneName)
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        loadingSlider.gameObject.SetActive(true);
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        loadingText.text = "Préparation des assets nécessaire";
+        // Charger la scène en arrière-plan sans l'activer
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        operation.allowSceneActivation = false;
+
+        // Une fois chargé à 90% on peut activer la scène
+        while (operation.progress < 0.9f)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                break;
+            }
+            yield return null;
+        }
+        loadingSlider.value = 90f;
+
+        loadingText.color = Color.red;
+        loadingText.text = $"Chargement de la scène : {operation.progress * 100:F0}%";
+        operation.allowSceneActivation = true;
+
+        // Attendre que la scène soit complètement activée pour passer à l'étape suivante
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        // on la met comme active comme ça on peut charger les assets dedans
+        Scene targetScene = SceneManager.GetSceneByName(sceneName);
+        if (targetScene.IsValid())
+        {
+            SceneManager.SetActiveScene(targetScene);
+        }
+
+        GameObject transitionUI = GameObject.Find("TransitionUIForKinematic");
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(false);
+        }
+
+        GameObject AllHub = GameObject.Find("AllHub");
+        GameObject IAVague1 = GameObject.Find("IAVague1");
+        GameObject IAVague2 = GameObject.Find("IAVague2");
+        GameObject IAVague3 = GameObject.Find("IAVague3");
+        GameObject IABoss = GameObject.Find("IABoss");
+        if (AllHub == null || IAVague1 == null || IAVague2 == null || IAVague3 == null || IABoss)
+        {
+            Debug.LogError("GameObject missing in the scene.");
+            yield break;
+        }
+
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        // Instanciation des assets dans la nouvelle scène
+/*        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 4));*/
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 1, 2));
+/*        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 4));*/
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/AI_Shooter_1", IAVague1, 2, 2));
+/*        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_2", IAVague1, 5, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_3", IAVague1, 6, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_4", IAVague1, 7, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_5", IAVague1, 8, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_Boss", IAVague1, 9, 19));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_1", IAVague2, 10, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_2", IAVague2, 11, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_3", IAVague2, 12, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_4", IAVague2, 13, 19));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_5", IAVague3, 14, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_6", IAVague3, 15, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_7", IAVague3, 16, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_8", IAVague3, 17, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_9", IAVague3, 18, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_10", IAVague3, 19, 19));
+
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IA/vEnemyAI_Boss", IABoss, 19, 19));*/
 
         if (transitionUI != null)
         {

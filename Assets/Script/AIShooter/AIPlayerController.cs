@@ -57,7 +57,6 @@ public class AIPlayerController : MonoBehaviour
     private bool isWalking = true;
     private bool isIdle = false;
     private bool canFire = false;
-    private bool canFireWithoutObstacle = false;
     private bool isFiring = false;
     private bool isReloading = false;
     private bool isDead = false;
@@ -115,6 +114,7 @@ public class AIPlayerController : MonoBehaviour
     }
     [SerializeField] private IASelectedType selectedIAType;
     [SerializeField] private LayerMask obstacleMask;
+    [SerializeField] bool isStatic;
 
     private string setActiveWalkType;
     private string setActiveIdle;
@@ -200,7 +200,84 @@ public class AIPlayerController : MonoBehaviour
         navMeshAgent.stoppingDistance = setStopDistanceToFirePlayer;
         animator.SetTrigger(setActiveIdle);
         inChasse = false;
+        isStatic = false;
     }
+
+    #region AssignTransform
+    public void AssignPlayerTransforms(GameObject player)
+    {
+        mainCharacter = player;
+
+        if (player.transform != null)
+        {
+            AssignPlayerTransforms2(player.transform);
+        }
+        this.gameObject.SetActive(true);
+    }
+
+    void AssignPlayerTransforms2(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name.Contains("CC_Base_Hip"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseThigh.L"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseThigh.R"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseCalf.L"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseCalf.R"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CCC_Base_Spine01"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_Base_Head"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseUpperarm.L"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseForearm.L"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseUpperarm.R"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            if (child.name.Contains("CC_BaseForearm.R"))
+            {
+                multipleTargets.targets.Add(child);
+            }
+
+            AssignPlayerTransforms2(child);
+        }
+    }
+    #endregion
 
     private void OnTriggerEnter(Collider other)
     {
@@ -287,70 +364,111 @@ public class AIPlayerController : MonoBehaviour
                 {
                     if (!isReloading)
                     {
-                        if (Vector3.Distance(this.gameObject.transform.position, mainCharacter.transform.position) < setStopDistanceToFirePlayer)
+                        if (!isStatic)
                         {
-                            Vector3 direction = mainCharacter.transform.position - this.gameObject.transform.position;
-                            direction.y = 0;
-                            if (direction != Vector3.zero)
+                            if (Vector3.Distance(this.gameObject.transform.position, mainCharacter.transform.position) < setStopDistanceToFirePlayer)
                             {
-                                Quaternion rotation = Quaternion.LookRotation(direction);
-                                this.gameObject.transform.rotation = rotation;
-                            }
+                                Vector3 direction = mainCharacter.transform.position - this.gameObject.transform.position;
+                                direction.y = 0;
+                                if (direction != Vector3.zero)
+                                {
+                                    Quaternion rotation = Quaternion.LookRotation(direction);
+                                    this.gameObject.transform.rotation = rotation;
+                                }
 
-                            if (navMeshAgent.remainingDistance <= setStopDistanceToFirePlayer)
+                                if (navMeshAgent.remainingDistance <= setStopDistanceToFirePlayer)
+                                {
+                                    if (!isIdle)
+                                    {
+                                        isIdle = true;
+                                        isWalking = false;
+                                        canFire = true;
+                                    }
+                                    if (canFire && !isFiring)
+                                    {
+                                        canFire = false;
+                                        isFiring = true;
+                                        if (!aiAutoChooseWeapon)
+                                        {
+                                            switch (selectWeapon.selectedWeapon)
+                                            {
+                                                case WeaponType.Pistol:
+                                                    StartCoroutine(WaitForFire(selectWeapon.pistolProperties));
+                                                    break;
+                                                case WeaponType.Rifle:
+                                                    StartCoroutine(WaitForFire(selectWeapon.rifleProperties));
+                                                    break;
+                                                case WeaponType.Shotgun:
+                                                    StartCoroutine(WaitForFire(selectWeapon.shotgunProperties));
+                                                    break;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            switch (randomChooseWeapon)
+                                            {
+                                                case 0:
+                                                    StartCoroutine(WaitForFire(selectWeapon.pistolProperties));
+                                                    break;
+                                                case 1:
+                                                    StartCoroutine(WaitForFire(selectWeapon.rifleProperties));
+                                                    break;
+                                                case 2:
+                                                    StartCoroutine(WaitForFire(selectWeapon.shotgunProperties));
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            else
                             {
-                                if (!isIdle)
+                                if (!isWalking)
                                 {
-                                    isIdle = true;
-                                    isWalking = false;
-                                    canFire = true;
+                                    animator.SetTrigger(setActiveWalkType);
+                                    isWalking = true;
+                                    isIdle = false;
                                 }
-                                if (canFire && !isFiring)
-                                {
-                                    canFire = false;
-                                    isFiring = true;
-                                    if (!aiAutoChooseWeapon)
-                                    {
-                                        switch (selectWeapon.selectedWeapon)
-                                        {
-                                            case WeaponType.Pistol:
-                                                StartCoroutine(WaitForFire(selectWeapon.pistolProperties));
-                                                break;
-                                            case WeaponType.Rifle:
-                                                StartCoroutine(WaitForFire(selectWeapon.rifleProperties));
-                                                break;
-                                            case WeaponType.Shotgun:
-                                                StartCoroutine(WaitForFire(selectWeapon.shotgunProperties));
-                                                break;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        switch (randomChooseWeapon)
-                                        {
-                                            case 0:
-                                                StartCoroutine(WaitForFire(selectWeapon.pistolProperties));
-                                                break;
-                                            case 1:
-                                                StartCoroutine(WaitForFire(selectWeapon.rifleProperties));
-                                                break;
-                                            case 2:
-                                                StartCoroutine(WaitForFire(selectWeapon.shotgunProperties));
-                                                break;
-                                        }
-                                    }
-                                }
+                                navMeshAgent.SetDestination(mainCharacter.transform.position);
                             }
                         }
                         else
                         {
-                            if (!isWalking)
+                            if (canFire && !isFiring)
                             {
-                                animator.SetTrigger(setActiveWalkType);
-                                isWalking = true;
-                                isIdle = false;
+                                canFire = false;
+                                isFiring = true;
+                                if (!aiAutoChooseWeapon)
+                                {
+                                    switch (selectWeapon.selectedWeapon)
+                                    {
+                                        case WeaponType.Pistol:
+                                            StartCoroutine(WaitForFire(selectWeapon.pistolProperties));
+                                            break;
+                                        case WeaponType.Rifle:
+                                            StartCoroutine(WaitForFire(selectWeapon.rifleProperties));
+                                            break;
+                                        case WeaponType.Shotgun:
+                                            StartCoroutine(WaitForFire(selectWeapon.shotgunProperties));
+                                            break;
+                                    }
+                                }
+                                else
+                                {
+                                    switch (randomChooseWeapon)
+                                    {
+                                        case 0:
+                                            StartCoroutine(WaitForFire(selectWeapon.pistolProperties));
+                                            break;
+                                        case 1:
+                                            StartCoroutine(WaitForFire(selectWeapon.rifleProperties));
+                                            break;
+                                        case 2:
+                                            StartCoroutine(WaitForFire(selectWeapon.shotgunProperties));
+                                            break;
+                                    }
+                                }
                             }
-                            navMeshAgent.SetDestination(mainCharacter.transform.position);
                         }
                     }
                 }
@@ -374,7 +492,10 @@ public class AIPlayerController : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger(weaponProperties.clipAimingName);
+            if (weaponProperties.clipReloadName != "ReloadRifle")
+            {
+                animator.SetTrigger(weaponProperties.clipAimingName);
+            }
             yield return new WaitForSeconds(weaponProperties.frequencyFire);
 
             if (Vector3.Distance(this.gameObject.transform.position, mainCharacter.transform.position) > setStopDistanceToFirePlayer)
@@ -386,10 +507,7 @@ public class AIPlayerController : MonoBehaviour
                 isFiring = false;
                 yield break;
             }
-            if (weaponProperties.clipReloadName != "ReloadRifle")
-            {
-                animator.SetTrigger(weaponProperties.clipFireName);
-            }
+            animator.SetTrigger(weaponProperties.clipFireName);
             for (int i = 0; i < weaponProperties.particlesFire.Count; i++)
             {
                 weaponProperties.particlesFire[i].Play();

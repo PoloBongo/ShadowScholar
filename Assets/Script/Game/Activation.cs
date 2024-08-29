@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,18 +22,15 @@ public class Activation : MonoBehaviour
     {
         loadInput = GameObject.Find("LoadInput");
         loadInput.GetComponent<LoadInput>().OnThirdPersonInputActivated();
-        minimapIcons.Add(GetComponent<MinimapIcon>());
 
 
         foreach (GameObject gameObject in SceneManager.GetActiveScene().GetRootGameObjects())
         {
-            MinimapIcon game = gameObject.GetComponent<MinimapIcon>();
-            if (game != null)
+            MinimapIcon[] icons = gameObject.GetComponentsInChildren<MinimapIcon>();
+            if(icons.Length > 0)
             {
-                minimapIcons.Add(gameObject.GetComponent<MinimapIcon>());
+                minimapIcons.AddRange(icons);
             }
-            
-
         }
 
         foreach (MinimapIcon icon in minimapIcons)

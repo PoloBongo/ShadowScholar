@@ -46,6 +46,8 @@ public class MinimapIcon : MonoBehaviour
 
             Vector3 viewportPosition = minimapCamera.WorldToViewportPoint(worldPosition);
 
+           /* Debug.Log($"{transform.gameObject.name} : {viewportPosition.x} {viewportPosition.y} {viewportPosition.z}");*/
+
             if (viewportPosition.z > 0 && viewportPosition.x >= 0 && viewportPosition.x <= 1 && viewportPosition.y >= 0 && viewportPosition.y <= 1)
             {
                 iconRect.gameObject.SetActive(true);

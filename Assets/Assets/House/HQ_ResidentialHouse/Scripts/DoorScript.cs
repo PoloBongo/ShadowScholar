@@ -88,9 +88,11 @@ public class DoorScript : MonoBehaviour {
 	AudioSource SoundFX;
 	Animation doorAnimation;
 	Animation LockAnim;
+	private GameObject instantiatePrefab;
 
 
-	
+
+
 	void Start (){
 
 //Border reparenting
@@ -144,24 +146,24 @@ public class DoorScript : MonoBehaviour {
 				Debug.LogWarning(gameObject.name + ": Text prefab missing, if you want see the text, please, put the text prefab in Text Prefab slot");
 				return;
 			}
-			GameObject go = Instantiate (doorTexts.TextPrefab, Vector3.zero, new Quaternion (0, 0, 0, 0)) as GameObject;
-			TextObj = go.GetComponent<Canvas>();
+			instantiatePrefab = Instantiate (doorTexts.TextPrefab, Vector3.zero, new Quaternion (0, 0, 0, 0)) as GameObject;
+			TextObj = instantiatePrefab.GetComponent<Canvas>();
 			
 			theText = TextObj.GetComponentInChildren<Text>();
 		}
 
-        if (PlayerHeadTag == "")
-            Debug.LogError("You need to set a tag!");
+		if (PlayerHeadTag == "")
+			Debug.LogError("You need to set a tag!");
 
-        if (GameObject.FindWithTag(PlayerHeadTag) != null)
-        {
-            player = GameObject.FindWithTag(PlayerHeadTag).transform;
-        }
-        else
-        {
-            Debug.LogWarning(gameObject.name + ": You need to set your player's camera tag to " + "'" + PlayerHeadTag + "'." + " The " + "'" + gameObject.name + "'" + " can't open/close if you don't set this tag");
-        }
-    }
+		if (GameObject.FindWithTag(PlayerHeadTag) != null)
+		{
+			player = GameObject.FindWithTag(PlayerHeadTag).transform;
+		}
+		else
+		{
+			Debug.LogWarning(gameObject.name + ": You need to set your player's camera tag to " + "'" + PlayerHeadTag + "'." + " The " + "'" + gameObject.name + "'" + " can't open/close if you don't set this tag");
+		}
+	}
 
 	void AddLock(){
 		if(!keySystem.enabled)
@@ -251,11 +253,11 @@ public class DoorScript : MonoBehaviour {
 	}
 
 	bool PLayerIsLookingAtDoorKnob(){
-        if (player == null)
-        {
-            player = GameObject.FindWithTag(PlayerHeadTag).transform;
-        }
-        Vector3 forward = player.TransformDirection (Vector3.back);
+		if (player == null)
+		{
+			player = GameObject.FindWithTag(PlayerHeadTag).transform;
+		}
+		Vector3 forward = player.TransformDirection (Vector3.back);
 		Vector3 thisTransform = knob.position - player.transform.position;
 
 		float dotProd = Vector3.Dot (forward.normalized, thisTransform.normalized);
@@ -460,8 +462,8 @@ public class DoorScript : MonoBehaviour {
 	}
 
 
-    private void OnDestroy()
-    {
-		DestroyImmediate(doorTexts.TextPrefab, true);
-    }
+	private void OnDestroy()
+	{
+		DestroyImmediate(instantiatePrefab, true);
+	}
 }

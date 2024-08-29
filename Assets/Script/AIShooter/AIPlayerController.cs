@@ -126,6 +126,8 @@ public class AIPlayerController : MonoBehaviour
     private string setActiveIdle;
     private Camera iaCamera;
     private bool inChasse;
+    [SerializeField] private bool canDetectFailedMission;
+    [SerializeField] private int indexMission;
     private string iaChoose;
     private float setTargetDistancePlayer;
     private float setStopDistanceToFirePlayer;
@@ -388,6 +390,11 @@ public class AIPlayerController : MonoBehaviour
 
         if (inChasse)
         {
+            if (canDetectFailedMission)
+            {
+                missionManager.MissionStatus("Failed", indexMission);
+            }
+
             if (!isDead)
             {
                 if (vThirdPersonController.currentHealth > 0)

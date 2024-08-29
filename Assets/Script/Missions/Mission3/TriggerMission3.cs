@@ -7,6 +7,7 @@ public class TriggerMission3 : MonoBehaviour
     [SerializeField] GameObject previousStepMission3;
     [SerializeField] GameObject nextStepMission3;
     [SerializeField] GameObject audioSource;
+    private CheckVagueIA checkVagueIA;
     private bool alreadyEnter = false;
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +38,9 @@ public class TriggerMission3 : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
+        checkVagueIA = nextStepMission3.GetComponent<CheckVagueIA>();
+        checkVagueIA.enabled = true;
+        checkVagueIA.InitCheckIA();
         nextStepMission3.SetActive(true);
         previousStepMission3.SetActive(true);
 

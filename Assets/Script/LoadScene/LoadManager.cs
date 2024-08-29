@@ -466,7 +466,7 @@ public class LoadManager : MonoBehaviour
         GameObject IAVague2 = GameObject.Find("IAVague2");
         GameObject IAVague3 = GameObject.Find("IAVague3");
         GameObject IABoss = GameObject.Find("IABoss");
-        if (AllHub == null || IAVague1 == null || IAVague2 == null || IAVague3 == null || IABoss)
+        if (AllHub == null || IAVague1 == null || IAVague2 == null || IAVague3 == null || IABoss == null)
         {
             Debug.LogError("GameObject missing in the scene.");
             yield break;
@@ -474,30 +474,31 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-/*        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 4));*/
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 1, 2));
-/*        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 4));*/
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 1, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 21));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/AI_Shooter_1", IAVague1, 2, 2));
-/*        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_2", IAVague1, 5, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_3", IAVague1, 6, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_4", IAVague1, 7, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_5", IAVague1, 8, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/vEnemyAI_Boss", IAVague1, 9, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin1", IAVague1, 4, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin2", IAVague1, 5, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin3", IAVague1, 6, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin4", IAVague1, 7, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin5", IAVague1, 8, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin6", IAVague1, 9, 21));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_1", IAVague2, 10, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_2", IAVague2, 11, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_3", IAVague2, 12, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/vNeutreAI_4", IAVague2, 13, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin1", IAVague2, 10, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin2", IAVague2, 11, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin3", IAVague2, 12, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin4", IAVague2, 13, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin5", IAVague2, 14, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin6", IAVague2, 15, 21));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_5", IAVague3, 14, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_6", IAVague3, 15, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_7", IAVague3, 16, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_8", IAVague3, 17, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_9", IAVague3, 18, 19));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/vNeutreAI_10", IAVague3, 19, 19));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/IA_Shooter_Skin1", IAVague3, 16, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/IA_Shooter_Skin3", IAVague3, 17, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/IA_Shooter_Skin4", IAVague3, 18, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/IA_Shooter_Skin5", IAVague3, 19, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague3/IA_Shooter_Skin6", IAVague3, 20, 21));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IA/vEnemyAI_Boss", IABoss, 19, 19));*/
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IABoss/vEnemyAI_Boss", IABoss, 21, 21));
 
         if (transitionUI != null)
         {

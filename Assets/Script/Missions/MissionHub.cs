@@ -363,6 +363,10 @@ public class MissionHub : MonoBehaviour
                             if (!jsonSave.shadowScholar.missions.mission2.isFinish)
                                 jsonSave.shadowScholar.missions.isStart = true;
                             break;
+                        case 3:
+                            if (!jsonSave.shadowScholar.missions.mission3.isFinish)
+                                jsonSave.shadowScholar.missions.isStart = true;
+                            break;
                     }
                     jsonSave.SaveJson();
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

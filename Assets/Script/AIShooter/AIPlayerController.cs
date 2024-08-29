@@ -43,6 +43,7 @@ public enum AIType
 public class AIPlayerController : MonoBehaviour
 {
     [SerializeField] GameObject mainCharacter;
+    private MissionManager missionManager;
     [SerializeField] bool aiAutoChooseWeapon;
     [System.Serializable]
     public class MultipleTargets
@@ -129,7 +130,8 @@ public class AIPlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         iaCamera = GetComponentInChildren<Camera>();
         vHealthController = GetComponent<vHealthController>();
-        vThirdPersonController = mainCharacter.GetComponent<vThirdPersonController>();
+        GameObject gameController = GameObject.Find("GameController");
+        missionManager = gameController.GetComponent<MissionManager>();
         if (!aiAutoChooseWeapon)
         {
             switch (selectWeapon.selectedWeapon)
@@ -207,6 +209,7 @@ public class AIPlayerController : MonoBehaviour
     public void AssignPlayerTransforms(GameObject player)
     {
         mainCharacter = player;
+        vThirdPersonController = player.GetComponent<vThirdPersonController>();
 
         if (player.transform != null)
         {
@@ -472,6 +475,10 @@ public class AIPlayerController : MonoBehaviour
                         }
                     }
                 }
+                else
+                {
+                    missionManager.MissionStatus("Failed", 2);
+                }
             }
         }
         else
@@ -556,6 +563,7 @@ public class AIPlayerController : MonoBehaviour
 
     IEnumerator OnDeadStart()
     {
+        yield return new WaitForSeconds(.3f);
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(3.5f);
         Destroy(this.gameObject);

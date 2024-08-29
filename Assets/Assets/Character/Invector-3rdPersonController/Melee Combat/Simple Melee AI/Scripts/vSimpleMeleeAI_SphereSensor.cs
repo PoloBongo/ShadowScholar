@@ -27,7 +27,6 @@ namespace Invector.vCharacterController.AI
         {
             if (!targetsInArea.Contains(_transform))
             {
-                Debug.Log("OLY SHEEEEEEEEEEET PRINT TOI ZBI");
                 targetsInArea.Add(_transform);
             }
         }
@@ -45,7 +44,6 @@ namespace Invector.vCharacterController.AI
         {
             if (targetsInArea.Count > 0)
             {
-                Debug.Log("OLY SHEEEEEEEEEEET PRINT TOI ZBI 2");
                 SortTargets();
                 if (targetsInArea.Count > 0)
                 {
@@ -94,6 +92,7 @@ namespace Invector.vCharacterController.AI
                         ((Vector3.Distance(this.transform.position, c2 != null ? c2.transform.position : Vector3.one * Mathf.Infinity)));
                 });
             }
+
             if (detectionCanFailedMission)
             {
                 FailedMission(indexMission);

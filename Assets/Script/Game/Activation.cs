@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Activation : MonoBehaviour
 {
     private GameObject loadInput;
     private GameObject zoneLoader;
+    private MinimapIcon icon;
     private List<GameObject> interactionScripts = new List<GameObject>();
+    private List<MinimapIcon> minimapIcons = new List<MinimapIcon>();
     public string sceneName;
     
     // Start is called before the first frame update
@@ -18,6 +21,24 @@ public class Activation : MonoBehaviour
     {
         loadInput = GameObject.Find("LoadInput");
         loadInput.GetComponent<LoadInput>().OnThirdPersonInputActivated();
+        minimapIcons.Add(GetComponent<MinimapIcon>());
+
+
+        foreach (GameObject gameObject in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            MinimapIcon game = gameObject.GetComponent<MinimapIcon>();
+            if (game != null)
+            {
+                minimapIcons.Add(gameObject.GetComponent<MinimapIcon>());
+            }
+            
+
+        }
+
+        foreach (MinimapIcon icon in minimapIcons)
+        {
+            icon.InitMinimapIcon();
+        }
 
         if (sceneName == "Game")
         {

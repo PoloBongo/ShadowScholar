@@ -21,13 +21,14 @@ public class ObjectifMission : MonoBehaviour
     [SerializeField] int indexMission;
     [SerializeField] private List<Objectif> listObjectifs = new List<Objectif>();
     [System.Serializable]
-    public class textMotivation
+    public class TextMotivation
     {
         public GameObject textGameobject;
         public GameObject parentText;
     }
-    [SerializeField] private List<textMotivation> listTexts = new List<textMotivation>();
-
+    [SerializeField] private List<TextMotivation> listTexts = new List<TextMotivation>();
+    [SerializeField] private GameObject objectifRequiredText;
+    [SerializeField] private GameObject objectifRequiredTextParent;
     [SerializeField] private MissionManager missionManager;
 
     public void UpdateObjectif(int indexObjectif, int value)
@@ -38,6 +39,18 @@ public class ObjectifMission : MonoBehaviour
             string valueString = listObjectifs[indexObjectif].actualValue.ToString();
             missionManager.SetTextObjectifMission(indexObjectif, valueString);
             CheckObjectif();
+        }
+        else
+        {
+            Debug.LogWarning("index pas trouvé");
+        }
+    }
+
+    public void UpdateFinalObjectif(int indexObjectif, int maxValue)
+    {
+        if (indexObjectif >= 0 && indexObjectif < listObjectifs.Count)
+        {
+            listObjectifs[indexObjectif].objectifValue = maxValue;
         }
         else
         {
@@ -62,6 +75,15 @@ public class ObjectifMission : MonoBehaviour
         }
     }
 
+    public bool CheckPrecisObjectif(int indexObjectif)
+    {
+        if (listObjectifs[indexObjectif].actualValue == listObjectifs[indexObjectif].objectifValue)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void ShowTextMotivation()
     {
         StartCoroutine(WaitForTextWhenObjectifIsInProgress());
@@ -82,5 +104,20 @@ public class ObjectifMission : MonoBehaviour
 
         listTexts[randomText].textGameobject.SetActive(false);
         listTexts[randomText].parentText.SetActive(false);
+    }
+
+    public void ShowTextNeedObjectif()
+    {
+        StartCoroutine(WaitForTextWhenObjectifIsRequired());
+    }
+
+    IEnumerator WaitForTextWhenObjectifIsRequired()
+    {
+        objectifRequiredTextParent.SetActive(true);
+        objectifRequiredText.SetActive(true);
+        yield return new WaitForSeconds(3f);
+
+        objectifRequiredTextParent.SetActive(false);
+        objectifRequiredText.SetActive(false);
     }
 }

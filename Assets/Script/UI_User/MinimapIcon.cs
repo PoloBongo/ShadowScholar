@@ -1,46 +1,66 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MinimapIcon : MonoBehaviour
 {
-    private Transform targetTransform; 
-    private GameObject minimap; 
-    private RectTransform minimapRect;
-    private float minimapSize;
-
     public GameObject iconPrefab;
-    private RectTransform iconRect; 
+    private Transform playerTransform;
 
-    void Start()
+    private RectTransform minimapRect;
+    private Camera minimapCamera;
+    private RectTransform iconRect;
+
+    public void InitMinimapIcon()
     {
-        targetTransform = transform;
-        minimap = GameObject.Find("Mini-Map");
-        minimapRect = minimap.GetComponent<RectTransform>();
-        minimapSize = GameObject.Find("Mini-Map-Camera").GetComponent<Camera>().orthographicSize * 2;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if(iconPrefab != null)
+        minimapCamera = GameObject.Find("Mini-Map-Camera").GetComponent<Camera>();
+        if (minimapCamera == null)
         {
-            Instantiate(iconPrefab, minimapRect);
-            iconRect = iconPrefab.GetComponent<RectTransform>();
+            Debug.LogError("Mini-Map Camera not found!");
+            return;
+        }
+
+        minimapRect = GameObject.Find("Mini-Map").GetComponent<RectTransform>();
+        if (minimapRect == null)
+        {
+            Debug.LogError("Mini-Map RectTransform not found!");
+            return;
+        }
+
+        if (iconPrefab != null)
+        {
+            GameObject iconInstance = Instantiate(iconPrefab, minimapRect);
+            iconRect = iconInstance.GetComponent<RectTransform>();
         }
         else
         {
-            Debug.LogError("iconPrefab can't be null");
+            Debug.LogError("Icon prefab is null!");
         }
     }
 
     void Update()
     {
-        if (iconPrefab != null)
+        if (iconRect != null && playerTransform != null)
         {
-            Vector3 targetPosition = targetTransform.position;
+            Vector3 worldPosition = transform.position;
 
-            float xPos = (targetPosition.x / minimapSize) * minimapRect.rect.width;
-            float yPos = (targetPosition.z / minimapSize) * minimapRect.rect.height;
+            Vector3 viewportPosition = minimapCamera.WorldToViewportPoint(worldPosition);
 
-            iconRect.anchoredPosition = new Vector2(xPos, yPos);
-            iconRect.rotation = Quaternion.Euler(0, 0, -targetTransform.eulerAngles.y);
+            if (viewportPosition.z > 0 && viewportPosition.x >= 0 && viewportPosition.x <= 1 && viewportPosition.y >= 0 && viewportPosition.y <= 1)
+            {
+                iconRect.gameObject.SetActive(true);
+
+                float xPos = (viewportPosition.x - 0.5f) * minimapRect.rect.width;
+                float yPos = (viewportPosition.y - 0.5f) * minimapRect.rect.height;
+
+                iconRect.anchoredPosition = new Vector2(xPos, yPos);
+
+                iconRect.rotation = Quaternion.Euler(0, 0, -transform.eulerAngles.y);
+            }
+            else
+            {
+                iconRect.gameObject.SetActive(false);
+            }
         }
     }
 }
-

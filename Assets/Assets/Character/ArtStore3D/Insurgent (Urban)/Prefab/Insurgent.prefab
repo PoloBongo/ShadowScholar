@@ -53219,14 +53219,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5665464087850412567}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5332429, y: 0.40794364, z: -0.5886108, w: -0.45030147}
+  m_LocalRotation: {x: 0.5665836, y: -0.43344995, z: -0.55659115, w: -0.42580575}
   m_LocalPosition: {x: -0.412, y: -0.112, z: 0}
   m_LocalScale: {x: 1.40576, y: 1.4057702, z: 1.4057703}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6510234549026653806}
   m_Father: {fileID: 6958050053912693822}
-  m_LocalEulerAnglesHint: {x: 73.838, y: -290.717, z: 160.036}
+  m_LocalEulerAnglesHint: {x: -74.8, y: -453.891, z: 183.755}
 --- !u!114 &5955756341999341127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88045,7 +88045,7 @@ MonoBehaviour:
   multipleTargets:
     targets: []
   selectWeapon:
-    selectedWeapon: 0
+    selectedWeapon: 1
     pistolProperties:
       prefabWeapon: {fileID: 5921290513557448829}
       prefabBullet: {fileID: 8736586290482629941, guid: 9d10b36bb076a3f4da134620c0ce667a, type: 3}
@@ -88117,7 +88117,7 @@ MonoBehaviour:
       audioSource: {fileID: 2957987937329159925}
   selectedIAType:
     iaType: 1
-    targetDistancePlayer: 30
+    targetDistancePlayer: 40
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -88224,12 +88224,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 1
+  selectedToolbar: 0
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
   fillHealthOnStart: 1
-  maxHealth: 500
+  maxHealth: 200
   healthRecovery: 0
   healthRecoveryDelay: 0
   currentHealthRecoveryDelay: 0
@@ -88243,7 +88243,7 @@ MonoBehaviour:
   _onDead:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5424763850420935221}
         m_TargetAssemblyTypeName: AIPlayerController, Assembly-CSharp
         m_MethodName: Dead
         m_Mode: 1

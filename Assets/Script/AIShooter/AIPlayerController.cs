@@ -116,6 +116,11 @@ public class AIPlayerController : MonoBehaviour
     [SerializeField] private IASelectedType selectedIAType;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] bool isStatic;
+    [SerializeField] bool canPtrol;
+
+    [SerializeField] private List<Transform> patrolPoints;
+    private int currentPatrolIndex = 0;
+    private bool inPatrol = false;
 
     private string setActiveWalkType;
     private string setActiveIdle;
@@ -293,6 +298,27 @@ public class AIPlayerController : MonoBehaviour
         }
     }
 
+    private void Patrol()
+    {
+        if (patrolPoints.Count == 0) return;
+        if (!CanViewPlayer())
+        {
+            if (!inPatrol)
+            {
+                navMeshAgent.SetDestination(patrolPoints[currentPatrolIndex].position);
+                inPatrol = true;
+                navMeshAgent.stoppingDistance = 1;
+                animator.SetTrigger(setActiveWalkType);
+            }
+
+            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance && !navMeshAgent.pathPending)
+            {
+                currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
+                navMeshAgent.SetDestination(patrolPoints[currentPatrolIndex].position);
+            }
+        }
+    }
+
     private bool CanViewPlayer()
     {
         if (iaChoose == "Facile" || iaChoose == "Moyen")
@@ -325,6 +351,7 @@ public class AIPlayerController : MonoBehaviour
                                     if (hit.transform.name == "HeadTrackSensor")
                                     {
                                         animator.SetTrigger(setActiveWalkType);
+                                        navMeshAgent.stoppingDistance = setStopDistanceToFirePlayer;
                                         inChasse = true;
                                         return inChasse;
                                     }
@@ -483,7 +510,14 @@ public class AIPlayerController : MonoBehaviour
         }
         else
         {
-            CanViewPlayer();
+            if (canPtrol)
+            {
+                Patrol();
+            }
+            else
+            {
+                CanViewPlayer();
+            }
         }
     }
 

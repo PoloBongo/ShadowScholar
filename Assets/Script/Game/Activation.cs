@@ -27,7 +27,7 @@ public class Activation : MonoBehaviour
         foreach (GameObject gameObject in SceneManager.GetActiveScene().GetRootGameObjects())
         {
             MinimapIcon[] icons = gameObject.GetComponentsInChildren<MinimapIcon>();
-            if(icons.Length > 0)
+            if (icons != null && icons.Length > 0)
             {
                 minimapIcons.AddRange(icons);
             }
@@ -35,13 +35,20 @@ public class Activation : MonoBehaviour
 
         foreach (MinimapIcon icon in minimapIcons)
         {
-            icon.InitMinimapIcon();
+            if (icon != null)
+            {
+                icon.InitMinimapIcon();
+            }
+            else
+            {
+                Debug.LogWarning("Found a null MinimapIcon reference.");
+            }
         }
 
         if (sceneName == "Game")
         {
             zoneLoader = GameObject.Find("ZoneLoader");
-            loadInput.GetComponent<ZoneLoader>().InitZoneLoader();
+            zoneLoader.GetComponent<ZoneLoader>().InitZoneLoader();
 
             GameObject acceuil = GameObject.Find("ReceptionTable_straight (3)");
             GameObject launchMission = GameObject.Find("Chair_PD_01_02_Interact");

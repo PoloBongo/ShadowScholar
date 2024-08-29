@@ -1,11 +1,10 @@
-using GeNa.Core;
 using System.IO;
 using UnityEngine;
 
 public class Horloge : MonoBehaviour
 {
     private float duration = 3600f;
-    private float durationLight = 300f;
+    private float durationLight = 60f;
     private float startTime;
     private float lightStartTime;
     private float lightStartTimeDay;
@@ -15,8 +14,6 @@ public class Horloge : MonoBehaviour
     private GameObject foundDirectionalLight;
     [SerializeField] private Material daySkybox;
     [SerializeField] private Material nightSkybox;
-    [SerializeField] private GaiaTimeOfDayLightSync interiorSpot;
-    [SerializeField] private GaiaTimeOfDayLightSync interiorSpotVariant;
     public float percentageComplete;
 
     private GameObject jsonFileGamObject;
@@ -77,16 +74,6 @@ public class Horloge : MonoBehaviour
             startTime = Time.time;
             lightStartTime = 0f;
             lightStartTimeDay = 0f;
-        }
-
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("ta appuyé sur K");
-            interiorSpot.m_overrideSystemActiveState = true;
-            interiorSpot.m_lightComponent.enabled = true;
-
-            interiorSpotVariant.m_overrideSystemActiveState = true;
-            interiorSpotVariant.m_lightComponent.enabled = true;
         }
     }
 

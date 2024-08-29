@@ -11,11 +11,11 @@ public class CheckVagueIA : MonoBehaviour
     private GameObject player;
     private int initialCount;
     private int indexVague;
-    void Start()
+
+    public void InitCheckIA()
     {
         actualVague = iaVagues[0].name;
         initialCount = iaVagues[0].transform.childCount;
-        initialCount++;
         indexVague = 0;
         renderIA = false;
     }
@@ -47,7 +47,7 @@ public class CheckVagueIA : MonoBehaviour
     private void CheckAndSwitchVague()
     {
         int count = SearchIAInVague();
-        if (count < initialCount && count > 0)
+        if (count < initialCount && count >= 0)
         {
             initialCount--;
             objectifMission.UpdateObjectif(indexVague, 1);
@@ -66,7 +66,8 @@ public class CheckVagueIA : MonoBehaviour
                         actualVague = iaVagues[i + 1].name;
                         renderIA = true;
                         initialCount = iaVagues[i + 1].transform.childCount;
-                        objectifMission.ShowTextMotivation();
+                        if (iaVagues[i].name != "IAVague1")
+                            objectifMission.ShowTextMotivation();
                     }
                     break;
                 }

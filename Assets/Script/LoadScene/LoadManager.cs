@@ -498,6 +498,76 @@ public class LoadManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(sceneIndex);
     }
     #endregion
+    #region LoadSceneMission4
+
+    IEnumerator PreloadSceneAndAssetsMission4(string sceneName)
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        loadingSlider.gameObject.SetActive(true);
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        loadingText.text = "Préparation des assets nécessaire";
+        // Charger la scène en arrière-plan sans l'activer
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        operation.allowSceneActivation = false;
+
+        // Une fois chargé à 90% on peut activer la scène
+        while (operation.progress < 0.9f)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                break;
+            }
+            yield return null;
+        }
+        loadingSlider.value = 90f;
+
+        loadingText.color = Color.red;
+        loadingText.text = $"Chargement de la scène : {operation.progress * 100:F0}%";
+        operation.allowSceneActivation = true;
+
+        // Attendre que la scène soit complètement activée pour passer à l'étape suivante
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        // on la met comme active comme ça on peut charger les assets dedans
+        Scene targetScene = SceneManager.GetSceneByName(sceneName);
+        if (targetScene.IsValid())
+        {
+            SceneManager.SetActiveScene(targetScene);
+        }
+
+        GameObject transitionUI = GameObject.Find("TransitionUIForKinematic");
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(false);
+        }
+
+        GameObject AllHub = GameObject.Find("AllHub");
+        if (AllHub == null)
+        {
+            Debug.LogError("GameObject missing in the scene.");
+            yield break;
+        }
+
+        loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
+        // Instanciation des assets dans la nouvelle scène
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_16", AllHub, 1, 3));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 2, 3));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 3));
+
+        if (transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
+
+        // on enlève de force la scène de chargement pour éviter tout soucis
+        loadingText.text = "Nettoyage de la scène de chargement...";
+        SceneManager.UnloadSceneAsync(sceneIndex);
+    }
+    #endregion
+
     IEnumerator LoadAndInstantiateAssetAsync(string assetPath, GameObject parentObject, int assetIndex, int totalAssets)
     {
         Debug.Log($"Attempting to load {assetPath}");

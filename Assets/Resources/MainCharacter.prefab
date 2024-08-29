@@ -8659,12 +8659,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 1
+  selectedToolbar: 0
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
   fillHealthOnStart: 1
-  maxHealth: 100
+  maxHealth: 1000
   healthRecovery: 0
   healthRecoveryDelay: 0
   currentHealthRecoveryDelay: 0
@@ -17216,7 +17216,7 @@ MonoBehaviour:
   openCloseEvents: 0
   openCloseWindow: 0
   selectedToolbar: 0
-  bodyStruct: {fileID: 11400000, guid: 65499a56104ff124d86c001ac38e1c4e, type: 2}
+  bodyStruct: {fileID: 0}
   showLabels: 0
   boneSnappingList:
   - name: Hips

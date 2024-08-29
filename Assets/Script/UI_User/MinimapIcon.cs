@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class MinimapIcon : MonoBehaviour
 {
-    public GameObject iconPrefab; 
-    private Transform playerTransform; 
+    public GameObject iconPrefab;
+    private Transform playerTransform;
 
-    private RectTransform minimapRect; 
+    private RectTransform minimapRect;
     private Camera minimapCamera;
     private RectTransform iconRect;
 
-    void Start()
+    public void InitMinimapIcon()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 

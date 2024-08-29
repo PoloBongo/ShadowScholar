@@ -462,6 +462,6 @@ public class DoorScript : MonoBehaviour {
 
     private void OnDestroy()
     {
-		DestroyImmediate(doorTexts.TextPrefab);
+		DestroyImmediate(doorTexts.TextPrefab, true);
     }
 }

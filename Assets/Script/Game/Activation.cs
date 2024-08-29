@@ -39,10 +39,6 @@ public class Activation : MonoBehaviour
             {
                 icon.InitMinimapIcon();
             }
-            else
-            {
-                Debug.LogWarning("Found a null MinimapIcon reference.");
-            }
         }
 
         if (sceneName == "Game")

@@ -113,5 +113,17 @@ public class Activation : MonoBehaviour
                 }
             }
         }
+        else if (sceneName == "Mission4")
+        {
+            GameObject IAVague1 = GameObject.Find("Patrouille1");
+            foreach (Transform child in IAVague1.transform)
+            {
+                AIPlayerController aiController = child.GetComponent<AIPlayerController>();
+                if (aiController != null)
+                {
+                    aiController.AssignPlayerTransforms(this.gameObject);
+                }
+            }
+        }
     }
 }

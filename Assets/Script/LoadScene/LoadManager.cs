@@ -124,8 +124,19 @@ public class LoadManager : MonoBehaviour
         // Instanciation des assets dans la nouvelle scène
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 4));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 2, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_18", Zones, 4, 4));
+        if (jsonFile.shadowScholar.area.playArea == "Zone_1")
+        {
+            yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 3));
+
+        }
+        else if (jsonFile.shadowScholar.area.playArea == "Zone_14") 
+        {
+            yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_14", Zones, 3, 3));
+        }
+        else if (jsonFile.shadowScholar.area.playArea == "Zone_18")
+        {
+            yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_18", Zones, 3, 3));
+        }
 
         if (transitionUI != null)
         {

@@ -46,7 +46,7 @@ public class ZoneLoader : MonoBehaviour
     public TextMeshProUGUI loadingText;
 
     private string filePath;
-    private JsonFile jsonFile;
+    public JsonFile jsonFile;
 
     // Start is called before the first frame update
     void Start()
@@ -60,8 +60,6 @@ public class ZoneLoader : MonoBehaviour
         {
             jsonFile.ReadJsonFile(filePath);
         }
-
-        InitZoneFromJson();
     }
 
     // Start pour le player
@@ -98,36 +96,6 @@ public class ZoneLoader : MonoBehaviour
         }
     }
 
-    // Initialise les zones par rapport au json
-    private void InitZoneFromJson() 
-    { 
-        if(jsonFile.shadowScholar.area.playArea == "Zone_14")
-        {
-            MakeAreaToLoadForZone14();
-        }
-        else if(jsonFile.shadowScholar.area.playArea == "Zone_1")
-        {
-            MakeAreaToLoadForZone1();
-        }
-        else if(jsonFile.shadowScholar.area.playArea == "Zone_18")
-        {
-            MakeAreaToLoadForZone18();
-        }
-        else
-        {
-            Debug.LogError("No valid zone in JsonFile");
-        }
-        if(areaToLoad.Count > 0)
-        {
-            StartCoroutine(InitDefaultZones());
-            while (areaToLoad.Count != loadedArea.Count)
-            {
-                continue;
-            }
-            areaToLoad.Clear();
-        }
-    }
-
     // Ouvre le menu
     private void OpenMenu()
     {
@@ -153,54 +121,23 @@ public class ZoneLoader : MonoBehaviour
     // Zone de la maison
     public void ShowHouseZone()
     {
-        MakeAreaToLoadForZone14();
-        StartCoroutine(ShowZones());
-    }
 
-    // Ajoute les zones à chargé pour la zone 14
-    private void MakeAreaToLoadForZone14()
-    {
         areaToLoad.Add("Zone_14");
-        areaToLoad.Add("Zone_11");
-        areaToLoad.Add("Zone_12");
-        areaToLoad.Add("Zone_15");
-        areaToLoad.Add("Zone_23");
-        areaToLoad.Add("Zone_22");
-        areaToLoad.Add("Zone_19");
-        areaToLoad.Add("Zone_13");
+        StartCoroutine(ShowZones());
     }
 
     // Zone de l'université
     public void ShowSchoolZone()
     {
-        MakeAreaToLoadForZone1();
-        StartCoroutine(ShowZones());
-    }
-
-    // Ajoute les zones à chargé pour la zone 1
-    private void MakeAreaToLoadForZone1()
-    {
         areaToLoad.Add("Zone_1");
-        areaToLoad.Add("Zone_2");
+        StartCoroutine(ShowZones());
     }
 
     // Zone de l'agence 
     public void ShowAgencyZone()
     {
-        MakeAreaToLoadForZone18();
-        StartCoroutine(ShowZones());
-    }
-
-    // Ajoute les zones à chargé pour la zone 1
-    private void MakeAreaToLoadForZone18()
-    {
         areaToLoad.Add("Zone_18");
-        areaToLoad.Add("Zone_17");
-        areaToLoad.Add("Zone_10");
-        areaToLoad.Add("Zone_13");
-        areaToLoad.Add("Zone_19");
-        areaToLoad.Add("Zone_20");
-        areaToLoad.Add("Zone_24");
+        StartCoroutine(ShowZones());
     }
 
     // Verifie que les resources sont chargés et instancie la zone
@@ -310,24 +247,6 @@ public class ZoneLoader : MonoBehaviour
             loadingScreenCanvas.enabled = false;
         }
 
-    }
-
-    // Initialise les zones de base
-    IEnumerator InitDefaultZones()
-    {
-        foreach (string area in areaToLoad)
-        {
-            if (!CheckContains(loadedArea, area))
-            {
-                string[] prefabsPath = Directory.GetFiles(Path.Combine(Application.dataPath, "Resources", "Prefabs Zone/" + area), "*.prefab", SearchOption.TopDirectoryOnly);
-                ressourcesToLoad = prefabsPath.Length;
-                foreach (string prefabPath in prefabsPath)
-                {
-                    yield return StartCoroutine(LoadRessourcesForZone(prefabPath, area));
-                }
-                yield return StartCoroutine(LoadAndInstantiateZone(area));
-            }
-        }
     }
 
     // Check si la list contient un certain nom

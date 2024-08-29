@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 8035662125312957610}
   - component: {fileID: 8775343586592549770}
   - component: {fileID: 8967357819987787560}
+  - component: {fileID: 8183176705160500445}
   m_Layer: 0
   m_Name: Terrain_(1000.00, 0.00, 1000.00)
   m_TagString: Untagged
@@ -548,6 +549,21 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c1e6df4566397c34ab738cac62959b40, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &8183176705160500445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4763719006119759682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a76b9c53788d84bae44b80ddaa6f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName:
+  - Mission2
+  - Mission3
 --- !u!1 &6516326595246389368
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5295970117327045710}
+  - component: {fileID: 347567706960177165}
   m_Layer: 0
   m_Name: map
   m_TagString: Untagged
@@ -689,6 +706,18 @@ Transform:
   - {fileID: 618265431904258669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &347567706960177165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746281429134006661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054274092705d47b8cc27f27aab3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7666362379072163393
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectionObject : MonoBehaviour
 {
@@ -20,7 +21,14 @@ public class DetectionObject : MonoBehaviour
     public void InitDetectionObject(Camera _camera, bool _canSearch)
     {
         playerCamera = _camera;
-        canSearch = _canSearch;
+        if (SceneManager.GetActiveScene().name == "Mission2")
+        {
+            canSearch = _canSearch;
+        }
+        else
+        {
+            canSearch = false;
+        }
     }
 
     void Update()

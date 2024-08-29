@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class showCursor : MonoBehaviour
+public class ShowCursor : MonoBehaviour
 {
     void Start()
     {

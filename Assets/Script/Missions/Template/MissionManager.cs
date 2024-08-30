@@ -1,4 +1,5 @@
 using Invector.vCharacterController;
+using Invector.vItemManager;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,7 @@ public class MissionManager : MonoBehaviour
 
     private string filePath;
     [SerializeField] JsonFile jsonFile;
+    private vItemManager vItemManager;
 
     private void Start()
     {
@@ -41,6 +43,12 @@ public class MissionManager : MonoBehaviour
     public void MissionStatus(string missionStatus, int indexMission)
     {
         HUDPlayer = GameObject.Find("InvectorComponents");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            vItemManager = player.GetComponent<vItemManager>();
+        if (vItemManager != null)
+            vItemManager.SaveInventory();
+
         if (missionStatus == "Success")
         {
             SaveMissionFinish(indexMission);

@@ -85,9 +85,10 @@ public class MissionHub : MonoBehaviour
 
         layerMask = LayerMask.GetMask("UI");
 
-/*        mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
-        missions.Add(mission1);
-        ChangeNextMissionNum(1);*/
+        /*        mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
+                missions.Add(mission1);
+                ChangeNextMissionNum(1);*/
+        ChangeNextMissionNum(1);
     }
 
     public void InitMissionHub()
@@ -368,6 +369,7 @@ public class MissionHub : MonoBehaviour
                                 jsonSave.shadowScholar.missions.isStart = true;
                             break;
                     }
+                    jsonSave.shadowScholar.player.position = new Vector3(1605.767f, 15.61f, 646.4249f);
                     jsonSave.SaveJson();
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                     SceneManager.LoadScene(2);
@@ -443,10 +445,17 @@ public class MissionHub : MonoBehaviour
 
     void ChangeNextMissionNum(int missionNum)
     {
-        nextMissionNum = missionNum;
-        hubInterface.missionText.text = missions[missionNum - 1].name;
-        missionLocalizationMaterial.SetTexture("_MainTex", missions[missionNum - 1].localization_texture);
-        hubInterface.missionObjectifText.text = missions[missionNum - 1].objectif;
+        if (missionNum < 1 || missionNum > missions.Count)
+        {
+            // out of range chef
+        }
+        else
+        {
+            nextMissionNum = missionNum;
+            hubInterface.missionText.text = missions[missionNum - 1].name;
+            missionLocalizationMaterial.SetTexture("_MainTex", missions[missionNum - 1].localization_texture);
+            hubInterface.missionObjectifText.text = missions[missionNum - 1].objectif;
+        }
     }
 
     IEnumerator WaitForSitAnimationToEnd()

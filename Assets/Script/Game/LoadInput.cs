@@ -25,11 +25,26 @@ public class LoadInput : MonoBehaviour
     [SerializeField] private JsonFile jsonFile;
     private void Start()
     {
+        ReadJson();
+    }
+
+    private void ReadJson()
+    {
         filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
 
         if (File.Exists(filePath))
         {
             jsonFile.ReadJsonFile(filePath);
+        }
+    }
+
+    void OnEnable()
+    {
+        ReadJson();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            OnThirdPersonInputActivated();
         }
     }
 
@@ -103,9 +118,8 @@ public class LoadInput : MonoBehaviour
 
             if (zoneLoader != null)
             {
-                Debug.Log("c  good");
                 zoneLoader.openCloseMenuTPInput = new GenericInput(jsonFile.shadowScholar.inputSettings.openCloseMenuTPInput, "Start", "Start");
-            } else { Debug.Log("azec guez"); }
+            }
         }
         else
         {

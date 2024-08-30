@@ -17,6 +17,7 @@ namespace Invector
         public GameObject playerPrefab;
         [vHelpBox("Assign a empty transform to spawn the Player to a specific location")]
         public Transform spawnPoint;
+        public Transform DebugPoint;
         [vHelpBox("Time to wait until the scene restart or the player will be spawned again")]
         public float respawnTimer = 4f;
         [vHelpBox("Check this if you want to destroy the dead body after the respawn")]

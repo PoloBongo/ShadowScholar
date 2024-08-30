@@ -108,6 +108,7 @@ public class ListenerQuit : MonoBehaviour
                 }
             }
         }
+        SearchPlayerForSaveInventory();
         Application.Quit();
     }
 }

@@ -34431,7 +34431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4891123705750235241}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.04756603, z: -0, w: -0.99886817}
+  m_LocalRotation: {x: 0, y: 0.047568027, z: -0, w: -0.99886805}
   m_LocalPosition: {x: 1813.1537, y: 9.153023, z: 1239.7656}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34546,12 +34546,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 1
+  selectedToolbar: 0
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
   fillHealthOnStart: 1
-  maxHealth: 500
+  maxHealth: 200
   healthRecovery: 0
   healthRecoveryDelay: 0
   currentHealthRecoveryDelay: 0
@@ -34674,7 +34674,7 @@ MonoBehaviour:
       clipCapacity: 25
       clipMaxCapacity: 25
       frequencyFire: 0.3
-      stopDistanceToFirePlayer: 10
+      stopDistanceToFirePlayer: 65
       particlesFire:
       - {fileID: 1026831130201075748}
       - {fileID: 4106870047279529559}
@@ -34711,11 +34711,15 @@ MonoBehaviour:
       audioSource: {fileID: 4307508688170285831}
   selectedIAType:
     iaType: 1
-    targetDistancePlayer: 25
+    targetDistancePlayer: 65
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4294967295
   isStatic: 0
+  canPtrol: 0
+  patrolPoints: []
+  canDetectFailedMission: 0
+  indexMission: 0
 --- !u!1 &5005688947091577850
 GameObject:
   m_ObjectHideFlags: 0

@@ -70185,12 +70185,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 1
+  selectedToolbar: 0
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
   fillHealthOnStart: 1
-  maxHealth: 500
+  maxHealth: 200
   healthRecovery: 0
   healthRecoveryDelay: 0
   currentHealthRecoveryDelay: 0
@@ -70313,7 +70313,7 @@ MonoBehaviour:
       clipCapacity: 25
       clipMaxCapacity: 25
       frequencyFire: 0.3
-      stopDistanceToFirePlayer: 10
+      stopDistanceToFirePlayer: 50
       particlesFire:
       - {fileID: 6690724937135041889}
       - {fileID: 6027836958691097779}
@@ -70350,11 +70350,15 @@ MonoBehaviour:
       audioSource: {fileID: 2010088506778078138}
   selectedIAType:
     iaType: 1
-    targetDistancePlayer: 25
+    targetDistancePlayer: 50
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4294967295
   isStatic: 1
+  canPtrol: 0
+  patrolPoints: []
+  canDetectFailedMission: 0
+  indexMission: 0
 --- !u!1 &7354509269930515100
 GameObject:
   m_ObjectHideFlags: 0

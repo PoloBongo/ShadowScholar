@@ -13,7 +13,9 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private GameObject missionSuccessUI;
     [SerializeField] private GameObject objectifUI;
     [SerializeField] List<TMP_Text> objectifs = new List<TMP_Text>();
+    [SerializeField] private int indexMission;
     private GameObject HUDPlayer;
+    private vThirdPersonController vThirdPersonController;
     public GenericInput openObjectif = new GenericInput("F1", "Start", "Start");
     public GenericInput closeObjectif = new GenericInput("Escape", "Start", "Start");
     private bool isOpen = false;
@@ -28,6 +30,12 @@ public class MissionManager : MonoBehaviour
         {
             jsonFile.ReadJsonFile(filePath);
         }
+    }
+
+    public void InitPlayerMissionManager()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        vThirdPersonController = player.GetComponent<vThirdPersonController>();
     }
 
     public void MissionStatus(string missionStatus, int indexMission)
@@ -86,6 +94,14 @@ public class MissionManager : MonoBehaviour
         {
             isOpen = false;
             OpenObjectifFunction(isOpen);
+        }
+
+        if (vThirdPersonController != null)
+        {
+            if (vThirdPersonController.currentHealth <= 0)
+            {
+                MissionStatus("Failed", indexMission);
+            }
         }
     }
 

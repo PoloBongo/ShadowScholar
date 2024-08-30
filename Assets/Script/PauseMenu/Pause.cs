@@ -66,6 +66,17 @@ public class Pause : MonoBehaviour
         isPaused = true;
     }
 
+    public void DebugMe()
+    {
+        Debug.Log("sa click ici chef");
+        GameObject gameController = GameObject.FindWithTag("GameController");
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null &&  gameController != null)
+        {
+            player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
+        }
+    }
+
     public void ResumeScene()
     {
         StartCoroutine(UnLoadScene(pauseMenuSceneName));

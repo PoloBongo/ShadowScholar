@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.621515, g: 0.60214925, b: 0.5873384, a: 1}
+  m_IndirectSpecularColor: {r: 0.46143323, g: 0.44705087, b: 0.43613255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 1316644599}
   isMainMenu: 0
+  isPauseMenu: 0
 --- !u!114 &32003141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   - {fileID: 1076594042}
   - {fileID: 1596956911}
   - {fileID: 1074450797}
+  indexMission: 0
   openObjectif:
     useInput: 1
     isAxisInUse: 0
@@ -3601,7 +3603,12 @@ MonoBehaviour:
         isFinish: 0
       mission2:
         isFinish: 0
+      mission3:
+        isFinish: 0
       isStart: 0
+    area:
+      playArea: 
+      playerTransform: {fileID: 0}
   isForInputSettings: 0
   inputFields: []
 --- !u!1 &1413081402
@@ -3966,6 +3973,8 @@ MonoBehaviour:
     parentText: {fileID: 1979385829}
   - textGameobject: {fileID: 543629271}
     parentText: {fileID: 1979385829}
+  objectifRequiredText: {fileID: 0}
+  objectifRequiredTextParent: {fileID: 0}
   missionManager: {fileID: 32003141}
 --- !u!4 &1492307334
 Transform:

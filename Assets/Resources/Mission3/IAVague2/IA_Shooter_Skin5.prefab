@@ -70292,12 +70292,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 1
+  selectedToolbar: 0
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
   fillHealthOnStart: 1
-  maxHealth: 500
+  maxHealth: 200
   healthRecovery: 0
   healthRecoveryDelay: 0
   currentHealthRecoveryDelay: 0
@@ -70385,7 +70385,7 @@ MonoBehaviour:
   multipleTargets:
     targets: []
   selectWeapon:
-    selectedWeapon: 1
+    selectedWeapon: 0
     pistolProperties:
       prefabWeapon: {fileID: 596768795730084763}
       prefabBullet: {fileID: 8736586290482629941, guid: 9d10b36bb076a3f4da134620c0ce667a, type: 3}
@@ -70399,7 +70399,7 @@ MonoBehaviour:
       clipCapacity: 6
       clipMaxCapacity: 6
       frequencyFire: 0.5
-      stopDistanceToFirePlayer: 10
+      stopDistanceToFirePlayer: 20
       particlesFire:
       - {fileID: 7307966640888396513}
       - {fileID: 352430352393091120}
@@ -70464,6 +70464,8 @@ MonoBehaviour:
   isStatic: 0
   canPtrol: 0
   patrolPoints: []
+  canDetectFailedMission: 0
+  indexMission: 0
 --- !u!1 &7942033899110784238
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,7 +47,7 @@ public class TriggerMission3 : MonoBehaviour
         GameObject IABoss = GameObject.Find("IABoss");
         foreach (Transform child in IABoss.transform)
         {
-            objectifMission.UpdateFinalObjectif(0, 16);
+            objectifMission.UpdateFinalObjectif(0, 17);
             child.gameObject.SetActive(true);
         }
 

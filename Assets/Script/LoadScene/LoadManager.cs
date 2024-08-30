@@ -477,13 +477,13 @@ public class LoadManager : MonoBehaviour
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 21));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 1, 21));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/CarCover", AllHub, 4, 21));
 
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin1", IAVague1, 4, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin2", IAVague1, 5, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin3", IAVague1, 6, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin4", IAVague1, 7, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin5", IAVague1, 8, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin6", IAVague1, 9, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin1", IAVague1, 5, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin2", IAVague1, 6, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin3", IAVague1, 7, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin4", IAVague1, 8, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin5", IAVague1, 9, 21));
 
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin1", IAVague2, 10, 21));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague2/IA_Shooter_Skin2", IAVague2, 11, 21));

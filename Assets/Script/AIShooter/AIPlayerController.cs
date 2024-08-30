@@ -2,7 +2,6 @@ using Invector;
 using Invector.vCharacterController;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 public enum WeaponType
@@ -119,13 +118,23 @@ public class AIPlayerController : MonoBehaviour
     [SerializeField] bool canPtrol;
 
     [SerializeField] private List<Transform> patrolPoints;
+
+/*    [System.Serializable]
+    public class SphereDetection
+    {
+        public SphereCollider modeDifficile;
+        public float radiusSphere;
+        public SphereCollider detectFriendIA;
+        public float radiusSphereFriendIA;
+    }
+    [SerializeField] private SphereDetection sphereDetection;*/
     private int currentPatrolIndex = 0;
     private bool inPatrol = false;
 
     private string setActiveWalkType;
     private string setActiveIdle;
     private Camera iaCamera;
-    private bool inChasse;
+    public bool inChasse;
     [SerializeField] private bool canDetectFailedMission;
     [SerializeField] private int indexMission;
     private string iaChoose;
@@ -205,6 +214,32 @@ public class AIPlayerController : MonoBehaviour
                 setTargetDistancePlayer = selectedIAType.targetDistancePlayer;
                 break;
         }
+/*        // sphere pour la détection du player dans la zone de l'IA
+        if (sphereDetection == null)
+        {
+            sphereDetection = new SphereDetection(); // Initialiser sphereDetection si nécessaire
+        }
+        if (sphereDetection.modeDifficile == null)
+        {
+            sphereDetection.modeDifficile = GetComponent<SphereCollider>();
+        }
+        sphereDetection.modeDifficile = GetComponent<SphereCollider>();
+        sphereDetection.modeDifficile.isTrigger = true;
+        sphereDetection.modeDifficile.radius = sphereDetection.radiusSphere;
+        sphereDetection.modeDifficile.center = Vector3.zero;
+
+        // sphere pour alerter les autres IA qu'une IA a vu le player
+        if (sphereDetection.detectFriendIA == null)
+        {
+            sphereDetection.detectFriendIA = gameObject.AddComponent<SphereCollider>();
+        }
+        sphereDetection.detectFriendIA = gameObject.AddComponent<SphereCollider>();
+        sphereDetection.detectFriendIA.isTrigger = true;
+        sphereDetection.detectFriendIA.radius = sphereDetection.radiusSphereFriendIA;
+        sphereDetection.detectFriendIA.center = Vector3.zero;
+
+        sphereDetection.modeDifficile.gameObject.layer = LayerMask.NameToLayer("ModeDifficile");
+        sphereDetection.detectFriendIA.gameObject.layer = LayerMask.NameToLayer("AlertFriendIA");*/
 
         navMeshAgent.stoppingDistance = setStopDistanceToFirePlayer;
         animator.SetTrigger(setActiveIdle);
@@ -300,6 +335,35 @@ public class AIPlayerController : MonoBehaviour
         }
     }
 
+    /* private void OnTriggerEnter(Collider other)
+     {
+         if (other.gameObject.layer == LayerMask.NameToLayer("ModeDifficile"))
+         {
+             if (iaChoose == "Difficile")
+             {
+                 if (other.CompareTag("Ignore Ragdoll"))
+                 {
+                     inChasse = true;
+                 }
+             }
+         }
+         else if (other.gameObject.layer == LayerMask.NameToLayer("AlertFriendIA"))
+         {
+             AIPlayerController otherAI = other.GetComponent<AIPlayerController>();
+             if (inChasse)
+             {
+                 if (otherAI != null && !otherAI.inChasse)
+                 {
+                     otherAI.inChasse = true;
+                     Debug.Log(otherAI.name);
+                 } else
+                 {
+                     Debug.Log("null");
+                 }
+             }
+         }
+     }*/
+
     private void Patrol()
     {
         if (patrolPoints.Count == 0) return;
@@ -378,6 +442,17 @@ public class AIPlayerController : MonoBehaviour
 
         inChasse = false;
         return inChasse;
+    }
+
+    public void OnPlayerDetected()
+    {
+        if (!inChasse)
+        {
+            Debug.Log(gameObject.name + " is now chasing the player!");
+            inChasse = true;
+            navMeshAgent.SetDestination(mainCharacter.transform.position);
+            isWalking = false;
+        }
     }
 
     void Update()

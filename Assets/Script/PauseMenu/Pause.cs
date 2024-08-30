@@ -1,4 +1,5 @@
 using Invector;
+using Invector.Utils;
 using Invector.vCharacterController;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +11,7 @@ public class Pause : MonoBehaviour
 {
 
     public string pauseMenuSceneName = "MenuPause";
-    private List<MonoBehaviour> scriptsInMainScene;
-    private Button resumeButton;
+    private List<MonoBehaviour> scriptsInMainScene = new List<MonoBehaviour>();
 
     private bool isPaused = false; 
 
@@ -65,7 +65,10 @@ public class Pause : MonoBehaviour
 
         foreach (var script in scriptsInMainScene)
         {
-            script.enabled = true; 
+            if (script != null)
+            {
+                script.enabled = true;
+            }
         }
 
         scriptsInMainScene.Clear();

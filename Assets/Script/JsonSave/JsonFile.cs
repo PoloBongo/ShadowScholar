@@ -50,6 +50,9 @@ public class JsonFile : MonoBehaviour
         public string fastClimbInput;
         public string slideDownClimbInput;
         public string hideWeaponInput;
+        public string openObjectifInput;
+        public string closeObjectifInput;
+        public string openCloseMenuTPInput;
     }
     [System.Serializable]
     public class Horloge
@@ -145,7 +148,10 @@ public class JsonFile : MonoBehaviour
                 exitInput = "Space",
                 fastClimbInput = "LeftShift",
                 slideDownClimbInput = "Q",
-                hideWeaponInput = "H"
+                hideWeaponInput = "H",
+                openObjectifInput = "F1",
+                closeObjectifInput = "Escape",
+                openCloseMenuTPInput = ";"
             },
             horloge = new Horloge()
             {

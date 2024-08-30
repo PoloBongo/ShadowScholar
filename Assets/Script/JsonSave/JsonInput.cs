@@ -43,6 +43,11 @@ public class JsonInput : MonoBehaviour
         public TMP_InputField slideDownInputText;
 
         public TMP_InputField hideWeaponInputText;
+
+        public TMP_InputField openObjectifInputText;
+        public TMP_InputField closeObjectifInputText;
+
+        public TMP_InputField openCloseMenuTPInputText;
     }
     public TMP_InputFieldClass tmp_InputFieldClass;
     #endregion
@@ -98,6 +103,11 @@ public class JsonInput : MonoBehaviour
         tmp_InputFieldClass.slideDownInputText.text = ConvertAzertyToQwerty(jsonFile.shadowScholar.inputSettings.slideDownClimbInput);
 
         tmp_InputFieldClass.hideWeaponInputText.text = ConvertAzertyToQwerty(jsonFile.shadowScholar.inputSettings.hideWeaponInput);
+
+        tmp_InputFieldClass.openObjectifInputText.text = ConvertAzertyToQwerty(jsonFile.shadowScholar.inputSettings.openObjectifInput);
+        tmp_InputFieldClass.closeObjectifInputText.text = ConvertAzertyToQwerty(jsonFile.shadowScholar.inputSettings.closeObjectifInput);
+
+        tmp_InputFieldClass.openCloseMenuTPInputText.text = ConvertAzertyToQwerty(jsonFile.shadowScholar.inputSettings.openCloseMenuTPInput);
     }
 
     private string ConvertAzertyToQwerty(string inputKey)

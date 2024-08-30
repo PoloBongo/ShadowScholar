@@ -34,7 +34,6 @@ public class AudioManager : MonoBehaviour
 
     public void OnVolumeSliderChanged()
     {
-        Debug.Log("Slider changed, new value: " + volumeSlider.value);
         currentVolume = volumeSlider.value;
         ApplyVolume();
         SaveVolumeSettings();
@@ -49,7 +48,6 @@ public class AudioManager : MonoBehaviour
     {
         VolumeSettings settings = new VolumeSettings { volume = currentVolume };
         string json = JsonUtility.ToJson(settings, true);
-        Debug.Log("Saving JSON: " + json);
         File.WriteAllText(saveFilePath, json);
     }
 
@@ -58,7 +56,6 @@ public class AudioManager : MonoBehaviour
         if (File.Exists(saveFilePath))
         {
             string json = File.ReadAllText(saveFilePath);
-            Debug.Log("Loaded JSON: " + json);
             VolumeSettings settings = JsonUtility.FromJson<VolumeSettings>(json);
             currentVolume = settings.volume;
             if (volumeSlider != null)

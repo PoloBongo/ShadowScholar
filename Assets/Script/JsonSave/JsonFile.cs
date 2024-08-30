@@ -17,6 +17,7 @@ public class JsonFile : MonoBehaviour
         public Horloge horloge;
         public Missions missions;
         public Area area;
+        public Player player;
     }
     [System.Serializable]
     public class KinematicStart
@@ -92,6 +93,12 @@ public class JsonFile : MonoBehaviour
     {
         public string playArea;
         public Transform playerTransform;
+    }
+
+    [System.Serializable]
+    public class Player
+    {
+        public Vector3 position;
     }
 
     private string filePath;
@@ -177,6 +184,10 @@ public class JsonFile : MonoBehaviour
             {
                 playArea = "Zone_14",
                 playerTransform = null
+            },
+            player = new Player()
+            {
+                position = new Vector3(1459.83f, 16.873f, 1011.18f)
             }
         };
 

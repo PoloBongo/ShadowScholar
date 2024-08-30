@@ -73632,7 +73632,7 @@ Transform:
   m_GameObject: {fileID: 5839713202058465332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.79636633, z: 0, w: 0.6048146}
-  m_LocalPosition: {x: 1798.518, y: 10.115, z: 1207.797}
+  m_LocalPosition: {x: 1800.98, y: 10.069, z: 1207.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73916,8 +73916,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   isStatic: 0
-  canPtrol: 0
+  canPatrol: 0
   patrolPoints: []
+  sphereDetection:
+    modeDifficile: {fileID: 0}
+    radiusSphere: 0
+    detectFriendIA: {fileID: 0}
+    radiusSphereFriendIA: 0
   canDetectFailedMission: 0
   indexMission: 0
 --- !u!1 &5870914553143362085

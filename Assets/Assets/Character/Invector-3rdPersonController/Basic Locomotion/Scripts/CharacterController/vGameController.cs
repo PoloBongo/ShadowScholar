@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 namespace Invector
 {
     using System.Collections.Generic;
+    using System.IO;
     using UnityEngine.Events;
     using vCharacterController;
     [vClassHeader("Simple GameController Example", openClose = false)]
@@ -38,27 +39,42 @@ namespace Invector
         public class GetActiveScene
         {
             public string sceneName;
+            public JsonFile jsonFile;
         }
-
         public GetActiveScene getActiveSceneName;
+        private string filePath;
 
         protected virtual void Start()
         {
-/*            if (instance == null)
+            /*            if (instance == null)
+                        {
+                            instance = this;
+                            if (dontDestroyOnLoad)
+                            {
+                                DontDestroyOnLoad(this.gameObject);
+                            }
+
+                            this.gameObject.name = gameObject.name + " Instance";
+                        }
+                        else
+                        {
+                            Destroy(this.gameObject);
+                            return;
+                        }*/
+
+            if (getActiveSceneName.sceneName == "Game")
             {
-                instance = this;
-                if (dontDestroyOnLoad)
+                filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
+                if (File.Exists(filePath))
                 {
-                    DontDestroyOnLoad(this.gameObject);
+                    getActiveSceneName.jsonFile.ReadJsonFile(filePath);
                 }
 
-                this.gameObject.name = gameObject.name + " Instance";
+                if (getActiveSceneName.jsonFile.shadowScholar.player.position != null)
+                {
+                    spawnPoint.position = getActiveSceneName.jsonFile.shadowScholar.player.position;
+                }
             }
-            else
-            {
-                Destroy(this.gameObject);
-                return;
-            }*/
 
             SceneManager.sceneLoaded += OnLevelFinishedLoading;
             if (displayInfoInFadeText && vHUDController.instance)

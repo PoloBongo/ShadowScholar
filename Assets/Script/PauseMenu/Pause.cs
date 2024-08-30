@@ -1,6 +1,7 @@
 using Invector;
 using Invector.Utils;
 using Invector.vCharacterController;
+using Invector.vItemManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,15 +15,21 @@ public class Pause : MonoBehaviour
     private List<MonoBehaviour> scriptsInMainScene = new List<MonoBehaviour>();
 
     private bool isPaused = false; 
+    private vInventory inventory;
 
 
     // Update is called once per frame
     void Update()
     {
+        inventory = FindAnyObjectByType<vInventory>();
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
             {
+                if (inventory != null)
+                {
+                    inventory.CloseInventory();
+                }
                 PauseScene();
             }
             else

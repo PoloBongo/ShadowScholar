@@ -48,6 +48,8 @@ public class ZoneLoader : MonoBehaviour
     private string filePath;
     public JsonFile jsonFile;
 
+    public GenericInput openCloseMenuTPInput = new GenericInput(";", "Start", "Start");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +77,7 @@ public class ZoneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("MoveZone") > 0)
+        if (openCloseMenuTPInput.GetButtonDown() && !isPressed)
         {
             if(!isPressed)
             {
@@ -90,7 +92,8 @@ public class ZoneLoader : MonoBehaviour
                 isPressed = true;
             }
         }
-        else
+
+        if (openCloseMenuTPInput.GetButtonDown() && isPressed)
         {
             isPressed = false;
         }

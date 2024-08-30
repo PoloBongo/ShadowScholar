@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46143323, g: 0.44705087, b: 0.43613255, a: 1}
+  m_IndirectSpecularColor: {r: 0.6588572, g: 0.6384492, b: 0.6228032, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -224,7 +224,7 @@ MonoBehaviour:
   - {fileID: 1596956911}
   - {fileID: 1074450797}
   indexMission: 0
-  openObjectif:
+  openObjectifInput:
     useInput: 1
     isAxisInUse: 0
     isUnityInput: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
     timeButtonWasPressed: 0
     lastTimeTheButtonWasPressed: 0
     inButtomTimer: 0
-  closeObjectif:
+  closeObjectifInput:
     useInput: 1
     isAxisInUse: 0
     isUnityInput: 0
@@ -3206,7 +3206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3596,6 +3596,8 @@ MonoBehaviour:
       fastClimbInput: 
       slideDownClimbInput: 
       hideWeaponInput: 
+      openObjectifInput: 
+      closeObjectifInput: 
     horloge:
       time: 0
     missions:

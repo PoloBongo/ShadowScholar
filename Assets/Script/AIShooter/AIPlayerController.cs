@@ -416,12 +416,12 @@ public class AIPlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("player est null");
+                    /*Debug.Log("player est null");*/
                 }
             }
             else
             {
-                Debug.Log("camera null");
+                /*Debug.Log("camera null");*/
             }
 
             inChasse = false;

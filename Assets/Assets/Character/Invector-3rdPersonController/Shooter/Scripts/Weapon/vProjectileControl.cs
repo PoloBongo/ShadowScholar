@@ -63,7 +63,6 @@ namespace Invector.vShooter
 
             if (Physics.Linecast(previousPosition, transform.position + transform.forward * 0.5f, out hitInfo, hitLayer))
             {
-                Debug.Log(hitInfo.collider.name);
                 if (!hitInfo.collider)
                 {
                     return;

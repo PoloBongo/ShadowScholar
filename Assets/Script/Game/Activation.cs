@@ -123,15 +123,19 @@ public class Activation : MonoBehaviour
         }
         else if (sceneName == "Mission4")
         {
-            GameObject IAVague1 = GameObject.Find("Patrouille1");
-            foreach (Transform child in IAVague1.transform)
+            GameObject IA = GameObject.Find("IA");
+            foreach (Transform child in IA.transform)
             {
-                AIPlayerController aiController = child.GetComponent<AIPlayerController>();
-                if (aiController != null)
+                foreach (Transform child2 in child.transform)
                 {
-                    aiController.AssignPlayerTransforms(this.gameObject);
+                    AIPlayerController aiController = child2.GetComponent<AIPlayerController>();
+                    if (aiController != null)
+                    {
+                        aiController.AssignPlayerTransforms(this.gameObject);
+                    }
                 }
             }
+
         }
     }
 

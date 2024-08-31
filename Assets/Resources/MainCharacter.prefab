@@ -8600,6 +8600,7 @@ GameObject:
   - component: {fileID: 637949589146000347}
   - component: {fileID: 6780384403125768426}
   - component: {fileID: 286504798290888158}
+  - component: {fileID: 4632543517369723028}
   m_Layer: 8
   m_Name: MainCharacter
   m_TagString: Player
@@ -8659,7 +8660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 0
+  selectedToolbar: 7
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
@@ -8848,7 +8849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 0
+  selectedToolbar: 2
   unlockCursorOnStart: 0
   showCursorOnStart: 0
   toggleWalk: 301
@@ -9231,7 +9232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 0
+  selectedToolbar: 9
   canUseMeleeBlock_H: 0
   canUseMeleeWeakAttack_H: 1
   canUseMeleeStrongAttack_H: 1
@@ -9610,22 +9611,6 @@ MonoBehaviour:
     addToEquipArea: 1
     indexArea: 0
   - id: 10
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 36
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 50
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 0
-    addToEquipArea: 0
-    indexArea: 0
-  - id: 28
     name: 
     amount: 1
     attributes:
@@ -11037,6 +11022,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconPrefab: {fileID: 4989557845526812871, guid: 8450b94f1a27db848a1e460bf58ca353, type: 3}
+--- !u!114 &4632543517369723028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806862119620824390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ab0ac8cf60b2a498418c32fd450a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3814402028755733498
 GameObject:
   m_ObjectHideFlags: 0
@@ -18209,7 +18206,7 @@ MonoBehaviour:
   behindTargetSmoothRotation: 1
   lockCamera: 0
   offsetMouse: {x: 0, y: 0}
-  indexList: 0
+  indexList: 10
   indexLookPoint: 0
   offSetPlayerPivot: 0
   distance: 5

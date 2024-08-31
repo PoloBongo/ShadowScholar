@@ -39,6 +39,7 @@ Transform:
   - {fileID: 130110109958994789}
   - {fileID: 2941554754222221437}
   - {fileID: 1659173140468729501}
+  - {fileID: 5914730216890533418}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &8288749950702107260
@@ -248,16 +249,102 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6165788292797621780, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: keySystem.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165788292797621780, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: doorTexts.lockText
+      value: "Tu as besoin d'une carte d'acc\xE8s !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165788292797621780, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: keySystem.LockPrefab
+      value: 
+      objectReference: {fileID: 4717989749987442893, guid: f0293859618ea5447973a9cb447038fc, type: 3}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[0].text
+      value: Bonjour Madame, un de vos agent m'as dit de passer quand je pourrais
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[1].text
+      value: Bonjour, tu est bien Tyler ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[2].text
+      value: "Oui c'est bien \xE7a"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[3].text
+      value: "Ok parfait il t'attendais, je te confis une carte d'acc\xE8s, tu pourras
+        te rendre \xE0 l'arri\xE8re de l'office."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[4].text
+      value: "Ok merci, bonne journ\xE9e \xE0 vous !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[0].talker
+      value: Tyler
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[1].talker
+      value: Secretaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[2].talker
+      value: Tyler
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[3].talker
+      value: Secretaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944147179416682689, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: dialogueLines.Array.data[4].talker
+      value: Tyler
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018802116490570276, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: doorTexts.lockText
+      value: "Tu as besoin d'une carte d'acc\xE8s !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963420748834994118, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -64.007225
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6288653545343534685, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2469697142699005336, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7608450797807774522}
   m_SourcePrefab: {fileID: 100100000, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
 --- !u!4 &130110109958994789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1959492653578713469, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
   m_PrefabInstance: {fileID: 1945478465683784216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4087467651593279360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2469697142699005336, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+  m_PrefabInstance: {fileID: 1945478465683784216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7608450797807774522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4087467651593279360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff9c18d29eb4174aa60b23a2e9c1935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2412552714684890866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -392,59 +479,115 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 453155736343641174, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453155736343641174, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833479853134511597, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 833479853134511597, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1085698078031249330, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085698078031249330, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1169592592872252945, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169592592872252945, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1494276226669497285, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494276226669497285, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1704216332526085178, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704216332526085178, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842862508490192065, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842862508490192065, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1956043698598533538, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956043698598533538, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2055808098192095650, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055808098192095650, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2428351577911996747, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428351577911996747, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2465075479386636682, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465075479386636682, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2554283759367672014, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554283759367672014, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2554990221501459512, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554990221501459512, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2605980404527118218, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605980404527118218, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2676711523131871720, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_Name
@@ -452,103 +595,203 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767419081528024144, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767419081528024144, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3368309976202492205, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368309976202492205, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3372195619365374576, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372195619365374576, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3658782701598518875, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658782701598518875, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3832119360688808806, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832119360688808806, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883638905314693188, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883638905314693188, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3964303407553633435, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964303407553633435, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4462277907807973506, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462277907807973506, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4601886039522660872, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601886039522660872, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4614641975787188970, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614641975787188970, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4654434629609717079, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654434629609717079, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4685748256472448196, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685748256472448196, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4800127546083265491, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800127546083265491, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4861851334921635870, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861851334921635870, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4862941900135134544, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862941900135134544, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5134158688590842989, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134158688590842989, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5322424929564532815, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322424929564532815, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5474408178639691924, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474408178639691924, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5496420815503929773, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496420815503929773, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5520090240562710427, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520090240562710427, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723225655847274692, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723225655847274692, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6165134372630568856, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165134372630568856, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6331479768176421186, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331479768176421186, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6623066701402049131, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623066701402049131, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7176787555284959513, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176787555284959513, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7189800851484765010, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,47 +835,91 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7395439888323035288, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395439888323035288, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7470677442308908759, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470677442308908759, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498508125338569375, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498508125338569375, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7535998172094830718, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535998172094830718, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567962592330718621, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567962592330718621, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7600533070635882706, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600533070635882706, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7764450032379647587, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764450032379647587, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8366070373640998255, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366070373640998255, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8439049611026511251, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439049611026511251, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8568338763698827333, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568338763698827333, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8871258422139538952, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
       propertyPath: m_playerExists
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871258422139538952, guid: 356ad980574a1da4d94b79cf3e92b8fa, type: 3}
+      propertyPath: m_genaManagerExists
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -706,6 +993,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6293570379951464251, guid: f4412d4b325bb944494c327de6575ff1, type: 3}
   m_PrefabInstance: {fileID: 5441013922320062188}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6169912480219455937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2814200633419137255}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -289.695
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.236
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -205.899
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5740825439003164722, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9b3475c4e53fb04c9b9595fd908d74d, type: 2}
+    - target: {fileID: -5702350262334440183, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dca95a76b714a0e4fb37b5f25d823ccd, type: 2}
+    - target: {fileID: 919132149155446097, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Name
+      value: indian office woman
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399262706480193352, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3cb81a55c1695da40933046a864acfd0, type: 2}
+    - target: {fileID: 2480636403939241134, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15443bd2f92f1d24989cc41671c824c8, type: 2}
+    - target: {fileID: 5154920306303409279, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732718908528766139, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937541551142690876, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c79e99d939add34a88bcdbf8f448d73, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 31801331506081185}
+  m_SourcePrefab: {fileID: 100100000, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+--- !u!4 &5914730216890533418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+  m_PrefabInstance: {fileID: 6169912480219455937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6439733397575687312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+  m_PrefabInstance: {fileID: 6169912480219455937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &31801331506081185
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439733397575687312}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: -203655887218126122, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &6385171023561508950
 PrefabInstance:
   m_ObjectHideFlags: 0

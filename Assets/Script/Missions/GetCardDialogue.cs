@@ -24,15 +24,42 @@ public class GetCardDialogue : MonoBehaviour
     private int currentLineIndex = 0;
     private bool isInDialogue = false;
 
+    private KinematicStartOffice kinematicStartOffice;
+    private JsonFile jsonFile;
+    private Pause pause;
+
     void Start()
     {
-        if (interactionScript != null)
-        {
-            interactionScript.OnInteract += StartDialogue; 
-        }
+        GameObject pauseGamobject = GameObject.Find("Pause");
+        if (pauseGamobject != null)
+            pause = pauseGamobject.GetComponent<Pause>();
 
-        dialogueCanvas.gameObject.SetActive(false);
+        GameObject jsonFileObject = GameObject.Find("Save");
+        if (jsonFileObject != null)
+            jsonFile = jsonFileObject.GetComponent<JsonFile>();
+
+        if (!jsonFile.shadowScholar.kinematicOffice.isFinish)
+        {
+            if (interactionScript != null)
+            {
+                interactionScript.OnInteract += StartDialogue;
+            }
+
+            dialogueCanvas.gameObject.SetActive(false);
+            kinematicStartOffice = GetComponent<KinematicStartOffice>();
+        }
+        else
+        {
+            InteractionScript interactionScript = GetComponent<InteractionScript>();
+            interactionScript.enabled = false;
+        }
         /*player = GameObject.FindWithTag("Player");*/
+    }
+
+    private void CantRelanceDialogue()
+    {
+        InteractionScript interactionScript = GetComponent<InteractionScript>();
+        interactionScript.enabled = false;
     }
 
     public void InitGetCardDialogue()
@@ -79,6 +106,7 @@ public class GetCardDialogue : MonoBehaviour
         else
         {
             EndDialogue();
+            CantRelanceDialogue();
         }
     }
 
@@ -89,6 +117,12 @@ public class GetCardDialogue : MonoBehaviour
         player.GetComponent<vItemManager>().AddItem(new ItemReference(28));
         player.GetComponent<vShooterMeleeInput>().SetLockAllInput(false);
         enabled = false;
+
+        if (kinematicStartOffice != null)
+        {
+            pause.enabled = false;
+            kinematicStartOffice.StartKinematicOffice();
+        }
     }
 
 }

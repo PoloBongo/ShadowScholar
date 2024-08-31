@@ -84,10 +84,7 @@ public class MissionHub : MonoBehaviour
         missionLaunchButtonMaterial = hubInterface.missionLaunchButton.GetComponent<Renderer>().material;
 
         layerMask = LayerMask.GetMask("UI");
-
-/*        mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
-        missions.Add(mission1);
-        ChangeNextMissionNum(1);*/
+        ChangeNextMissionNum(1);
     }
 
     public void InitMissionHub()
@@ -115,7 +112,7 @@ public class MissionHub : MonoBehaviour
     {
         if (!jsonSave.shadowScholar.missions.mission1.isFinish)
         {
-            mission1 = new Mission1(1, "Initiation eu combat", "Finissez le parcours", "Mission1/Localization");
+            mission1 = new Mission1(1, "Initiation eu combat", "Finissez les 3 étapes de l'entraînement", "Mission1/Localization");
             missions.Add(mission1);
             nextMissionInfo = 1;
         }
@@ -123,7 +120,7 @@ public class MissionHub : MonoBehaviour
         {
             if (!jsonSave.shadowScholar.missions.mission2.isFinish)
             {
-                mission2 = new Mission2(2, "Repérage", "Finissez le parcours", "Mission1/Localization");
+                mission2 = new Mission2(2, "Repérage dans les favelas", "Repérer les points et les objets stratégiques sur place", "Mission2/Localization");
                 missions.Add(mission2);
                 nextMissionInfo = 2;
             }
@@ -131,7 +128,7 @@ public class MissionHub : MonoBehaviour
             {
                 if (!jsonSave.shadowScholar.missions.mission3.isFinish)
                 {
-                    mission3 = new Mission3(2, "Attaquer la planque du gang", "Finissez le parcours", "Mission1/Localization");
+                    mission3 = new Mission3(2, "Attaquez la planque du gang des KUMI 415", "Trouvez les caisses d'armes", "Mission3/Localization");
                     missions.Add(mission3);
                     nextMissionInfo = 3;
                 }
@@ -233,7 +230,7 @@ public class MissionHub : MonoBehaviour
         }
 
         ResetState();
-        
+        animator.Play("Pick_Mid", 0, 0f);
 
     }
 
@@ -368,6 +365,7 @@ public class MissionHub : MonoBehaviour
                                 jsonSave.shadowScholar.missions.isStart = true;
                             break;
                     }
+                    jsonSave.shadowScholar.player.position = new Vector3(1605.767f, 15.61f, 646.4249f);
                     jsonSave.SaveJson();
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                     SceneManager.LoadScene(2);
@@ -443,10 +441,17 @@ public class MissionHub : MonoBehaviour
 
     void ChangeNextMissionNum(int missionNum)
     {
-        nextMissionNum = missionNum;
-        hubInterface.missionText.text = missions[missionNum - 1].name;
-        missionLocalizationMaterial.SetTexture("_MainTex", missions[missionNum - 1].localization_texture);
-        hubInterface.missionObjectifText.text = missions[missionNum - 1].objectif;
+        if (missionNum < 1 || missionNum > missions.Count)
+        {
+            // out of range chef
+        }
+        else
+        {
+            nextMissionNum = missionNum;
+            hubInterface.missionText.text = missions[missionNum - 1].name;
+            missionLocalizationMaterial.SetTexture("_MainTex", missions[missionNum - 1].localization_texture);
+            hubInterface.missionObjectifText.text = missions[missionNum - 1].objectif;
+        }
     }
 
     IEnumerator WaitForSitAnimationToEnd()

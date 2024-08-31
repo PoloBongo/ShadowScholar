@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46143323, g: 0.44705087, b: 0.43613255, a: 1}
+  m_IndirectSpecularColor: {r: 0.6588572, g: 0.6384492, b: 0.6228032, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,6 +200,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &662634526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662634527}
+  m_Layer: 0
+  m_Name: DebugPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &662634527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662634526}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1605.767, y: 15.61, z: 646.4249}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1908287060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &671337928
 PrefabInstance:
@@ -620,6 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 812283667}
   - component: {fileID: 812283666}
+  - component: {fileID: 812283668}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -704,6 +736,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &812283668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812283665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6506dfdcff1814cad4c20773006821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &916056871
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +979,9 @@ MonoBehaviour:
       fastClimbInput: 
       slideDownClimbInput: 
       hideWeaponInput: 
+      openObjectifInput: 
+      closeObjectifInput: 
+      openCloseMenuTPInput: 
     horloge:
       time: 0
     missions:
@@ -948,6 +995,8 @@ MonoBehaviour:
     area:
       playArea: 
       playerTransform: {fileID: 0}
+    player:
+      position: {x: 0, y: 0, z: 0}
   isForInputSettings: 0
   inputFields: []
 --- !u!4 &1063183821
@@ -1118,7 +1167,7 @@ GameObject:
   - component: {fileID: 1908287061}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1140,6 +1189,7 @@ MonoBehaviour:
   selectedToolbar: 0
   playerPrefab: {fileID: 3806862119620824390, guid: dd78e7d03f33ade43aba0478480830dd, type: 3}
   spawnPoint: {fileID: 2001829922}
+  DebugPoint: {fileID: 662634527}
   respawnTimer: 4
   destroyBodyAfterDead: 1
   displayInfoInFadeText: 1
@@ -1153,6 +1203,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 1
   getActiveSceneName:
     sceneName: Game
+    jsonFile: {fileID: 1063183820}
 --- !u!4 &1908287060
 Transform:
   m_ObjectHideFlags: 0
@@ -1167,6 +1218,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2001829922}
+  - {fileID: 662634527}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1908287061

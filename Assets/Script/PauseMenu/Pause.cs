@@ -1,6 +1,7 @@
 using Invector;
 using Invector.Utils;
 using Invector.vCharacterController;
+using Invector.vItemManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,15 +15,21 @@ public class Pause : MonoBehaviour
     private List<MonoBehaviour> scriptsInMainScene = new List<MonoBehaviour>();
 
     private bool isPaused = false; 
+    private vInventory inventory;
 
 
     // Update is called once per frame
     void Update()
     {
+        inventory = FindAnyObjectByType<vInventory>();
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
             {
+                if (inventory != null)
+                {
+                    inventory.CloseInventory();
+                }
                 PauseScene();
             }
             else
@@ -57,6 +64,17 @@ public class Pause : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
 
         isPaused = true;
+    }
+
+    public void DebugMe()
+    {
+        Debug.Log("sa click ici chef");
+        GameObject gameController = GameObject.FindWithTag("GameController");
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null &&  gameController != null)
+        {
+            player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
+        }
     }
 
     public void ResumeScene()

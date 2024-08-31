@@ -476,8 +476,8 @@ public class LoadManager : MonoBehaviour
         // Instanciation des assets dans la nouvelle scène
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_25", AllHub, 1, 21));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", AllHub, 1, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 3, 21));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/CarCover", AllHub, 4, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/CarCover", AllHub, 3, 21));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", AllHub, 4, 21));
 
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin1", IAVague1, 5, 21));
         yield return StartCoroutine(LoadAndInstantiateAssetAsync("Mission3/IAVague1/IA_Shooter_Skin2", IAVague1, 6, 21));

@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Horloge : MonoBehaviour
 {
@@ -20,60 +21,83 @@ public class Horloge : MonoBehaviour
     private JsonFile jsonFile;
     private string filePath;
 
+    private bool canBeFonctional = false;
+
     void Start()
     {
-        startTime = Time.time;
         jsonFileGamObject = GameObject.Find("Save");
         filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
-        if (jsonFileGamObject != null )
+        if (SceneManager.GetActiveScene().name != "Game")
         {
             jsonFile = jsonFileGamObject.GetComponent<JsonFile>();
             if (jsonFile != null)
             {
                 jsonFile.ReadJsonFile(filePath);
-                SetTimeManually(jsonFile.shadowScholar.horloge.time);
+                SetTimeManually(0f);
             }
+            canBeFonctional = false;
+        }
+        else
+        {
+            canBeFonctional = true;
         }
 
-        if (directionalLight == null)
+        if (canBeFonctional)
         {
-            foundDirectionalLight = GameObject.Find("Directional Light");
-            directionalLight = foundDirectionalLight.GetComponent<Light>();
+            startTime = Time.time;
+            if (jsonFileGamObject != null)
+            {
+                jsonFile = jsonFileGamObject.GetComponent<JsonFile>();
+                if (jsonFile != null)
+                {
+                    jsonFile.ReadJsonFile(filePath);
+                    SetTimeManually(jsonFile.shadowScholar.horloge.time);
+                }
+            }
+
+            if (directionalLight == null)
+            {
+                foundDirectionalLight = GameObject.Find("Directional Light");
+                directionalLight = foundDirectionalLight.GetComponent<Light>();
+            }
         }
     }
 
     void Update()
     {
-        if (!timeAdjustedManually)
+        if (canBeFonctional)
         {
-            float elapsedTime = Time.time - startTime;
-            percentageComplete = elapsedTime / duration;
-        }
-        else
-        {
-            startTime = Time.time - (percentageComplete * duration);
-            timeAdjustedManually = false;
-        }
-        float angle = Mathf.Lerp(0f, -720f, percentageComplete);
-        Vector3 currentRotation = transform.localEulerAngles;
-        transform.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, angle);
+            if (!timeAdjustedManually)
+            {
+                float elapsedTime = Time.time - startTime;
+                percentageComplete = elapsedTime / duration;
+            }
+            else
+            {
+                startTime = Time.time - (percentageComplete * duration);
+                timeAdjustedManually = false;
+            }
+            float angle = Mathf.Lerp(0f, -720f, percentageComplete);
+            Vector3 currentRotation = transform.localEulerAngles;
+            transform.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, angle);
 
-        if (percentageComplete > 0.37f)
-        {
-            SetIntensityNight(percentageComplete, 0.37f, 1f, 0f);
-        }
-        
-        if (percentageComplete > 0.826f)
-        {
-            SetIntensityDay(percentageComplete, 0.826f, 0f, 1f);
-        }
+            if (percentageComplete > 0.37f)
+            {
+                SetIntensityNight(percentageComplete, 0.37f, 1f, 0f);
+            }
 
-        if (percentageComplete >= 1f)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            startTime = Time.time;
-            lightStartTime = 0f;
-            lightStartTimeDay = 0f;
+            if (percentageComplete > 0.826f)
+            {
+                SetIntensityDay(percentageComplete, 0.826f, 0f, 1f);
+            }
+
+            if (percentageComplete >= 1f)
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                startTime = Time.time;
+                lightStartTime = 0f;
+                lightStartTimeDay = 0f;
+            }
         }
     }
 

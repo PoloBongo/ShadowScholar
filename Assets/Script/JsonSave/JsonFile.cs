@@ -13,6 +13,7 @@ public class JsonFile : MonoBehaviour
     public class ShadowScholar
     {
         public KinematicStart kinematicStart;
+        public KinematicOffice kinematicOffice;
         public InputSettings inputSettings;
         public Horloge horloge;
         public Missions missions;
@@ -21,6 +22,11 @@ public class JsonFile : MonoBehaviour
     }
     [System.Serializable]
     public class KinematicStart
+    {
+        public bool isFinish;
+    }
+    [System.Serializable]
+    public class KinematicOffice
     {
         public bool isFinish;
     }
@@ -127,6 +133,10 @@ public class JsonFile : MonoBehaviour
         shadowScholar = new ShadowScholar()
         {
             kinematicStart = new KinematicStart()
+            {
+                isFinish = false
+            },
+            kinematicOffice = new KinematicOffice()
             {
                 isFinish = false
             },

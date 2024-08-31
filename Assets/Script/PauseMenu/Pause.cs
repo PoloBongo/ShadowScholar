@@ -10,20 +10,27 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
+    private class ScriptState
+    {
+        public MonoBehaviour script;
+        public bool stockEnabled;
+    }
 
     public string pauseMenuSceneName = "MenuPause";
-    private List<MonoBehaviour> scriptsInMainScene = new List<MonoBehaviour>();
+    private List<ScriptState> scriptsInMainScene = new List<ScriptState>();
 
     private bool isPaused = false; 
     private vInventory inventory;
+    private GameObject player;
+    private GameObject gameController;
 
 
     // Update is called once per frame
     void Update()
     {
-        inventory = FindAnyObjectByType<vInventory>();
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            inventory = FindAnyObjectByType<vInventory>();
             if (!isPaused)
             {
                 if (inventory != null)
@@ -50,13 +57,25 @@ public class Pause : MonoBehaviour
             {
                 if(script.gameObject.name != "Pause" && script is not vDestroyGameObject)
                 {
+                    scriptsInMainScene.Add(new ScriptState
+                    {
+                        script = script,
+                        stockEnabled = script.enabled
+                    });
                     script.enabled = false;
-                    scriptsInMainScene.Add(script);
                 }
             }
         }
 
-        GameObject.FindWithTag("Player").GetComponent<vThirdPersonController>().StopCharacter();
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            vThirdPersonController playerController = playerObject.GetComponent<vThirdPersonController>();
+            if (playerController != null)
+            {
+                playerController.StopCharacter();
+            }
+        }
 
         StartCoroutine(LoadSceneAsync(pauseMenuSceneName));
 
@@ -66,11 +85,15 @@ public class Pause : MonoBehaviour
         isPaused = true;
     }
 
+    private void GetInfo()
+    {
+        gameController = GameObject.FindWithTag("GameController");
+        player = GameObject.FindWithTag("Player");
+    }
+
     public void DebugMe()
     {
-        Debug.Log("sa click ici chef");
-        GameObject gameController = GameObject.FindWithTag("GameController");
-        GameObject player = GameObject.FindWithTag("Player");
+        GetInfo();
         if (player != null &&  gameController != null)
         {
             player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
@@ -83,9 +106,9 @@ public class Pause : MonoBehaviour
 
         foreach (var script in scriptsInMainScene)
         {
-            if (script != null)
+            if (script.script != null && script.stockEnabled)
             {
-                script.enabled = true;
+                script.script.enabled = true;
             }
         }
 
@@ -112,7 +135,6 @@ public class Pause : MonoBehaviour
             if (foundButton != null && foundButton.name == "ResumeBtn")
             {
                 foundButton.onClick.AddListener(() => ResumeScene());
-                Debug.Log("Btn Trouvé");
                 break;
             }
         }

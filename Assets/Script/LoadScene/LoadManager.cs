@@ -122,8 +122,8 @@ public class LoadManager : MonoBehaviour
 
         loadingText.color = new Color32(0xFF, 0xC2, 0x00, 0xFF);
         // Instanciation des assets dans la nouvelle scène
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 4));
-        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 2, 4));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("map", null, 1, 3));
+        yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Other", Roads, 2, 3));
         if (jsonFile.shadowScholar.area.playArea == "Zone_1")
         {
             yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 3));

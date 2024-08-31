@@ -311,14 +311,33 @@ PrefabInstance:
       value: "Tu as besoin d'une carte d'acc\xE8s !"
       objectReference: {fileID: 0}
     - target: {fileID: 8963420748834994118, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1118753
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963420748834994118, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.215469
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963420748834994118, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963420748834994118, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963420748834994118, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -64.007225
+      value: -64.00723
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6288653545343534685, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8963420748834892774, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5663582578796482591}
     - targetCorrespondingSourceObject: {fileID: 2469697142699005336, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7608450797807774522}
@@ -345,6 +364,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff9c18d29eb4174aa60b23a2e9c1935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kinematic: {fileID: 7280378255005926914, guid: 422ea2d53fc6f5348bd84cd156aac3db, type: 3}
+  pause: {fileID: 0}
+--- !u!1 &7393729666146265598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8963420748834892774, guid: 4c999c3ccdb7edc4ea4799fcd10bf4d2, type: 3}
+  m_PrefabInstance: {fileID: 1945478465683784216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5663582578796482591
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393729666146265598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2412552714684890866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1109,7 +1156,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: -203655887218126122, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: -203655887218126122, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

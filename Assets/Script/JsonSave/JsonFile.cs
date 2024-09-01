@@ -73,6 +73,8 @@ public class JsonFile : MonoBehaviour
         public Mission1 mission1;
         public Mission2 mission2;
         public Mission3 mission3;
+        public Mission4 mission4;
+        public Mission5 mission5;
         public bool isStart;
     }
 
@@ -90,6 +92,16 @@ public class JsonFile : MonoBehaviour
     
     [System.Serializable]
     public class Mission3
+    {
+        public bool isFinish;
+    }
+    [System.Serializable]
+    public class Mission4
+    {
+        public bool isFinish;
+    }
+    [System.Serializable]
+    public class Mission5
     {
         public bool isFinish;
     }
@@ -168,7 +180,7 @@ public class JsonFile : MonoBehaviour
                 hideWeaponInput = "H",
                 openObjectifInput = "F1",
                 closeObjectifInput = "Escape",
-                openCloseMenuTPInput = ";"
+                openCloseMenuTPInput = "F2"
             },
             horloge = new Horloge()
             {
@@ -185,6 +197,14 @@ public class JsonFile : MonoBehaviour
                     isFinish = false
                 },
                 mission3 = new Mission3()
+                {
+                    isFinish = false
+                },
+                mission4 = new Mission4()
+                {
+                    isFinish = false
+                },
+                mission5 = new Mission5()
                 {
                     isFinish = false
                 },

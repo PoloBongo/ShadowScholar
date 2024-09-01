@@ -69,6 +69,8 @@ public class MissionHub : MonoBehaviour
     Mission1 mission1;
     Mission2 mission2;
     Mission3 mission3;
+    Mission4 mission4;
+    Mission5 mission5;
 
     private GameObject jsonSaveGameObject;
     private JsonFile jsonSave;
@@ -131,6 +133,24 @@ public class MissionHub : MonoBehaviour
                     mission3 = new Mission3(2, "Attaquez la planque du gang des KUMI 415", "Trouvez les caisses d'armes", "Mission3/Localization");
                     missions.Add(mission3);
                     nextMissionInfo = 3;
+                }
+                else
+                {
+                    if (!jsonSave.shadowScholar.missions.mission4.isFinish)
+                    {
+                        mission4 = new Mission4(2, "Repérage du cartel", "Repérer les routines du cartel", "Mission4/Localization");
+                        missions.Add(mission4);
+                        nextMissionInfo = 4;
+                    }
+                    else
+                    {
+                        if (!jsonSave.shadowScholar.missions.mission5.isFinish)
+                        {
+                            mission5 = new Mission5(2, "Attaquez la villa du cartel", "Neutralisez le cartel et récupérer les caisses d'armes", "Mission5/Localization");
+                            missions.Add(mission5);
+                            nextMissionInfo = 5;
+                        }
+                    }
                 }
             }
         }
@@ -364,6 +384,14 @@ public class MissionHub : MonoBehaviour
                             if (!jsonSave.shadowScholar.missions.mission3.isFinish)
                                 jsonSave.shadowScholar.missions.isStart = true;
                             break;
+                        case 4:
+                            if (!jsonSave.shadowScholar.missions.mission4.isFinish)
+                                jsonSave.shadowScholar.missions.isStart = true;
+                            break;
+                        case 5:
+                            if (!jsonSave.shadowScholar.missions.mission5.isFinish)
+                                jsonSave.shadowScholar.missions.isStart = true;
+                            break;
                     }
                     jsonSave.shadowScholar.player.position = new Vector3(1605.767f, 15.61f, 646.4249f);
                     jsonSave.SaveJson();
@@ -448,8 +476,15 @@ public class MissionHub : MonoBehaviour
         else
         {
             nextMissionNum = missionNum;
-            hubInterface.missionText.text = missions[missionNum - 1].name;
-            missionLocalizationMaterial.SetTexture("_MainTex", missions[missionNum - 1].localization_texture);
+            if (hubInterface != null && hubInterface.missionText != null)
+            {
+                hubInterface.missionText.text = missions[missionNum - 1].name;
+            }
+            if (missions[missionNum - 1] != null && missions[missionNum - 1].localization_texture != null)
+            {
+                if (missionLocalizationMaterial != null)
+                    missionLocalizationMaterial.SetTexture("_MainTex", missions[missionNum - 1].localization_texture);
+            }
             hubInterface.missionObjectifText.text = missions[missionNum - 1].objectif;
         }
     }

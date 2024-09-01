@@ -1123,6 +1123,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 80e07e3c0f77fc344ba61e71ccad4cac, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Hips'\n\tTransform 'Spine1'\n\tTransform
+        'LeftHandMiddle2'\n\tTransform 'Neck'\n\tTransform 'LeftHandThumb1'\n\tTransform
+        'LeftHandRing2'\n\tTransform 'RightHandIndex3'\n\tTransform 'LeftHandRing3'\n\tTransform
+        'RightHandMiddle1'\n\tTransform 'LeftUpLeg'\n\tand more ...\n\tFrom animation
+        clip 'mixamo.com'"
+      objectReference: {fileID: 0}
     - target: {fileID: 6937541551142690876, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1154,9 +1168,9 @@ Animation:
   m_GameObject: {fileID: 6439733397575687312}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 92a1b8f2a823c1a4dbca7e70cd0fd8ca, type: 2}
+  m_Animation: {fileID: -203655887218126122, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
   m_Animations:
-  - {fileID: 7400000, guid: 92a1b8f2a823c1a4dbca7e70cd0fd8ca, type: 2}
+  - {fileID: -203655887218126122, guid: 75873951d6b1d024fbad5c8aa661c0df, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

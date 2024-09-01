@@ -340,12 +340,6 @@ public class AIPlayerController : MonoBehaviour
                         otherAI.animator.SetTrigger(otherAI.setActiveWalkType);
                         otherAI.setStopDistanceToFirePlayer = 50f;
                         otherAI.navMeshAgent.stoppingDistance = 50f;
-                        Debug.Log(otherAI.name);
-                        Debug.Log(otherAI.inChasse);
-                    }
-                    else
-                    {
-                        Debug.Log("null");
                     }
                 }
             }
@@ -355,9 +349,9 @@ public class AIPlayerController : MonoBehaviour
     private void Patrol()
     {
         if (patrolPoints.Count == 0) return;
-        if (!CanViewPlayer())
+        if (!CanViewPlayer() && !inChasse)
         {
-            if (!inPatrol)
+            if (!inPatrol && !inChasse)
             {
                 navMeshAgent.SetDestination(patrolPoints[currentPatrolIndex].position);
                 inPatrol = true;
@@ -365,7 +359,7 @@ public class AIPlayerController : MonoBehaviour
                 animator.SetTrigger(setActiveWalkType);
             }
 
-            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance && !navMeshAgent.pathPending)
+            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance && !navMeshAgent.pathPending && !inChasse)
             {
                 currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
                 navMeshAgent.SetDestination(patrolPoints[currentPatrolIndex].position);
@@ -436,7 +430,6 @@ public class AIPlayerController : MonoBehaviour
     {
         if (!inChasse)
         {
-            Debug.Log(gameObject.name + " is now chasing the player!");
             inChasse = true;
             navMeshAgent.SetDestination(mainCharacter.transform.position);
             isWalking = false;
@@ -541,7 +534,6 @@ public class AIPlayerController : MonoBehaviour
                                     isWalking = true;
                                     isIdle = false;
                                 }
-                                Debug.Log(setStopDistanceToFirePlayer);
                                 navMeshAgent.SetDestination(mainCharacter.transform.position);
                             }
                         }

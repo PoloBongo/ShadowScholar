@@ -137,6 +137,12 @@ public class MissionManager : MonoBehaviour
             case 2:
                 jsonFile.shadowScholar.missions.mission3.isFinish = true;
                 break;
+            case 3:
+                jsonFile.shadowScholar.missions.mission4.isFinish = true;
+                break;
+            case 4:
+                jsonFile.shadowScholar.missions.mission5.isFinish = true;
+                break;
         }
         jsonFile.SaveJson();
     }

@@ -16399,6 +16399,7 @@ GameObject:
   - component: {fileID: 1437752296255185998}
   - component: {fileID: 6853890353653551191}
   - component: {fileID: 2188957485452382762}
+  - component: {fileID: 8269250260726502523}
   m_Layer: 10
   m_Name: IA_Shooter_Skin6
   m_TagString: Enemy
@@ -16708,6 +16709,19 @@ MonoBehaviour:
     radiusSphereFriendIA: 0
   canDetectFailedMission: 0
   indexMission: 0
+--- !u!114 &8269250260726502523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403177082045849033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: f9f3cc8539bc3fd4fab2d78a82392f4b, type: 3}
 --- !u!1 &1426850531710561293
 GameObject:
   m_ObjectHideFlags: 0

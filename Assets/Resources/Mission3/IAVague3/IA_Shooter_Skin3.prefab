@@ -57853,6 +57853,7 @@ GameObject:
   - component: {fileID: 5955362294181164364}
   - component: {fileID: 5889076981740082070}
   - component: {fileID: 5784084278833183568}
+  - component: {fileID: 2321850676340157866}
   m_Layer: 10
   m_Name: IA_Shooter_Skin3
   m_TagString: Enemy
@@ -58153,10 +58154,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   isStatic: 0
-  canPtrol: 0
+  canPatrol: 0
   patrolPoints: []
+  sphereDetection:
+    modeDifficile: {fileID: 0}
+    radiusSphere: 0
+    detectFriendIA: {fileID: 0}
+    radiusSphereFriendIA: 0
   canDetectFailedMission: 0
   indexMission: 0
+--- !u!114 &2321850676340157866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704837702357701627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: f9f3cc8539bc3fd4fab2d78a82392f4b, type: 3}
 --- !u!1 &6712900374266875982
 GameObject:
   m_ObjectHideFlags: 0

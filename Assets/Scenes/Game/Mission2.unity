@@ -5,11 +5,11 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 1
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 9ae3d0d97a46a6147a70d8a469c3ae25
+  m_OcclusionCullingData: {fileID: 36300000, guid: 7cdda4adab2c52e46b2db82bd84cd9d6, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6588572, g: 0.6384492, b: 0.6228032, a: 1}
+  m_IndirectSpecularColor: {r: 0.790404, g: 0.76649743, b: 0.74812657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1991,6 +1991,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614280826}
   m_CullTransparentMesh: 1
+--- !u!1 &627029970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627029972}
+  - component: {fileID: 627029971}
+  m_Layer: 0
+  m_Name: Occlusion Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!192 &627029971
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627029970}
+  serializedVersion: 2
+  m_Size: {x: 394.3136, y: 116.36926, z: 94.490036}
+  m_Center: {x: -60.877304, y: -23.530546, z: 4.4464526}
+  m_IsViewVolume: 1
+--- !u!4 &627029972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627029970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1859, y: 10.21, z: 1201.2}
+  m_LocalScale: {x: 1, y: 1, z: 3.3995}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730514678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3182,8 @@ MonoBehaviour:
   shadowScholar:
     kinematicStart:
       isFinish: 1
+    kinematicOffice:
+      isFinish: 0
     inputSettings:
       jumpInput: 
       rollInput: 
@@ -3175,6 +3220,10 @@ MonoBehaviour:
       mission2:
         isFinish: 0
       mission3:
+        isFinish: 0
+      mission4:
+        isFinish: 0
+      mission5:
         isFinish: 0
       isStart: 0
     area:
@@ -65450,7 +65499,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.021666666
+  m_VoxelSize: 0.033333335
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: a88d19509b6d6b54581e38d99165083e, type: 2}
   m_BuildHeightMesh: 0
@@ -65739,3 +65788,4 @@ SceneRoots:
   - {fileID: 1357412376}
   - {fileID: 191192754}
   - {fileID: 1796718763}
+  - {fileID: 627029972}

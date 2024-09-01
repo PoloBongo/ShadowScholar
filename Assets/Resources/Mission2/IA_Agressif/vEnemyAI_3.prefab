@@ -4476,6 +4476,7 @@ GameObject:
   - component: {fileID: 3737953632651747884}
   - component: {fileID: 1143827012077023096}
   - component: {fileID: 4594770876922865106}
+  - component: {fileID: 2383296589286713285}
   m_Layer: 9
   m_Name: vEnemyAI_3
   m_TagString: Enemy
@@ -4807,6 +4808,19 @@ MonoBehaviour:
   defaultStaminaRecoveryDelay: 1
   defaultDefenseRate: 100
   defaultDefenseRange: 90
+--- !u!114 &2383296589286713285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146812932198877113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: f9f3cc8539bc3fd4fab2d78a82392f4b, type: 3}
 --- !u!1 &9162375386005613507
 GameObject:
   m_ObjectHideFlags: 0

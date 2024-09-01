@@ -3050,6 +3050,7 @@ GameObject:
   - component: {fileID: 245620727447828329}
   - component: {fileID: 7944650186723079359}
   - component: {fileID: 5982933605317109788}
+  - component: {fileID: -7856110672416917991}
   m_Layer: 9
   m_Name: vNeutreAI_7
   m_TagString: Enemy
@@ -3380,6 +3381,19 @@ MonoBehaviour:
   defaultStaminaRecoveryDelay: 1
   defaultDefenseRate: 100
   defaultDefenseRange: 90
+--- !u!114 &-7856110672416917991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801041908075580045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: 2e1a70b366ec63d4fab5cbaec9683e21, type: 3}
 --- !u!1 &5871198747228393979
 GameObject:
   m_ObjectHideFlags: 0

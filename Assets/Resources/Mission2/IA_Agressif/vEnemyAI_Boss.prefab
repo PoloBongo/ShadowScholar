@@ -4116,6 +4116,7 @@ GameObject:
   - component: {fileID: 5848119546107590854}
   - component: {fileID: 5565117710967031546}
   - component: {fileID: 3701174839656840333}
+  - component: {fileID: -1990135971043150652}
   m_Layer: 9
   m_Name: vEnemyAI_Boss
   m_TagString: Enemy
@@ -4447,6 +4448,19 @@ MonoBehaviour:
   defaultStaminaRecoveryDelay: 1
   defaultDefenseRate: 100
   defaultDefenseRange: 90
+--- !u!114 &-1990135971043150652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914157499164942375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644e66f9e5def343b2f7c48abcb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4989557845526812871, guid: f9f3cc8539bc3fd4fab2d78a82392f4b, type: 3}
 --- !u!1 &7925993714567771586
 GameObject:
   m_ObjectHideFlags: 0

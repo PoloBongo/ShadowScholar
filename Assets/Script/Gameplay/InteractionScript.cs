@@ -107,6 +107,8 @@ public class InteractionScript : MonoBehaviour
 
 	bool PLayerIsLookingAtDoorKnob()
 	{
+		if (player == null)
+            player = GameObject.FindWithTag(PlayerHeadTag).transform;
         Vector3 forward = player.TransformDirection(Vector3.back);
         Vector3 thisTransform = knob.position - player.transform.position;
 

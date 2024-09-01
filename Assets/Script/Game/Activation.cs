@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -130,6 +131,14 @@ public class Activation : MonoBehaviour
                     }
                 }
             }
+
+            Binoculars binoculars = GameObject.Find("Binoculars").GetComponent<Binoculars>();
+            if(binoculars != null)
+            {
+                binoculars.InitBinoculars();
+                Debug.Log("Init Binoculars");
+            }
+
 
         }
     }

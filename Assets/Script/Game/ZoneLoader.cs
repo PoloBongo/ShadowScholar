@@ -48,7 +48,7 @@ public class ZoneLoader : MonoBehaviour
     private string filePath;
     public JsonFile jsonFile;
 
-    public GenericInput openCloseMenuTPInput = new GenericInput(";", "Start", "Start");
+    public GenericInput openCloseMenuTPInput = new GenericInput("F2", "Start", "Start");
 
     // Start is called before the first frame update
     void Start()

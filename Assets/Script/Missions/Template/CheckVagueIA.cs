@@ -1,16 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckVagueIA : MonoBehaviour
 {
     [SerializeField] List<GameObject> iaVagues = new List<GameObject>();
     [SerializeField] ObjectifMission objectifMission;
-    [SerializeField] private bool canSuccessMission;
+    [SerializeField] private GameObject Kinematic;
+    [SerializeField] private Pause pause;
     private string actualVague;
     private bool renderIA;
     private GameObject player;
     private int initialCount;
-    private int indexVague;
+    public int indexVague;
+    private bool antiSpamKinematicSpawn = false;
 
     public void InitCheckIA()
     {
@@ -31,7 +34,7 @@ public class CheckVagueIA : MonoBehaviour
                 {
                     if (renderIA)
                     {
-                        player = GameObject.FindGameObjectWithTag("Player");
+                        player = FindInactiveObjectByName("MainCharacter(Clone)");
                         child.gameObject.SetActive(true);
                         child.gameObject.GetComponent<AIPlayerController>().AssignPlayerTransforms(player);
                     }
@@ -39,9 +42,22 @@ public class CheckVagueIA : MonoBehaviour
                 }
             }
         }
-        Debug.Log(count);
         renderIA = false;
         return count;
+    }
+
+    private GameObject FindInactiveObjectByName(string name)
+    {
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == name && obj.activeInHierarchy)
+            {
+                return obj;
+            }
+        }
+        return null;
     }
 
     private void CheckAndSwitchVague()
@@ -59,6 +75,19 @@ public class CheckVagueIA : MonoBehaviour
             {
                 if (actualVague == iaVagues[i].name)
                 {
+                    if (SceneManager.GetActiveScene().name == "Mission5")
+                    {
+                        if (actualVague == "IAVague1" && !antiSpamKinematicSpawn)
+                        {
+                            player = GameObject.FindGameObjectWithTag("Player");
+                            if (player != null)
+                                player.SetActive(false);
+                            pause.enabled = false;
+                            Instantiate(Kinematic);
+                            antiSpamKinematicSpawn = true;
+                            break;
+                        }
+                    }
                     if (actualVague == "IABoss")
                         objectifMission.UpdateObjectif(1, 1);
                     if (i + 1 < iaVagues.Count)

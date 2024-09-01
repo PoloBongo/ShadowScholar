@@ -60,7 +60,6 @@ public class AudioManager : MonoBehaviour
             currentVolume = settings.volume;
             if (volumeSlider != null)
             {
-                Debug.Log(volumeSlider.value);
                 volumeSlider.value = currentVolume;
             }
         }

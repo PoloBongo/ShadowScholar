@@ -110,7 +110,7 @@ public class Activation : MonoBehaviour
                 }
             }
         }
-        else if (sceneName == "Mission3")
+        else if (sceneName == "Mission3" || sceneName == "Mission5")
         {
             GameObject IAVague1 = GameObject.Find("IAVague1");
             foreach (Transform child in IAVague1.transform)

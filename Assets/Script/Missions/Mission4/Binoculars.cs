@@ -2,6 +2,7 @@ using Invector.vCharacterController;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Binoculars : MonoBehaviour
@@ -16,6 +17,9 @@ public class Binoculars : MonoBehaviour
     private List<GameObject> enemyList = new List<GameObject>();
 
     public ObjectifMission objectifMission;
+
+    public Canvas canvas;
+    private bool isUse = false;
 
    // Start is called before the first frame update
     void Start()
@@ -32,6 +36,8 @@ public class Binoculars : MonoBehaviour
             }
         }
 
+        canvas.enabled = false;
+
         Debug.Log(enemyList.Count);
     }
 
@@ -39,6 +45,7 @@ public class Binoculars : MonoBehaviour
     {
         vShooterMeleeInput = GameObject.FindGameObjectWithTag("Player").GetComponent<vShooterMeleeInput>();
         playerCamera = vShooterMeleeInput.cameraMain;
+        StartCoroutine(WaitForOneMinutes());
     }
 
 
@@ -47,6 +54,8 @@ public class Binoculars : MonoBehaviour
     {
         if(Input.GetAxis("Binoculars") > 0)
         {
+            isUse = true;
+            canvas.enabled = false;
             vShooterMeleeInput.ChangeCameraStateWithLerp("Binoculars");
             DetectVisibleEnemies();
         }
@@ -120,4 +129,14 @@ public class Binoculars : MonoBehaviour
 
         return true;
     }
+
+    IEnumerator WaitForOneMinutes()
+    {
+        yield return new WaitForSeconds(60f);
+        if (!isUse)
+        {
+            canvas.enabled = true;
+        }
+    }
+
 }

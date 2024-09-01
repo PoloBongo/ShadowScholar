@@ -130,7 +130,7 @@ public class MissionHub : MonoBehaviour
             {
                 if (!jsonSave.shadowScholar.missions.mission3.isFinish)
                 {
-                    mission3 = new Mission3(2, "Attaquez la planque du gang des KUMI 415", "Trouvez les caisses d'armes", "Mission3/Localization");
+                    mission3 = new Mission3(3, "Attaquez la planque du gang des KUMI 415", "Trouvez les caisses d'armes", "Mission3/Localization");
                     missions.Add(mission3);
                     nextMissionInfo = 3;
                 }
@@ -138,7 +138,7 @@ public class MissionHub : MonoBehaviour
                 {
                     if (!jsonSave.shadowScholar.missions.mission4.isFinish)
                     {
-                        mission4 = new Mission4(2, "Repérage du cartel", "Repérer les routines du cartel", "Mission4/Localization");
+                        mission4 = new Mission4(4, "Repérage du cartel", "Repérer les routines du cartel", "Mission4/Localization");
                         missions.Add(mission4);
                         nextMissionInfo = 4;
                     }
@@ -146,7 +146,7 @@ public class MissionHub : MonoBehaviour
                     {
                         if (!jsonSave.shadowScholar.missions.mission5.isFinish)
                         {
-                            mission5 = new Mission5(2, "Attaquez la villa du cartel", "Neutralisez le cartel et récupérer les caisses d'armes", "Mission5/Localization");
+                            mission5 = new Mission5(5, "Attaquez la villa du cartel", "Neutralisez le cartel et récupérer les caisses d'armes", "Mission5/Localization");
                             missions.Add(mission5);
                             nextMissionInfo = 5;
                         }
@@ -396,7 +396,7 @@ public class MissionHub : MonoBehaviour
                     jsonSave.shadowScholar.player.position = new Vector3(1605.767f, 15.61f, 646.4249f);
                     jsonSave.SaveJson();
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene("SceneChargement");
                 }
             }
         }

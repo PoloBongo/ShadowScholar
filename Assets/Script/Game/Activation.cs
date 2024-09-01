@@ -1,3 +1,5 @@
+using Invector.vItemManager;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
@@ -12,7 +14,8 @@ public class Activation : MonoBehaviour
     private List<GameObject> interactionScripts = new List<GameObject>();
     private List<MinimapIcon> minimapIcons = new List<MinimapIcon>();
     public string sceneName;
-    
+    private vItemManager vItemManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +24,11 @@ public class Activation : MonoBehaviour
 
     public void ActivateScript()
     {
+        // load l'inventaire au player
+        StartCoroutine(WaitForLoadInventory());
+
         loadInput = GameObject.Find("LoadInput");
         loadInput.GetComponent<LoadInput>().OnThirdPersonInputActivated();
-
 
         foreach (GameObject gameObject in SceneManager.GetActiveScene().GetRootGameObjects())
         {
@@ -140,6 +145,15 @@ public class Activation : MonoBehaviour
             }
 
 
+        }
+    }
+
+    IEnumerator WaitForLoadInventory()
+    {
+        yield return new WaitForSeconds(.3f);
+        if (TryGetComponent<vItemManager>(out vItemManager))
+        {
+            vItemManager.LoadInventory();
         }
     }
 }

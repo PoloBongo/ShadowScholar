@@ -115,11 +115,11 @@ public class AIPlayerController : MonoBehaviour
     [SerializeField] private IASelectedType selectedIAType;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] bool isStatic;
-    [SerializeField] bool canPtrol;
+    [SerializeField] bool canPatrol = false;
 
     [SerializeField] private List<Transform> patrolPoints;
 
-/*    [System.Serializable]
+    [System.Serializable]
     public class SphereDetection
     {
         public SphereCollider modeDifficile;
@@ -127,14 +127,14 @@ public class AIPlayerController : MonoBehaviour
         public SphereCollider detectFriendIA;
         public float radiusSphereFriendIA;
     }
-    [SerializeField] private SphereDetection sphereDetection;*/
+    [SerializeField] private SphereDetection sphereDetection;
     private int currentPatrolIndex = 0;
     private bool inPatrol = false;
 
     private string setActiveWalkType;
     private string setActiveIdle;
     private Camera iaCamera;
-    public bool inChasse;
+    private bool inChasse;
     [SerializeField] private bool canDetectFailedMission;
     [SerializeField] private int indexMission;
     private string iaChoose;
@@ -214,35 +214,18 @@ public class AIPlayerController : MonoBehaviour
                 setTargetDistancePlayer = selectedIAType.targetDistancePlayer;
                 break;
         }
-/*        // sphere pour la détection du player dans la zone de l'IA
+        // sphere pour la détection du player dans la zone de l'IA
         if (sphereDetection == null)
         {
-            sphereDetection = new SphereDetection(); // Initialiser sphereDetection si nécessaire
+            sphereDetection = new SphereDetection();
         }
-        if (sphereDetection.modeDifficile == null)
-        {
-            sphereDetection.modeDifficile = GetComponent<SphereCollider>();
-        }
-        sphereDetection.modeDifficile = GetComponent<SphereCollider>();
-        sphereDetection.modeDifficile.isTrigger = true;
-        sphereDetection.modeDifficile.radius = sphereDetection.radiusSphere;
-        sphereDetection.modeDifficile.center = Vector3.zero;
 
-        // sphere pour alerter les autres IA qu'une IA a vu le player
-        if (sphereDetection.detectFriendIA == null)
-        {
-            sphereDetection.detectFriendIA = gameObject.AddComponent<SphereCollider>();
-        }
-        sphereDetection.detectFriendIA = gameObject.AddComponent<SphereCollider>();
-        sphereDetection.detectFriendIA.isTrigger = true;
-        sphereDetection.detectFriendIA.radius = sphereDetection.radiusSphereFriendIA;
-        sphereDetection.detectFriendIA.center = Vector3.zero;
-
-        sphereDetection.modeDifficile.gameObject.layer = LayerMask.NameToLayer("ModeDifficile");
-        sphereDetection.detectFriendIA.gameObject.layer = LayerMask.NameToLayer("AlertFriendIA");*/
+        if (patrolPoints == null) { /* ne rien faire */ }
 
         navMeshAgent.stoppingDistance = setStopDistanceToFirePlayer;
         animator.SetTrigger(setActiveIdle);
+        isWalking = false;
+        isIdle = false;
         inChasse = false;
         isStatic = false;
     }
@@ -335,34 +318,39 @@ public class AIPlayerController : MonoBehaviour
         }
     }
 
-    /* private void OnTriggerEnter(Collider other)
-     {
-         if (other.gameObject.layer == LayerMask.NameToLayer("ModeDifficile"))
-         {
-             if (iaChoose == "Difficile")
-             {
-                 if (other.CompareTag("Ignore Ragdoll"))
-                 {
-                     inChasse = true;
-                 }
-             }
-         }
-         else if (other.gameObject.layer == LayerMask.NameToLayer("AlertFriendIA"))
-         {
-             AIPlayerController otherAI = other.GetComponent<AIPlayerController>();
-             if (inChasse)
-             {
-                 if (otherAI != null && !otherAI.inChasse)
-                 {
-                     otherAI.inChasse = true;
-                     Debug.Log(otherAI.name);
-                 } else
-                 {
-                     Debug.Log("null");
-                 }
-             }
-         }
-     }*/
+    private Coroutine checkTriggerCoroutine;
+    private bool alertFriend = false;
+
+    private IEnumerator AlertOtherAI()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 20f, LayerMask.GetMask("CompanionAI"));
+
+        foreach (Collider other in colliders)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("CompanionAI"))
+            {
+                AIPlayerController otherAI = other.GetComponent<AIPlayerController>();
+                if (inChasse)
+                {
+                    if (otherAI != null && !otherAI.inChasse)
+                    {
+                        otherAI.inChasse = true;
+                        otherAI.animator.SetTrigger(otherAI.setActiveWalkType);
+                        otherAI.setStopDistanceToFirePlayer = 50f;
+                        otherAI.navMeshAgent.stoppingDistance = 50f;
+                        Debug.Log(otherAI.name);
+                        Debug.Log(otherAI.inChasse);
+                    }
+                    else
+                    {
+                        Debug.Log("null");
+                    }
+                }
+            }
+        }
+    }
 
     private void Patrol()
     {
@@ -428,12 +416,12 @@ public class AIPlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("player est null");
+                    /*Debug.Log("player est null");*/
                 }
             }
             else
             {
-                Debug.Log("camera null");
+                /*Debug.Log("camera null");*/
             }
 
             inChasse = false;
@@ -465,6 +453,18 @@ public class AIPlayerController : MonoBehaviour
 
         if (inChasse)
         {
+            if (!alertFriend)
+            {
+                if (sphereDetection.detectFriendIA != null)
+                {
+                    if (checkTriggerCoroutine == null)
+                    {
+                        checkTriggerCoroutine = StartCoroutine(AlertOtherAI());
+                    }
+                    alertFriend = true;
+                }
+            }
+
             if (canDetectFailedMission)
             {
                 missionManager.MissionStatus("Failed", indexMission);
@@ -541,6 +541,7 @@ public class AIPlayerController : MonoBehaviour
                                     isWalking = true;
                                     isIdle = false;
                                 }
+                                Debug.Log(setStopDistanceToFirePlayer);
                                 navMeshAgent.SetDestination(mainCharacter.transform.position);
                             }
                         }
@@ -592,7 +593,13 @@ public class AIPlayerController : MonoBehaviour
         }
         else
         {
-            if (canPtrol)
+            if (checkTriggerCoroutine != null)
+            {
+                StopCoroutine(checkTriggerCoroutine);
+                checkTriggerCoroutine = null;
+            }
+
+            if (canPatrol)
             {
                 Patrol();
             }

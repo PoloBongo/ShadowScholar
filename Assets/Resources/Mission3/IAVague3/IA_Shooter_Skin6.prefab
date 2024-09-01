@@ -16683,7 +16683,7 @@ MonoBehaviour:
       stopDistanceToFirePlayer: 10
       particlesFire:
       - {fileID: 7154038629604657968}
-      - {fileID: 0}
+      - {fileID: 3796093765500401445}
       - {fileID: 5531203344575583405}
       - {fileID: 6973294374618107372}
       - {fileID: 3570773155665135449}
@@ -16699,8 +16699,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   isStatic: 0
-  canPtrol: 0
+  canPatrol: 0
   patrolPoints: []
+  sphereDetection:
+    modeDifficile: {fileID: 6853890353653551191}
+    radiusSphere: 3.878027
+    detectFriendIA: {fileID: 0}
+    radiusSphereFriendIA: 0
   canDetectFailedMission: 0
   indexMission: 0
 --- !u!1 &1426850531710561293

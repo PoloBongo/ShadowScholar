@@ -18,16 +18,33 @@ public class LoadInput : MonoBehaviour
     private vZipLine vZipLine;
     private vLadderAction vLadderAction;
     private vDrawHideShooterWeapons vDrawHideShooterWeapons;
+    private MissionManager missionManager;
+    private ZoneLoader zoneLoader;
 
     private string filePath;
     [SerializeField] private JsonFile jsonFile;
     private void Start()
+    {
+        ReadJson();
+    }
+
+    private void ReadJson()
     {
         filePath = Path.Combine(Application.persistentDataPath, "shadowScholar.json");
 
         if (File.Exists(filePath))
         {
             jsonFile.ReadJsonFile(filePath);
+        }
+    }
+
+    void OnEnable()
+    {
+        ReadJson();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            OnThirdPersonInputActivated();
         }
     }
 
@@ -51,6 +68,11 @@ public class LoadInput : MonoBehaviour
         if (vLadderAction == null) Debug.LogError("vLadderAction non trouvé.");
         vDrawHideShooterWeapons = FindAnyObjectByType<vDrawHideShooterWeapons>();
         if (vDrawHideShooterWeapons == null) Debug.LogError("vDrawHideShooterWeapons non trouvé.");
+        zoneLoader = FindAnyObjectByType<ZoneLoader>();
+
+        GameObject gameController = GameObject.Find("GameController");
+        if (gameController != null)
+            missionManager = gameController.GetComponent<MissionManager>();
 
         if (invectorInput != null || invectorMeleeCombatInput != null || invectorShooterInput != null || vInventory != null || vSwimming != null || vCoverController != null || vZipLine != null)
         {
@@ -87,6 +109,17 @@ public class LoadInput : MonoBehaviour
             vLadderAction.slideDownInput = new GenericInput(jsonFile.shadowScholar.inputSettings.slideDownClimbInput, "X", "X");
 
             vDrawHideShooterWeapons.hideAndDrawWeaponsInput = new GenericInput(jsonFile.shadowScholar.inputSettings.hideWeaponInput, "LB", "LB");
+
+            if (missionManager != null)
+            {
+                missionManager.openObjectifInput = new GenericInput(jsonFile.shadowScholar.inputSettings.openObjectifInput, "Start", "Start");
+                missionManager.closeObjectifInput = new GenericInput(jsonFile.shadowScholar.inputSettings.closeObjectifInput, "Start", "Start");
+            }
+
+            if (zoneLoader != null)
+            {
+                zoneLoader.openCloseMenuTPInput = new GenericInput(jsonFile.shadowScholar.inputSettings.openCloseMenuTPInput, "Start", "Start");
+            }
         }
         else
         {

@@ -1,4 +1,5 @@
 using Invector.vCharacterController;
+using Invector.vItemManager;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -16,12 +17,13 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private int indexMission;
     private GameObject HUDPlayer;
     private vThirdPersonController vThirdPersonController;
-    public GenericInput openObjectif = new GenericInput("F1", "Start", "Start");
-    public GenericInput closeObjectif = new GenericInput("Escape", "Start", "Start");
+    public GenericInput openObjectifInput = new GenericInput("F1", "Start", "Start");
+    public GenericInput closeObjectifInput = new GenericInput("Escape", "Start", "Start");
     private bool isOpen = false;
 
     private string filePath;
     [SerializeField] JsonFile jsonFile;
+    private vItemManager vItemManager;
 
     private void Start()
     {
@@ -41,6 +43,12 @@ public class MissionManager : MonoBehaviour
     public void MissionStatus(string missionStatus, int indexMission)
     {
         HUDPlayer = GameObject.Find("InvectorComponents");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            vItemManager = player.GetComponent<vItemManager>();
+        if (vItemManager != null)
+            vItemManager.SaveInventory();
+
         if (missionStatus == "Success")
         {
             SaveMissionFinish(indexMission);
@@ -85,12 +93,12 @@ public class MissionManager : MonoBehaviour
 
     private void Update()
     {
-        if (openObjectif.GetButtonDown())
+        if (openObjectifInput.GetButtonDown())
         {
             isOpen = !isOpen;
             OpenObjectifFunction(isOpen);
         }
-        if (closeObjectif.GetButtonDown())
+        if (closeObjectifInput.GetButtonDown())
         {
             isOpen = false;
             OpenObjectifFunction(isOpen);

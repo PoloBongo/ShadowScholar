@@ -94,9 +94,12 @@ public class Pause : MonoBehaviour
     public void DebugMe()
     {
         GetInfo();
-        if (player != null &&  gameController != null)
+        if (player != null && gameController != null)
         {
-            player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
+            if (gameController.GetComponent<vGameController>() != null && gameController.GetComponent<vGameController>().DebugPoint != null)
+            {
+                player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
+            }
         }
     }
 

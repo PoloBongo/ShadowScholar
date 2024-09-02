@@ -8659,12 +8659,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 7
+  selectedToolbar: 0
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
   fillHealthOnStart: 1
-  maxHealth: 1000
+  maxHealth: 100
   healthRecovery: 0
   healthRecoveryDelay: 0
   currentHealthRecoveryDelay: 0
@@ -9520,111 +9520,7 @@ MonoBehaviour:
   selectedToolbar: 0
   inventory: {fileID: 0}
   itemListData: {fileID: 11400000, guid: 1493f9d9326e8014494b8cb04de38f25, type: 2}
-  startItems:
-  - id: 11
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 25
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 25
-      isOpen: 0
-      isBool: 0
-    - name: 10
-      value: 85
-      isOpen: 0
-      isBool: 0
-    - name: 9
-      value: 10
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 0
-    addToEquipArea: 0
-    indexArea: 0
-  - id: 12
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 50
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 8
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 0
-    addToEquipArea: 0
-    indexArea: 0
-  - id: 26
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 25
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 100
-      isOpen: 0
-      isBool: 0
-    - name: 10
-      value: 85
-      isOpen: 0
-      isBool: 0
-    - name: 9
-      value: 0
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 1
-    addToEquipArea: 0
-    indexArea: 0
-  - id: 27
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 25
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 100
-      isOpen: 0
-      isBool: 0
-    - name: 10
-      value: 85
-      isOpen: 0
-      isBool: 0
-    - name: 9
-      value: 0
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 1
-    addToEquipArea: 1
-    indexArea: 0
-  - id: 10
-    name: 
-    amount: 1
-    attributes:
-    - name: 2
-      value: 36
-      isOpen: 0
-      isBool: 0
-    - name: 6
-      value: 50
-      isOpen: 0
-      isBool: 0
-    changeAttributes: 1
-    autoEquip: 0
-    addToEquipArea: 0
-    indexArea: 0
+  startItems: []
   equipPoints:
   - equipPointName: LeftArm
     area: {fileID: 0}

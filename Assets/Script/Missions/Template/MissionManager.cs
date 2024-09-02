@@ -83,7 +83,7 @@ public class MissionManager : MonoBehaviour
         }
 
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("SceneChargement");
     }
 
     private void OpenObjectifFunction(bool isOpen)

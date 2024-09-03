@@ -24,6 +24,9 @@ public class Activation : MonoBehaviour
 
     public void ActivateScript()
     {
+        interactionScripts.Clear();
+        minimapIcons.Clear();
+
         // load l'inventaire au player
         StartCoroutine(WaitForLoadInventory());
 

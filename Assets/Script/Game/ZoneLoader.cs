@@ -124,8 +124,11 @@ public class ZoneLoader : MonoBehaviour
     // Zone de la maison
     public void ShowHouseZone()
     {
-
         areaToLoad.Add("Zone_14");
+        prefabPaths.Add("Exterior");
+        prefabPaths.Add("House_2");
+        prefabPaths.Add("Park_Garage");
+        prefabPaths.Add("Shop_Center");
         StartCoroutine(ShowZones());
     }
 
@@ -133,6 +136,21 @@ public class ZoneLoader : MonoBehaviour
     public void ShowSchoolZone()
     {
         areaToLoad.Add("Zone_1");
+        prefabPaths.Add("Exterior");
+        prefabPaths.Add("Football_Stadium");
+        prefabPaths.Add("House_3");
+        prefabPaths.Add("House_4");
+        prefabPaths.Add("House_4_1");
+        prefabPaths.Add("House_6_1");
+        prefabPaths.Add("House_7");
+        prefabPaths.Add("House_A_3 1");
+        prefabPaths.Add("House_A_3");
+        prefabPaths.Add("House_A_4");
+        prefabPaths.Add("House_B_6");
+        prefabPaths.Add("House_D_4");
+        prefabPaths.Add("House_E_1");
+        prefabPaths.Add("House_E_6");
+        prefabPaths.Add("School");
         StartCoroutine(ShowZones());
     }
 
@@ -140,6 +158,15 @@ public class ZoneLoader : MonoBehaviour
     public void ShowAgencyZone()
     {
         areaToLoad.Add("Zone_18");
+        prefabPaths.Add("Exterior");
+        prefabPaths.Add("KB3D_BRK_BldgLG_J (1)");
+        prefabPaths.Add("KB3D_BRK_BldgLG_J (2)");
+        prefabPaths.Add("KB3D_BRK_BldgLG_J (3)");
+        prefabPaths.Add("KB3D_BRK_BldgLG_J");
+        prefabPaths.Add("KB3D_BRK_BldgSM_A (2)");
+        prefabPaths.Add("KB3D_BRK_BldgSM_I");
+        prefabPaths.Add("KB3D_BRK_BldgSM_J");
+        prefabPaths.Add("Office Variant Variant");
         StartCoroutine(ShowZones());
     }
 
@@ -223,9 +250,8 @@ public class ZoneLoader : MonoBehaviour
         {
             if (!CheckContains(loadedArea, area))
             {
-                string[] prefabsPath = Directory.GetFiles(Path.Combine(Application.dataPath, "Resources", "Prefabs Zone/" + area), "*.prefab", SearchOption.TopDirectoryOnly);
-                ressourcesToLoad = prefabsPath.Length;
-                foreach (string prefabPath in prefabsPath)
+                ressourcesToLoad = prefabPaths.Count;
+                foreach (string prefabPath in prefabPaths)
                 {
                     yield return StartCoroutine(LoadRessourcesForZone(prefabPath, area));
                 }
@@ -239,6 +265,7 @@ public class ZoneLoader : MonoBehaviour
             player.transform.SetPositionAndRotation(playerSpawn.position, playerSpawn.rotation);
 
             areaToLoad.Clear();
+            prefabPaths.Clear();
 
             jsonFile.shadowScholar.area.playArea = playArea;
             jsonFile.shadowScholar.area.playerTransform = playerSpawn;

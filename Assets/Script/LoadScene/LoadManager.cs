@@ -141,7 +141,6 @@ public class LoadManager : MonoBehaviour
         if (jsonFile.shadowScholar.area.playArea == "Zone_1")
         {
             yield return StartCoroutine(LoadAndInstantiateAssetAsync("Prefabs Zone/Zone_1", Zones, 3, 3));
-
         }
         else if (jsonFile.shadowScholar.area.playArea == "Zone_14") 
         {

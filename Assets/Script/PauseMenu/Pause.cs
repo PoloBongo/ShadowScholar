@@ -23,7 +23,8 @@ public class Pause : MonoBehaviour
     private vInventory inventory;
     private GameObject player;
     private GameObject gameController;
-
+    private GameObject save;
+    private JsonFile jsonFile;
 
     // Update is called once per frame
     void Update()
@@ -89,16 +90,32 @@ public class Pause : MonoBehaviour
     {
         gameController = GameObject.FindWithTag("GameController");
         player = GameObject.FindWithTag("Player");
+        save = GameObject.Find("Save");
+        jsonFile = save.GetComponent<JsonFile>();
     }
 
     public void DebugMe()
     {
         GetInfo();
-        if (player != null && gameController != null)
+        if (player != null && gameController != null && save != null)
         {
             if (gameController.GetComponent<vGameController>() != null && gameController.GetComponent<vGameController>().DebugPoint != null)
             {
-                player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
+                if (jsonFile != null)
+                {
+                    if (jsonFile.shadowScholar.area.playArea == "Zone_14")
+                    {
+                        player.transform.position = new Vector3(1459.729f, 13.45015f, 1028.012f);
+                    }
+                    else if (jsonFile.shadowScholar.area.playArea == "Zone_1")
+                    {
+                        player.transform.position = new Vector3(865.7018f, 9.485443f, 398.7039f);
+                    }
+                    else
+                    {
+                        player.transform.position = gameController.GetComponent<vGameController>().DebugPoint.position;
+                    }
+                }
             }
         }
     }

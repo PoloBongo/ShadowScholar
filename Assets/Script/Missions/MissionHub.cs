@@ -1,5 +1,6 @@
 using Invector.vCamera;
 using Invector.vCharacterController;
+using Invector.vItemManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -395,6 +396,7 @@ public class MissionHub : MonoBehaviour
                     }
                     jsonSave.shadowScholar.player.position = new Vector3(1605.767f, 15.61f, 646.4249f);
                     jsonSave.SaveJson();
+                    SaveInventoryWhenMissionIsLaunch();
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                     SceneManager.LoadScene("SceneChargement");
                 }
@@ -402,7 +404,18 @@ public class MissionHub : MonoBehaviour
         }
     }
 
-
+    private void SaveInventoryWhenMissionIsLaunch()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            vItemManager vItemManagerObject = player.GetComponent<vItemManager>();
+            if (vItemManagerObject != null)
+            {
+                vItemManagerObject.SaveInventory();
+            }
+        }
+    }
 
     void RotateTowardsTarget(Transform transform, Quaternion targetRotation, float rotationSpeed)
     {

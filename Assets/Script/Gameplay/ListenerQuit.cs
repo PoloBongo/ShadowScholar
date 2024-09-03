@@ -21,13 +21,13 @@ public class ListenerQuit : MonoBehaviour
         }
     }
 
-    private void Update()
+/*    private void Update()
     {
         if (Input.GetAxis("MoveZone") > 0)
         {
             SearchPlayerForSaveInventory();
         }
-    }
+    }*/
 
     // save la position du joueur uniquement dans la scene Game et MenuPause ( si il est en pause en étant dans la scène game )
     private void SearchPlayerForSaveInventory()
@@ -47,7 +47,6 @@ public class ListenerQuit : MonoBehaviour
         }
 
         if (SceneManager.GetActiveScene().name == "Game" ||
-            SceneManager.GetActiveScene().name == "Mission1" ||
             SceneManager.GetActiveScene().name == "Mission2" ||
             SceneManager.GetActiveScene().name == "Mission3" ||
             SceneManager.GetActiveScene().name == "Mission4" ||

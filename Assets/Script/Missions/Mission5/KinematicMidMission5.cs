@@ -8,13 +8,10 @@ public class KinematicEndMission5 : MonoBehaviour
     private GameObject nextVague;
     private GameObject previousVague;
     [SerializeField] GameObject destroyKinematic;
-    private Pause pause;
     private GameObject player;
 
     void Start()
     {
-        GameObject pauseGameObject = GameObject.Find("Pause");
-        pause = pauseGameObject.GetComponent<Pause>();
         nextVague = FindInactiveObjectByName("IAVague_Step2");
         previousVague = GameObject.Find("IAVague_Step1");
         player = FindInactiveObjectByName("MainCharacter(Clone)");
@@ -47,7 +44,6 @@ public class KinematicEndMission5 : MonoBehaviour
 
     void OnPlayableDirectorStopped(PlayableDirector director)
     {
-        pause.enabled = true;
         Destroy(previousVague);
         nextVague.GetComponent<CheckVagueIA>().InitCheckIA();
         nextVague.SetActive(true);

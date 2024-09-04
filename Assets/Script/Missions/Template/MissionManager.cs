@@ -46,8 +46,10 @@ public class MissionManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
             vItemManager = player.GetComponent<vItemManager>();
-        if (vItemManager != null)
+        if (vItemManager != null && SceneManager.GetActiveScene().name != "Mission1")
+        {
             vItemManager.SaveInventory();
+        }
 
         if (missionStatus == "Success")
         {

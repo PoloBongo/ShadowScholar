@@ -371,6 +371,7 @@ public class MissionHub : MonoBehaviour
                 {
                     hubInterface.missionLaunchText.fontSize = 0.17f;
                     hubInterface.missionLaunchText.text = "Lancement en cours...";
+                    SaveInventoryWhenMissionIsLaunch();
                     switch (nextMissionInfo)
                     {
                         case 1:
@@ -396,7 +397,6 @@ public class MissionHub : MonoBehaviour
                     }
                     jsonSave.shadowScholar.player.position = new Vector3(1605.767f, 15.61f, 646.4249f);
                     jsonSave.SaveJson();
-                    SaveInventoryWhenMissionIsLaunch();
                     SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                     SceneManager.LoadScene("SceneChargement");
                 }
@@ -404,15 +404,30 @@ public class MissionHub : MonoBehaviour
         }
     }
 
+    private GameObject FindActiveObjectByName(string name)
+    {
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == name && obj.activeInHierarchy)
+            {
+                return obj;
+            }
+        }
+        return null;
+    }
+
     private void SaveInventoryWhenMissionIsLaunch()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = FindActiveObjectByName("MainCharacter(Clone)");
         if (player != null)
         {
             vItemManager vItemManagerObject = player.GetComponent<vItemManager>();
             if (vItemManagerObject != null)
             {
                 vItemManagerObject.SaveInventory();
+                vItemManagerObject.LoadInventory();
             }
         }
     }

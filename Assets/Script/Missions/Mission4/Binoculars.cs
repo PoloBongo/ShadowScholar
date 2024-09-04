@@ -20,6 +20,7 @@ public class Binoculars : MonoBehaviour
 
     public Canvas canvas;
     private bool isUse = false;
+    private bool canStartUpdate;
 
    // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class Binoculars : MonoBehaviour
                 }
             }
         }
-
+        canStartUpdate = false;
         canvas.enabled = false;
 
         Debug.Log(enemyList.Count);
@@ -46,22 +47,26 @@ public class Binoculars : MonoBehaviour
         vShooterMeleeInput = GameObject.FindGameObjectWithTag("Player").GetComponent<vShooterMeleeInput>();
         playerCamera = vShooterMeleeInput.cameraMain;
         StartCoroutine(WaitForOneMinutes());
+        canStartUpdate = true;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Binoculars") > 0)
+        if (canStartUpdate)
         {
-            isUse = true;
-            canvas.enabled = false;
-            vShooterMeleeInput.ChangeCameraStateWithLerp("Binoculars");
-            DetectVisibleEnemies();
-        }
-        else
-        {
-            vShooterMeleeInput.ResetCameraState();
+            if (Input.GetAxis("Binoculars") > 0)
+            {
+                isUse = true;
+                canvas.enabled = false;
+                vShooterMeleeInput.ChangeCameraStateWithLerp("Binoculars");
+                DetectVisibleEnemies();
+            }
+            else
+            {
+                vShooterMeleeInput.ResetCameraState();
+            }
         }
     }
 

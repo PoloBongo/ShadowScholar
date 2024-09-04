@@ -132,6 +132,11 @@ public class Activation : MonoBehaviour
             {
                 foreach (Transform child2 in child.transform)
                 {
+                    if (!child2.gameObject.activeInHierarchy)
+                    {
+                        child2.gameObject.SetActive(true);
+                    }
+
                     AIPlayerController aiController = child2.GetComponent<AIPlayerController>();
                     if (aiController != null)
                     {

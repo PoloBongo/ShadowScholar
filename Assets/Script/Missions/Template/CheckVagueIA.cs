@@ -7,7 +7,6 @@ public class CheckVagueIA : MonoBehaviour
     [SerializeField] List<GameObject> iaVagues = new List<GameObject>();
     [SerializeField] ObjectifMission objectifMission;
     [SerializeField] private GameObject Kinematic;
-    [SerializeField] private Pause pause;
     private string actualVague;
     private bool renderIA;
     private GameObject player;
@@ -82,7 +81,6 @@ public class CheckVagueIA : MonoBehaviour
                             player = GameObject.FindGameObjectWithTag("Player");
                             if (player != null)
                                 player.SetActive(false);
-                            pause.enabled = false;
                             Instantiate(Kinematic);
                             antiSpamKinematicSpawn = true;
                             break;

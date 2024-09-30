@@ -3,10 +3,10 @@ using TMPro;
 
 public class FPSCounter : MonoBehaviour
 {
-    public TextMeshProUGUI fpsText;  // Référence à l'objet TextMeshPro pour afficher les FPS
+    public TextMeshProUGUI fpsText;  // Rï¿½fï¿½rence a l'objet TextMeshPro pour afficher les FPS
     private int frames = 0;
     private float time = 0.0f;
-    private float refreshTime = 1.0f;  // Intervalle de temps pour le rafraîchissement des FPS affichés
+    private float refreshTime = 1.0f;  // Intervalle de temps pour le rafraï¿½chissement des FPS affichï¿½s
 
     void Update()
     {
